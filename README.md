@@ -27,13 +27,13 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 | #   | Name                 | ID        | Github Username     |
 | --- | :------------------- | :-------- | :------------------ |
 | 1   | Nadine El-Mufti      | 40017347  | `njayem`            | 
-| 2   | Warda Ahmed Salem    | 40085148  |                     |
-| 3   | Safaa Kadhim         | 40123596  |  safaaraed99        | 
-| 4   | Arandeep Grewal      | 40129705  |  Arandeep24         |
-| 5   | Nicolas Towa Kamgne  | 40154685  |                     |
-| 6   | Eric Hanna           | 40113678  |                     |
-| 7   | Michael Warner       | 40124302  |                     |
-| 8   | Raja Singh Chandi    | 40078603  |                     |
+| 2   | Warda Ahmed Salem    | 40085148  |  ``                 |
+| 3   | Safaa Kadhim         | 40123596  |  `safaaraed99`      | 
+| 4   | Arandeep Grewal      | 40129705  |  `Arandeep24`       |
+| 5   | Nicolas Towa Kamgne  | 40154685  |  ``                 |
+| 6   | Eric Hanna           | 40113678  |  `leoenix`          |
+| 7   | Michael Warner       | 40124302  |  ``                 |
+| 8   | Raja Singh Chandi    | 40078603  |  ``                 |
 
 
 
@@ -54,6 +54,11 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 :small_blue_diamond: &nbsp; Class Names: CamelCase <br>
 
 ## Naming Conventions (for Git & Github organization) :green_book:
+
+**For Issues**, Issues Follow This Syntax <br>
+      ISS-(issue number) Issue Example Name [(FEATURE/BUG)] <br>
+      Example: ISS-1 Add a ReadMe File [FEATURE] <br>
+
 
 Branches To Solve Issues (i.e. #issue_number): 
 

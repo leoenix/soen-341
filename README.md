@@ -48,12 +48,27 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
    &nbsp;&nbsp; :white_small_square: Java Hibernate <br>
 
 
-## Naming Conventions :blue_book:
+## Naming Conventions (for code organization) :blue_book:
 :small_blue_diamond: &nbsp; Variables + Instance Methods: snake case (all lowercase) <br>
 :small_blue_diamond: &nbsp; Class Methods: camelCase (first letter lowercase) <br>
 :small_blue_diamond: &nbsp; Class Names: CamelCase <br>
 
+## Naming Conventions (for Git & Github organization) :green_book:
 
+Branches To Solve Issues (i.e. #issue_number):
+
+**For Feature Requests**, Branches Are Called: 
+     One Branch:  feature-(issue_number) 
+     Multiple Branches:   feature-(issue_number)/add-margin
+                          feature-(issue_number)/change-color
+
+**For Bug Reports**, Branches Are Called: 
+    One Branch:  bug-(issue_number) 
+    Multiple Branches:  bug-(issue_number)/centralize-margin
+                        bug-(issue_number)/remove-color
+
+**For URGENT Bugs**, Branches Are Called: 
+    hotfix-(issue_number)
 
 
 

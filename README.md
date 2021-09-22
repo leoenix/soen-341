@@ -1,4 +1,4 @@
-# :wave: StackOverflow Clone App (Soen 341) :wave:
+# :wave: StackOverflow Clone Web App (Soen 341) :wave:
 
 ## Objective :trophy:
 Implement a simplified version of StackOverflow, a Q&A platform, that enables users to ask and answer questions, vote for each other's answers, and authorize the OP (Original Poster) to accept the best answer

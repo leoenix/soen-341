@@ -28,7 +28,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 | --- | :------------------- | :-------- | :------------------ |
 | 1   | Nadine El-Mufti      | 40017347  | `njayem`            | 
 | 2   | Warda Ahmed Salem    | 40085148  |                     |
-| 3   | Safaa Kadhim         | 40123596  |  safaa.raed99       | 
+| 3   | Safaa Kadhim         | 40123596  |  safaaraed99       | 
 | 4   | Arandeep Grewal      | 40129705  |  arandeep24         |
 | 5   | Nicolas Towa Kamgne  | 40154685  |                     |
 | 6   | Eric Hanna           | 40113678  |                     |

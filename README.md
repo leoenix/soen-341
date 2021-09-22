@@ -55,20 +55,20 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 ## Naming Conventions (for Git & Github organization) :green_book:
 
-Branches To Solve Issues (i.e. #issue_number):
+Branches To Solve Issues (i.e. #issue_number): 
 
-**For Feature Requests**, Branches Are Called: 
-     One Branch:  feature-(issue_number) 
-     Multiple Branches:   feature-(issue_number)/add-margin
-                          feature-(issue_number)/change-color
+**For Feature Requests**, Branches Are Called: <br>
+     One Branch:  feature-(issue_number) <br>
+     Multiple Branches:   feature-(issue_number)/add-margin <br>
+                          feature-(issue_number)/change-color <br>
 
-**For Bug Reports**, Branches Are Called: 
-    One Branch:  bug-(issue_number) 
-    Multiple Branches:  bug-(issue_number)/centralize-margin
-                        bug-(issue_number)/remove-color
+**For Bug Reports**, Branches Are Called: <br>
+    One Branch:  bug-(issue_number) <br>
+    Multiple Branches:  bug-(issue_number)/centralize-margin <br>
+                        bug-(issue_number)/remove-color <br>
 
-**For URGENT Bugs**, Branches Are Called: 
-    hotfix-(issue_number)
+**For URGENT Bugs**, Branches Are Called: <br>
+    hotfix-(issue_number) <br>
 
 
 

@@ -60,17 +60,17 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 **:green_circle: &nbsp; For Branches** (To Solve Issues Through Pull-Requests)<br> 
 
-- **For Feature Requests** <br>
+  * **For Feature Requests** <br>
     * One Branch:  feature-(issue_number) <br>
     * Multiple Branches:   feature-(issue_number)/add-margin <br>
                            feature-(issue_number)/change-color <br>
 
-- **For Bug Reports**, Branches Are Called: <br>
+  * **For Bug Reports** <br>  
     * One Branch:  bug-(issue_number) <br>
     * Multiple Branches:  bug-(issue_number)/centralize-margin <br>
                           bug-(issue_number)/remove-color <br>
 
-- **For URGENT Bugs**, Branches Are Called: <br>
+  * **For URGENT Bugs** <br>
     * hotfix-(issue_number) <br>
   
 **:green_circle: &nbsp; For Issues** <br>
@@ -80,7 +80,6 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 **:green_circle: &nbsp; For Pull-Requests** <br>
       Syntax: [Solves #Github_Hash] Pull-Request Topic <br>
       Example: [Solves #Github_Hash] Added a README.md File<br>
-
 
 <pre>
 ## Workflow Tips :bulb: <br>

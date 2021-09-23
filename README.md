@@ -93,7 +93,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 :two: &nbsp; Checkout to a new_branch (using the above naming conventions) <br>
 :three: &nbsp; Add, Commit, and Push these changes to the new_branch <br>
 :four: &nbsp; Push this branch to Github <br>
-:five: &nbsp; Address an Issue by creating a Pull-Request: (Main) <------ (new_branch) <br>
+:five: &nbsp; Address an Issue / have your code added to main/master by creating a Pull-Request: (Main) <------ (new_branch) <br>
 
    
 

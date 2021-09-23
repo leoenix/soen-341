@@ -56,8 +56,8 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 ## Naming Conventions (for Git & Github organization) :green_book:
 
 **For Issues**, Issues Follow This Syntax <br>
-      ISS-(issue number) Issue Example Name [(FEATURE/BUG)] <br>
-      Example: ISS-1 Add a ReadMe File [FEATURE] <br>
+      [#generated_hash: FEATURE/BUG] Issue Example Name <br>
+      Example: [#10: FEATURE] Add a read me file <br>
 
 
 Branches To Solve Issues (i.e. #issue_number): 
@@ -74,6 +74,9 @@ Branches To Solve Issues (i.e. #issue_number):
 
 **For URGENT Bugs**, Branches Are Called: <br>
     hotfix-(issue_number) <br>
+    
+**For Pull Requests**, Pull Requests Follow This Syntax: 
+[Solves #generated_hash] Pull-request topic
 
 
 

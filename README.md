@@ -79,12 +79,12 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
     * hotfix-(issue_number) <br>
   
 **:green_circle: &nbsp; For Issues** 
-     * **Syntax:** [#Github_Hash: FEATURE/BUG] Issue Topic <br>
+     * **Syntax:** [#issue_number: FEATURE/BUG] Issue Topic <br>
      * **Example:** [#40: FEATURE] Add a README.md File <br>
 
 **:green_circle: &nbsp; For Pull-Requests** 
-     * **Syntax:** [Solves #Github_Hash] Pull-Request Topic <br>
-     * **Example:** [Solves #Github_Hash] Added a README.md File<br>
+     * **Syntax:** [Solves #issue_number] Pull-Request Topic <br>
+     * **Example:** [Solves #40] Added a README.md File<br>
 
 
 ## Workflow Tips :bulb: 

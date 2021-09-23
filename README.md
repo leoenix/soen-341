@@ -32,13 +32,13 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 | #   | Name                 | ID        | Github Username     |
 | --- | :------------------- | :-------- | :------------------ |
-| 1   | Nadine El-Mufti      | 40017347  | `njayem`            | 
+| 1   | Nadine El-Mufti      | 40017347  |  `njayem`           | 
 | 2   | Warda Ahmed Salem    | 40085148  |  ``                 |
 | 3   | Safaa Kadhim         | 40123596  |  `safaaraed99`      | 
 | 4   | Arandeep Grewal      | 40129705  |  `Arandeep24`       |
 | 5   | Nicolas Towa Kamgne  | 40154685  |  ``                 |
 | 6   | Eric Hanna           | 40113678  |  `leoenix`          |
-| 7   | Michael Warner       | 40124302  |  ``                 |
+| 7   | Michael Warner       | 40124302  |  `narroarrow`       |
 | 8   | Raja Singh Chandi    | 40078603  |  ``                 |
 
 

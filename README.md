@@ -9,6 +9,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 *Extra Feature: A user is awarded 10 reputation points for receiving an upvote on an answer to a question* 
 
+
 ## Core Features :point_down:	
 :one: &nbsp; Ask & Answer Questions :question: :memo:<br>
 :two: &nbsp; Upvote An Answer :arrow_up: <br>
@@ -22,19 +23,19 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 - [ ]  Sprint 3
 - [ ]  Sprint 4
 
+
 ## Team Members :technologist:
 
 | #   | Name                 | ID        | Github Username     |
 | --- | :------------------- | :-------- | :------------------ |
 | 1   | Nadine El-Mufti      | 40017347  | `njayem`            | 
-| 2   | Warda Ahmed Salem    | 40085148  |                     |
-| 3   | Safaa Kadhim         | 40123596  |  safaaraed99        | 
-| 4   | Arandeep Grewal      | 40129705  |  Arandeep24         |
-| 5   | Nicolas Towa Kamgne  | 40154685  |                     |
-| 6   | Eric Hanna           | 40113678  |                     |
-| 7   | Michael Warner       | 40124302  |                     |
-| 8   | Raja Singh Chandi    | 40078603  |                     |
-
+| 2   | Warda Ahmed Salem    | 40085148  |  ``                 |
+| 3   | Safaa Kadhim         | 40123596  |  `safaaraed99`      | 
+| 4   | Arandeep Grewal      | 40129705  |  `Arandeep24`       |
+| 5   | Nicolas Towa Kamgne  | 40154685  |  ``                 |
+| 6   | Eric Hanna           | 40113678  |  `leoenix`          |
+| 7   | Michael Warner       | 40124302  |  ``                 |
+| 8   | Raja Singh Chandi    | 40078603  |  ``                 |
 
 
 ## Technology Stack :gear:
@@ -49,26 +50,45 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 
 ## Naming Conventions (for code organization) :blue_book:
+
 :small_blue_diamond: &nbsp; Variables + Instance Methods: snake case (all lowercase) <br>
 :small_blue_diamond: &nbsp; Class Methods: camelCase (first letter lowercase) <br>
 :small_blue_diamond: &nbsp; Class Names: CamelCase <br>
 
+
 ## Naming Conventions (for Git & Github organization) :green_book:
 
-Branches To Solve Issues (i.e. #issue_number): 
+**:green_circle: &nbsp; For Branches** (To Solve Issues Through Pull-Requests)<br> 
 
-**For Feature Requests**, Branches Are Called: <br>
-     One Branch:  feature-(issue_number) <br>
-     Multiple Branches:   feature-(issue_number)/add-margin <br>
-                          feature-(issue_number)/change-color <br>
+  * **For Feature Requests** <br>
+    * One Branch:  feature-(issue_number) <br>
+    * Multiple Branches:   feature-(issue_number)/add-margin <br>
+                           feature-(issue_number)/change-color <br>
 
-**For Bug Reports**, Branches Are Called: <br>
-    One Branch:  bug-(issue_number) <br>
-    Multiple Branches:  bug-(issue_number)/centralize-margin <br>
-                        bug-(issue_number)/remove-color <br>
+  * **For Bug Reports** <br>  
+    * One Branch:  bug-(issue_number) <br>
+    * Multiple Branches:  bug-(issue_number)/centralize-margin <br>
+                          bug-(issue_number)/remove-color <br>
 
-**For URGENT Bugs**, Branches Are Called: <br>
-    hotfix-(issue_number) <br>
+  * **For URGENT Bugs** <br>
+    * hotfix-(issue_number) <br>
+  
+**:green_circle: &nbsp; For Issues** <br>
+      Syntax: [#Github_Hash: FEATURE/BUG] Issue Topic <br>
+      Example: [#40: FEATURE] Add a README.md File <br>
 
+**:green_circle: &nbsp; For Pull-Requests** <br>
+      Syntax: [Solves #Github_Hash] Pull-Request Topic <br>
+      Example: [Solves #Github_Hash] Added a README.md File<br>
 
+<pre>
+## Workflow Tips :bulb: <br>
+
+:one: &nbsp; Make your changes and save your code <br>
+:two: &nbsp; Checkout to a new_branch (using the above naming conventions) <br>
+:three: &nbsp; Add, Commit, and Push these changes to the new_branch <br>
+:four: &nbsp; Push this branch to Github <br>
+:five: &nbsp; Address an Issue by creating a Pull-Request: (Main) <------ (new_branch) <br>
+</pre>
+   
 

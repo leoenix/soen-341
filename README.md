@@ -1,16 +1,19 @@
 # :wave: StackOverflow Clone Web App (Soen 341) :wave:
 
 ## Objective :trophy:
+
 Implement a simplified version of StackOverflow, a Q&A platform, that enables users to ask and answer questions, vote for each other's answers, and authorize the OP (Original Poster) to accept the best answer
 
 
 ## Description :pencil2:
+
 Build a simplified version of StackOverflow, which is essentially a Q&A website that enables users to ask questions or share their knowledge of programming by answering questions posted by other users.  The community can indicate which answers are most valuable and appropriate by upvoting them. Users can upvote any answer they want except for their own, and only the OP, the Original Poster of a question, gets to accept the best response
 
 *Extra Feature: A user is awarded 10 reputation points for receiving an upvote on an answer to a question* 
 
 
 ## Core Features :point_down:	
+
 :one: &nbsp; Ask & Answer Questions :question: :memo:<br>
 :two: &nbsp; Upvote An Answer :arrow_up: <br>
 :three: &nbsp; Select The Best Answer :star: <br>
@@ -18,6 +21,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 
 ## Progress :alarm_clock:
+
 - [ ]  Sprint 1
 - [ ]  Sprint 2
 - [ ]  Sprint 3
@@ -28,25 +32,26 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 | #   | Name                 | ID        | Github Username     |
 | --- | :------------------- | :-------- | :------------------ |
-| 1   | Nadine El-Mufti      | 40017347  | `njayem`            | 
+| 1   | Nadine El-Mufti      | 40017347  |  `njayem`           | 
 | 2   | Warda Ahmed Salem    | 40085148  |  ``                 |
 | 3   | Safaa Kadhim         | 40123596  |  `safaaraed99`      | 
 | 4   | Arandeep Grewal      | 40129705  |  `Arandeep24`       |
 | 5   | Nicolas Towa Kamgne  | 40154685  |  ``                 |
 | 6   | Eric Hanna           | 40113678  |  `leoenix`          |
-| 7   | Michael Warner       | 40124302  |  ``                 |
+| 7   | Michael Warner       | 40124302  |  `narroarrow`       |
 | 8   | Raja Singh Chandi    | 40078603  |  ``                 |
 
 
 ## Technology Stack :gear:
+
   :black_square_button: &nbsp; Front-End <br>
-   &nbsp;&nbsp; :black_small_square: HTML <br>
-   &nbsp;&nbsp; :black_small_square: CSS <br>
-   &nbsp;&nbsp; :black_small_square: Bootstrap <br>
-   &nbsp;&nbsp; :black_small_square: Create-React-App <br>
+   &nbsp;&nbsp;&nbsp; :black_small_square: HTML <br>
+   &nbsp;&nbsp;&nbsp; :black_small_square: CSS <br>
+   &nbsp;&nbsp;&nbsp; :black_small_square: Bootstrap <br>
+   &nbsp;&nbsp;&nbsp; :black_small_square: Create-React-App <br>
   :white_square_button: &nbsp; Back-End: <br>
-   &nbsp;&nbsp; :white_small_square: Java Spring Boot <br>
-   &nbsp;&nbsp; :white_small_square: Java Hibernate <br>
+   &nbsp;&nbsp;&nbsp; :white_small_square: Java Spring Boot <br>
+   &nbsp;&nbsp;&nbsp; :white_small_square: Java Hibernate <br>
 
 
 ## Naming Conventions (for code organization) :blue_book:
@@ -58,37 +63,37 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 ## Naming Conventions (for Git & Github organization) :green_book:
 
-**:green_circle: &nbsp; For Branches** (To Solve Issues Through Pull-Requests)<br> 
+**:green_circle: &nbsp; For Branches** (To Solve Issues Through Pull-Requests) <br>
 
-  * **For Feature Requests** <br>
-    * One Branch:  feature-(issue_number) <br>
-    * Multiple Branches:   feature-(issue_number)/add-margin <br>
-                           feature-(issue_number)/change-color <br>
+  * **For Feature Requests** 
+    * **One Branch:**  feature-(issue_number) 
+    * **Multiple Branches:** feature-(issue_number)/add-margin 
+    &nbsp; &nbsp; &nbsp;     feature-(issue_number)/change-color <br>
 
-  * **For Bug Reports** <br>  
-    * One Branch:  bug-(issue_number) <br>
-    * Multiple Branches:  bug-(issue_number)/centralize-margin <br>
-                          bug-(issue_number)/remove-color <br>
+  * **For Bug Reports** 
+    * **One Branch:**  bug-(issue_number) 
+    * **Multiple Branches:** bug-(issue_number)/centralize-margin 
+    &nbsp; &nbsp; &nbsp;     bug-(issue_number)/remove-color <br>
 
-  * **For URGENT Bugs** <br>
+  * **For URGENT Bugs** 
     * hotfix-(issue_number) <br>
   
-**:green_circle: &nbsp; For Issues** <br>
-      Syntax: [#Github_Hash: FEATURE/BUG] Issue Topic <br>
-      Example: [#40: FEATURE] Add a README.md File <br>
+**:green_circle: &nbsp; For Issues** 
+     * **Syntax:** [#issue_number: FEATURE/BUG] Issue Topic <br>
+     * **Example:** [#40: FEATURE] Add a README.md File <br>
 
-**:green_circle: &nbsp; For Pull-Requests** <br>
-      Syntax: [Solves #Github_Hash] Pull-Request Topic <br>
-      Example: [Solves #Github_Hash] Added a README.md File<br>
+**:green_circle: &nbsp; For Pull-Requests** 
+     * **Syntax:** [Solves #issue_number] Pull-Request Topic <br>
+     * **Example:** [Solves #40] Added a README.md File<br>
 
-<pre>
-## Workflow Tips :bulb: <br>
+
+## Workflow Tips :bulb: 
 
 :one: &nbsp; Make your changes and save your code <br>
 :two: &nbsp; Checkout to a new_branch (using the above naming conventions) <br>
 :three: &nbsp; Add, Commit, and Push these changes to the new_branch <br>
 :four: &nbsp; Push this branch to Github <br>
 :five: &nbsp; Address an Issue by creating a Pull-Request: (Main) <------ (new_branch) <br>
-</pre>
+
    
 

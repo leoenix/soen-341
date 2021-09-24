@@ -78,13 +78,13 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
   * **For URGENT Bugs** 
     * hotfix-(issue_number) <br>
   
-**:green_circle: &nbsp; For Issues** 
-     * **Syntax:** [#issue_number: FEATURE/BUG] Issue Topic <br>
-     * **Example:** [#40: FEATURE] Add a README.md File <br>
+**:green_circle: &nbsp; For Issues** <br>
+   * **Syntax:** [#issue_number: FEATURE/BUG] Issue Topic <br>
+   * **Example:** [#40: FEATURE] Add a README.md File <br>
 
-**:green_circle: &nbsp; For Pull-Requests** 
-     * **Syntax:** [Solves #issue_number] Pull-Request Topic <br>
-     * **Example:** [Solves #40] Added a README.md File<br>
+**:green_circle: &nbsp; For Pull-Requests** <br>
+   * **Syntax:** [Solves #issue_number] Pull-Request Topic <br>
+   * **Example:** [Solves #40] Added a README.md File<br>
 
 
 ## Workflow Tips :bulb: 
@@ -93,7 +93,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 :two: &nbsp; Checkout to a new_branch (using the above naming conventions) <br>
 :three: &nbsp; Add, Commit, and Push these changes to the new_branch <br>
 :four: &nbsp; Push this branch to Github <br>
-:five: &nbsp; Address an Issue by creating a Pull-Request: (Main) <------ (new_branch) <br>
+:five: &nbsp; Address an Issue / have your code added to main/master by creating a Pull-Request: (Main) <------ (new_branch) <br>
 
    
 

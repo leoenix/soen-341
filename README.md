@@ -33,7 +33,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 | #   | Name                 | ID        | Github Username     |
 | --- | :------------------- | :-------- | :------------------ |
 | 1   | Nadine El-Mufti      | 40017347  |  `njayem`           | 
-| 2   | Warda Ahmed Salem    | 40085148  |  ``                 |
+| 2   | Warda Ahmed Salem    | 40085148  |  `wardasalem`       |
 | 3   | Safaa Kadhim         | 40123596  |  `safaaraed99`      | 
 | 4   | Arandeep Grewal      | 40129705  |  `Arandeep24`       |
 | 5   | Nicolas Towa Kamgne  | 40154685  |  ``                 |

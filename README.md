@@ -13,12 +13,34 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 
 ## Core Features :point_down:	
-
-:one: &nbsp; Ask & Answer Questions :question: :memo:<br>
-:two: &nbsp; Upvote An Answer :arrow_up: <br>
-:three: &nbsp; Select The Best Answer :star: <br>
+:one: &nbsp; Account Creation and Log in <br>;
+:two: &nbsp; Ask & Answer Questions :question: :memo:<br>
+:three: &nbsp; Upvote An Answer :arrow_up: and Select The Best Prioritize :star: <br>
 :four: &nbsp; :sparkles: Grant A User 10 Reputation Points For Each Upvote Earned :sparkles:
 
+## User Stories
+
+Account Creation and Log in:
+
+  - As a regular user, I want to log into the system so that my account information is stored in one location and I can easily access questions I have interacted with.
+
+Ask and Answer Questions:
+
+- As a forum user, I want to be able to ask questions so that I can have my question answered by other users. 
+
+- As a forum user, I want to be able to answer the questions posted by other users so that I can help other members of the forum. 
+
+- As a web user, I want to be notified if I did not submit my reply and i try to navigate away from the page so I don't lose my answer on accident.
+
+Upvote and Prioritize Best Answer:
+
+- As a forum user, I want to be able to upvote answers that are correct and explained clearly so the answer gets more visibility 
+
+- As a forum user, I want to be able to see the highest voted answer at the top of the answer section so that the best answer is easy to find. 
+
+Grant A User 10 Reputation Points For Each Upvote Earned: 
+
+- As a regular user, I want to be able to receive 10 reputation points each time my answer gets an upvote so that it will encourage me to answer the questions of others.
 
 ## Progress :alarm_clock:
 

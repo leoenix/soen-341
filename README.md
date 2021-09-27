@@ -36,7 +36,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 | 2   | Warda Ahmed Salem    | 40085148  |  `wardasalem`       |
 | 3   | Safaa Kadhim         | 40123596  |  `safaaraed99`      | 
 | 4   | Arandeep Grewal      | 40129705  |  `Arandeep24`       |
-| 5   | Nicolas Towa Kamgne  | 40154685  |  ``                 |
+| 5   | Nicolas Towa Kamgne  | 40154685  |  `nicotowa`         |
 | 6   | Eric Hanna           | 40113678  |  `leoenix`          |
 | 7   | Michael Warner       | 40124302  |  `narroarrow`       |
 | 8   | Raja Singh Chandi    | 40078603  |  ``                 |

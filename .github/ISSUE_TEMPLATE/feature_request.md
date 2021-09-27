@@ -1,9 +1,8 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: "[FEATURE]"
+title: "[#issue_number: FEATURE] Issue Topic"
 labels: enhancement
-assignees: ''
 
 ---
 

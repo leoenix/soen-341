@@ -7,7 +7,7 @@ labels: user story
 
 ---
 
-## User Story :curly_haired_man:
+# User Story :curly_haired_man:
 
 **As a** *`persona`*, **I want to** *`do something`* **so that I can** *`realize a reward`*.
 

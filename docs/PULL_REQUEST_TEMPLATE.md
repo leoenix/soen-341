@@ -1,6 +1,7 @@
 name: Pull-Request
 about: 'A Pull-Request is an event in which a contributor asks the maintainer of a Git repository (and other contributors) to review code they want to merge into a project'
 title: "[Solves #issue_number] Pull-Request Topic"
+pipelines: 'Product Backlog'
 
 
  an event in Git where a contributor asks a maintainer of a Git repository to review code they want to merge into a project

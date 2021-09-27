@@ -1,3 +1,9 @@
+name: Pull-Request
+about: 'A Pull-Request is an event in which a contributor asks the maintainer of a Git repository (and other contributors) to review code they want to merge into a project'
+title: "[Solves #issue_number] Pull-Request Topic"
+
+
+ an event in Git where a contributor asks a maintainer of a Git repository to review code they want to merge into a project
 # Description
 
 Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.

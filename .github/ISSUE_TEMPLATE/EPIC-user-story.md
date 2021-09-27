@@ -3,6 +3,7 @@ name: Epic User Story
 about: An EPIC User Story represents functionality that will span multiple sprints
 title: '[#issue_number: FEATURE/BUG] Issue Topic'
 labels: EPIC user story
+pipelines: 'Product Backlog'
 ---
 
 # **Epic** :boom:

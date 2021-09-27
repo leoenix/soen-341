@@ -22,7 +22,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 ## Progress :alarm_clock:
 
-- [ ]  Sprint 1
+- [X]  Sprint 1
 - [ ]  Sprint 2
 - [ ]  Sprint 3
 - [ ]  Sprint 4

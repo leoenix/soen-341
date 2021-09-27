@@ -95,5 +95,13 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 :four: &nbsp; Push this branch to Github <br>
 :five: &nbsp; Address an Issue / have your code added to main/master by creating a PR: (Main) <--- (new_branch) <br>
 
+## ONLY Create Issues For The Following :point_up:
+
+- Feature Requests <br>
+- Bug Fixes <br>
+- EPIC User Stories <br>
+- User Stories <br>
+
+**_note:** Tasks under User Stories should be solved via Pull-Requests (Not Issues)_
    
 

@@ -44,7 +44,7 @@ Grant A User 10 Reputation Points For Each Upvote Earned:
 
 ## Progress :alarm_clock:
 
-- [ ]  Sprint 1
+- [X]  Sprint 1
 - [ ]  Sprint 2
 - [ ]  Sprint 3
 - [ ]  Sprint 4
@@ -115,7 +115,15 @@ Grant A User 10 Reputation Points For Each Upvote Earned:
 :two: &nbsp; Checkout to a new_branch (using the above naming conventions) <br>
 :three: &nbsp; Add, Commit, and Push these changes to the new_branch <br>
 :four: &nbsp; Push this branch to Github <br>
-:five: &nbsp; Address an Issue / have your code added to main/master by creating a Pull-Request: (Main) <------ (new_branch) <br>
+:five: &nbsp; Address an Issue / have your code added to main/master by creating a PR: (Main) <--- (new_branch) <br>
 
+## ONLY Create Issues For The Following :point_up:
+
+- Feature Requests <br>
+- Bug Fixes <br>
+- EPIC User Stories <br>
+- User Stories <br>
+
+**_note:** Tasks under User Stories should be solved via Pull-Requests that are linked to User Story Issues (not PR issues of their own)_
    
 

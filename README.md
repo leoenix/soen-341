@@ -102,6 +102,6 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 - EPIC User Stories <br>
 - User Stories <br>
 
-**_note:** Tasks under User Stories should be solved via Pull-Requests (Not Issues)_
+**_note:** Tasks under User Stories should be solved via Pull-Requests that are linked to User Story Issues (not PR issues of their own)_
    
 

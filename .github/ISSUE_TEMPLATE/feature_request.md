@@ -1,10 +1,9 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: "[FEATURE]"
+title: "[#issue_number: FEATURE] Issue Topic"
 labels: enhancement
 pipelines: 'Product Backlog'
-
 ---
 
 **Is your feature request related to a problem? Please describe.**

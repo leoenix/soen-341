@@ -12,7 +12,7 @@ pipelines: 'Product Backlog'
 
 **As a** *`persona`*, **I want to** *`do something`* **so that I can** *`realize a reward`*.
 
-## Total Points Associted w/ This User Story
+## Total Story Points 
 [ ] Points
 
 ## Risk

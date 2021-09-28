@@ -11,7 +11,7 @@ pipelines: 'Product Backlog'
 Describe what the feature is intended to accomplish & why it's important
 
 
-## **User Stories** (under this EPIC) :family_man_woman_girl_boy:
+## **User Stories under this EPIC** _(Ordered based on priority)_ :family_man_woman_girl_boy:
 - [ ] User Story #1:
 - [ ] User Story #2:
 - [ ] User Story #3:

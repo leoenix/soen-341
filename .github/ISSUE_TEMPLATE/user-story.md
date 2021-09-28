@@ -1,7 +1,7 @@
 ---
 name: User Story
 about: 'A user story is a high-level description of a core feature of a software system written from the perspective of an end-user.'
-title: "[#issue_number: FEATURE/BUG] Issue Topic"
+title: "[#issue_number: User Story] User Story Short Title"
 labels: user story
 pipelines: 'Product Backlog'
 

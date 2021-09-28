@@ -6,14 +6,16 @@ labels: enhancement
 pipelines: 'Product Backlog'
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+# **Feature Request** :electron: 
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+## **Is your feature request related to a problem? Please describe.** <br>
+A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] <br>
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## **Describe the solution you'd like** <br>
+A clear and concise description of what you want to happen. <br>
 
-**Additional context**
+## **Describe alternatives you've considered** <br>
+A clear and concise description of any alternative solutions or features you've considered. <br>
+
+## **Additional context** <br>
 Add any other context or screenshots about the feature request here.

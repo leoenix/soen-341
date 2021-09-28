@@ -6,7 +6,7 @@ labels: EPIC user story
 pipelines: 'Product Backlog'
 ---
 
-# **Epic** :boom:
+# **Epic User Story** :boom:
 
 Describe what the feature is intended to accomplish & why it's important
 

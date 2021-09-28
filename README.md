@@ -38,7 +38,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 | 5   | Nicolas Towa Kamgne  | 40154685  |  `nicotowa`         |
 | 6   | Eric Hanna           | 40113678  |  `leoenix`          |
 | 7   | Michael Warner       | 40124302  |  `narroarrow`       |
-| 8   | Raja Singh Chandi    | 40078603  |  ``                 |
+| 8   | Raja Singh Chandi    | 40078603  |  `rajachandi`       |
 
 
 ## Technology Stack :gear:

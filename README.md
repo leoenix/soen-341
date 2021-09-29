@@ -51,6 +51,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
   :white_square_button: &nbsp; Back-End: <br>
    &nbsp;&nbsp;&nbsp; :white_small_square: Java Spring Boot <br>
    &nbsp;&nbsp;&nbsp; :white_small_square: Java Hibernate <br>
+   &nbsp;&nbsp;&nbsp; :white_small_square: PostgreSQL <br>
 
 
 ## Naming Conventions (for code organization) :blue_book:
@@ -101,6 +102,6 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 - EPIC User Stories <br>
 - User Stories <br>
 
-**_note:** Tasks under User Stories should be solved via Pull-Requests that are linked to User Story Issues (not PR issues of their own)_
+_**note:**_ _Tasks under User Stories should be solved via Pull-Requests that are linked to User Story Issues (not PR issues of their own)_
    
 

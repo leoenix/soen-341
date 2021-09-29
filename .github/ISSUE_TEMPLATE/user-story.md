@@ -17,16 +17,16 @@ pipelines: 'Product Backlog'
 - [ ] Important
 - [ ] It can wait
 
-## Total Story Points 
-[ ] Points
+## Total Story Points / Ideal Hours
+[ ] Points / Hours
 
 ## Risk
 To be added soon
 
 ## Acceptance Criterion / Tasks To Be Completed _(Ordered based on priority)_ :white_check_mark:
-- [ ] Task 1: Task Description - Assignee (First Name)
-- [ ] Task 2: Task Description - Assignee (First Name)
-- [ ] Task 3: Task Description - Assignee (First Name)
-- [ ] Task 4: Task Description - Assignee (First Name)
+- [ ] Task 1: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()
+- [ ] Task 2: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()
+- [ ] Task 3: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()
+- [ ] Task 4: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()
 - [ ] Additional Tasks as necessary
 

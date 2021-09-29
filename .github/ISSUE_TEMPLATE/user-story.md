@@ -24,9 +24,9 @@ pipelines: 'Product Backlog'
 To be added soon
 
 ## Acceptance Criterion / Tasks To Be Completed _(Ordered based on priority)_ :white_check_mark:
-- [ ] Task 1: Task Description - Assignees (Github Usernames)
-- [ ] Task 2: Task Description - Assignees (Github Usernames)
-- [ ] Task 3: Task Description - Assignees (Github Usernames)
-- [ ] Task 4: Task Description - Assignees (Github Usernames)
+- [ ] Task 1: Task Description - Assignees (First Name)
+- [ ] Task 2: Task Description - Assignees (First Name)
+- [ ] Task 3: Task Description - Assignees (First Name)
+- [ ] Task 4: Task Description - Assignees (First Name)
 - [ ] Additional Tasks as necessary
 

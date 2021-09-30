@@ -1,7 +1,7 @@
 ---
 name: Epic User Story
 about: An EPIC User Story represents functionality that will span multiple sprints
-title: "[#issue_number: EPIC User Story] EPIC User Story Short Title"
+title: "[#issue_number: EPIC USER STORY] EPIC User Story Short Title"
 labels: EPIC user story
 pipelines: 'Product Backlog'
 ---

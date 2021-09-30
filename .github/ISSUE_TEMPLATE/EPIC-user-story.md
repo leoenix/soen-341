@@ -12,10 +12,10 @@ Describe what the feature is intended to accomplish & why it's important
 
 
 ## **User Stories under this EPIC** _(Ordered based on priority)_ :family_man_woman_girl_boy:
-- [ ] User Story #1:
-- [ ] User Story #2:
-- [ ] User Story #3:
-- [ ] User Story #4:
+- [ ] User Story #(issue_number)
+- [ ] User Story #(issue_number)
+- [ ] User Story #(issue_number)
+- [ ] User Story #(issue_number)
 - [ ] Additional User Stories as necessary
 
 

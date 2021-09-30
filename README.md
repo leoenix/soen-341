@@ -15,8 +15,8 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 ## Core Features :point_down:	
 :one: &nbsp; Account Creation and Log in <br>
 :two: &nbsp; Ask & Answer Questions :question: :memo:<br>
-:three: &nbsp; Upvote An Answer :arrow_up: and Select The Best Prioritize :star: <br>
-:four: &nbsp; :sparkles: Grant A User 10 Reputation Points For Each Upvote Earned :sparkles:
+:three: &nbsp; Upvote An Answer :arrow_up: and Select The Best Answer :star: <br>
+:four: &nbsp; :sparkles: Earn 10 Reputation Points For Each Upvote Earned :sparkles:
 
 
 ## Progress :alarm_clock:

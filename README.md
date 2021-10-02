@@ -97,11 +97,10 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 ## ONLY Create Issues For The Following :point_up:
 
-- Feature Requests <br>
+- Feature Requests (which are technically Tasks) <br>
 - Bug Fixes <br>
 - EPIC User Stories <br>
 - User Stories <br>
-- Tasks <br>
 
 _**note:**_ _Tasks under User Stories should be solved via Pull-Requests (Link every PR to its relevant task)_
    

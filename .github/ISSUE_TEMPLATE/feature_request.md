@@ -1,14 +1,22 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: "[#issue_number: FEATURE] Issue Topic"
+title: "[#issue_number: FEATURE] Feature/Task Topic"
 labels: enhancement
 pipelines: 'Product Backlog'
 ---
 
 # **Feature Request** :electron: 
 
-## **Is your feature request related to a problem? Please describe.** <br>
+## Priority Level:
+- [ ] Urgent
+- [ ] Important
+- [ ] It can wait
+
+## Risk
+To be added soon
+
+## **Is your feature request / task related to a problem? Please describe.** <br>
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] <br>
 
 ## **Describe the solution you'd like** <br>

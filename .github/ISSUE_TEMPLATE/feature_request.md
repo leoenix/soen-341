@@ -1,5 +1,5 @@
 ---
-name: Feature request
+name: Feature Request / Task
 about: Suggest an idea for this project
 title: "[#issue_number: FEATURE] Feature/Task Topic"
 labels: enhancement

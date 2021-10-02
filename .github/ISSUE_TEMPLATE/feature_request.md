@@ -1,6 +1,6 @@
 ---
 name: Feature Request / Task
-about: Suggest an idea for this project
+about: Suggest an idea for this project / Add a task to a User Story
 title: "[#issue_number: FEATURE] Feature/Task Topic"
 labels: enhancement
 pipelines: 'Product Backlog'

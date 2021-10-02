@@ -12,16 +12,8 @@ pipelines: 'Product Backlog'
 
 **As a** *`persona`*, **I want to** *`do something`* **so that I can** *`realize a reward`*.
 
-# Priority Level:
-- [ ] Urgent
-- [ ] Important
-- [ ] It can wait
-
 ## Total Story Points / Ideal Hours
 [ ] Points / Hours
-
-## Risk
-To be added soon
 
 ## Acceptance Criterion / Tasks To Be Completed _(Ordered based on priority)_ :white_check_mark:
 - [ ] Task 1: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()

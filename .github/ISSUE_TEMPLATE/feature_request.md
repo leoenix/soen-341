@@ -9,9 +9,7 @@ pipelines: 'Product Backlog'
 # **Feature Request** :electron: 
 
 ## Priority Level:
-- [ ] Urgent
-- [ ] Important
-- [ ] It can wait
+Urgent / Important / It can wait
 
 ## Risk
 To be added soon

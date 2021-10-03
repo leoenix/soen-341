@@ -12,8 +12,8 @@ pipelines: 'Product Backlog'
 
 **As a** *`persona`*, **I want to** *`do something`* **so that I can** *`realize a reward`*.
 
-## Total Story Points / Ideal Hours
-[ ] Points / Hours
+## Total Story Points
+[ ] Points
 
 ## Acceptance Criterion / Tasks To Be Completed _(Ordered based on priority)_ :white_check_mark:
 - [ ] Task 1: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()

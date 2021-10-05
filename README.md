@@ -1,6 +1,6 @@
 # :wave: StackOverflow Clone Web App (Soen 341) :wave: <br>
 
-[Story Points Google Doc] **(shorturl.at/hlpPT)** <br>
+[Sprint Google Doc] **(shorturl.at/hlpPT)** <br>
 [Story Points Google Sheet] **(shorturl.at/chBJT)** <br>
 
 ## Objective :trophy:

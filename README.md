@@ -1,107 +1,70 @@
-# :wave: StackOverflow Clone Web App (Soen 341) :wave:
+# Getting Started with Create React App
 
-## Objective :trophy:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Implement a simplified version of StackOverflow, a Q&A platform, that enables users to ask and answer questions, vote for each other's answers, and authorize the OP (Original Poster) to accept the best answer
+## Available Scripts
 
+In the project directory, you can run:
 
-## Description :pencil2:
+### `npm start`
 
-Build a simplified version of StackOverflow, which is essentially a Q&A website that enables users to ask questions or share their knowledge of programming by answering questions posted by other users.  The community can indicate which answers are most valuable and appropriate by upvoting them. Users can upvote any answer they want except for their own, and only the OP, the Original Poster of a question, gets to accept the best response
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-*Extra Feature: A user is awarded 10 reputation points for receiving an upvote on an answer to a question* 
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
+### `npm test`
 
-## Core Features :point_down:	
-:one: &nbsp; Account Creation and Log in :computer: <br>
-:two: &nbsp; Ask & Answer Questions :question: :memo: <br>
-:three: &nbsp; Upvote An Answer :arrow_up: and Select The Best Answer :star: <br>
-:four: &nbsp; :sparkles: Earn 10 Reputation Points For Each Upvote Earned :sparkles:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run build`
 
-## Progress :alarm_clock:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- [X]  Sprint 1
-- [ ]  Sprint 2
-- [ ]  Sprint 3
-- [ ]  Sprint 4
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Team Members :technologist:
+### `npm run eject`
 
-| #   | Name                 | ID        | Github Username     |
-| --- | :------------------- | :-------- | :------------------ |
-| 1   | Nadine El-Mufti      | 40017347  |  `njayem`           | 
-| 2   | Warda Ahmed Salem    | 40085148  |  `wardasalem`       |
-| 3   | Safaa Kadhim         | 40123596  |  `safaaraed99`      | 
-| 4   | Arandeep Grewal      | 40129705  |  `Arandeep24`       |
-| 5   | Nicolas Towa Kamgne  | 40154685  |  `nicotowa`         |
-| 6   | Eric Hanna           | 40113678  |  `leoenix`          |
-| 7   | Michael Warner       | 40124302  |  `narroarrow`       |
-| 8   | Raja Singh Chandi    | 40078603  |  `rajachandi`       |
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Technology Stack :gear:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-  :black_square_button: &nbsp; Front-End <br>
-   &nbsp;&nbsp;&nbsp; :black_small_square: HTML <br>
-   &nbsp;&nbsp;&nbsp; :black_small_square: CSS <br>
-   &nbsp;&nbsp;&nbsp; :black_small_square: Bootstrap <br>
-   &nbsp;&nbsp;&nbsp; :black_small_square: Create-React-App <br>
-  :white_square_button: &nbsp; Back-End: <br>
-   &nbsp;&nbsp;&nbsp; :white_small_square: Java Spring Boot <br>
-   &nbsp;&nbsp;&nbsp; :white_small_square: Java Hibernate <br>
-   &nbsp;&nbsp;&nbsp; :white_small_square: PostgreSQL <br>
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Learn More
 
-## Naming Conventions (for code organization) :blue_book:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-:small_blue_diamond: &nbsp; Variables + Instance Methods: snake case (all lowercase) <br>
-:small_blue_diamond: &nbsp; Class Methods: camelCase (first letter lowercase) <br>
-:small_blue_diamond: &nbsp; Class Names: CamelCase <br>
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
-## Naming Conventions (for Git & Github organization) :green_book:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-**:green_circle: &nbsp; For Branches** (To Solve Issues Through Pull-Requests) <br>
+### Analyzing the Bundle Size
 
-  * **For Feature Requests** 
-    * **One Branch:**  feature-(issue_number) 
-    * **Multiple Branches:** feature-(issue_number)/add-margin 
-    &nbsp; &nbsp; &nbsp;     feature-(issue_number)/change-color <br>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-  * **For Bug Reports** 
-    * **One Branch:**  bug-(issue_number) 
-    * **Multiple Branches:** bug-(issue_number)/centralize-margin 
-    &nbsp; &nbsp; &nbsp;     bug-(issue_number)/remove-color <br>
+### Making a Progressive Web App
 
-  * **For URGENT Bugs** 
-    * hotfix-(issue_number) <br>
-  
-**:green_circle: &nbsp; For Issues** <br>
-   * **Syntax:** [#issue_number: FEATURE/BUG] Issue Topic <br>
-   * **Example:** [#40: FEATURE] Add a README.md File <br>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-**:green_circle: &nbsp; For Pull-Requests** <br>
-   * **Syntax:** [Solves #issue_number] Pull-Request Topic <br>
-   * **Example:** [Solves #40] Added a README.md File<br>
+### Advanced Configuration
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-## Workflow Tips :bulb: 
+### Deployment
 
-:one: &nbsp; Make your changes and save your code <br>
-:two: &nbsp; Checkout to a new_branch (using the above naming conventions) <br>
-:three: &nbsp; Add, Commit, and Push these changes to the new_branch <br>
-:four: &nbsp; Push this branch to Github <br>
-:five: &nbsp; Address an Issue / have your code added to main/master by creating a PR: (Main) <--- (new_branch) <br>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## ONLY Create Issues For The Following :point_up:
+### `npm run build` fails to minify
 
-- Feature Requests <br>
-- Bug Fixes <br>
-- EPIC User Stories <br>
-- User Stories <br>
-
-_**note:**_ _Tasks under User Stories should be solved via Pull-Requests that are linked to User Story Issues (not PR issues of their own)_
-   
-
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

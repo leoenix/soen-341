@@ -1,4 +1,7 @@
-# :wave: StackOverflow Clone Web App (Soen 341) :wave:
+# :wave: StackOverflow Clone Web App (Soen 341) :wave: <br>
+
+`[Project Google Doc]` **(shorturl.at/hlpPT)** <br>
+`[Project Google Sheet]` **(shorturl.at/chBJT)** <br>
 
 ## Objective :trophy:
 

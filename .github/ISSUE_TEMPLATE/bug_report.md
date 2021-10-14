@@ -1,5 +1,5 @@
 ---
-name: Bug report
+name: Bug Report
 about: Create a report to help us improve
 title: "[#issue_number: BUG] Bug Topic"
 labels: bug

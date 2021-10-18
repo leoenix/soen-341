@@ -52,8 +52,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
    &nbsp;&nbsp;&nbsp; :black_small_square: Bootstrap <br>
    &nbsp;&nbsp;&nbsp; :black_small_square: Create-React-App <br>
   :white_square_button: &nbsp; Back-End: <br>
-   &nbsp;&nbsp;&nbsp; :white_small_square: Java Spring Boot <br>
-   &nbsp;&nbsp;&nbsp; :white_small_square: Java Hibernate <br>
+   &nbsp;&nbsp;&nbsp; :white_small_square: Node.js <br>
    &nbsp;&nbsp;&nbsp; :white_small_square: PostgreSQL <br>
 
 

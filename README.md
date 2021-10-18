@@ -1,4 +1,7 @@
-# :wave: StackOverflow Clone Web App (Soen 341) :wave:
+# :wave: StackOverflow Clone Web App (Soen 341) :wave: <br>
+
+`[Project Google Doc]` **(shorturl.at/hlpPT)** <br>
+`[Project Google Sheet]` **(shorturl.at/chBJT)** <br>
 
 ## Objective :trophy:
 
@@ -15,7 +18,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 ## Core Features :point_down:	
 :one: &nbsp; Account Creation and Log in :computer: <br>
 :two: &nbsp; Ask & Answer Questions :question: :memo: <br>
-:three: &nbsp; Upvote An Answer :arrow_up: and Select The Best Answer :star: <br>
+:three: &nbsp; Upvote An Answer :arrow_up: &nbsp; and Select The Best Answer :star: <br>
 :four: &nbsp; :sparkles: Earn 10 Reputation Points For Each Upvote Earned :sparkles:
 
 
@@ -49,8 +52,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
    &nbsp;&nbsp;&nbsp; :black_small_square: Bootstrap <br>
    &nbsp;&nbsp;&nbsp; :black_small_square: Create-React-App <br>
   :white_square_button: &nbsp; Back-End: <br>
-   &nbsp;&nbsp;&nbsp; :white_small_square: Java Spring Boot <br>
-   &nbsp;&nbsp;&nbsp; :white_small_square: Java Hibernate <br>
+   &nbsp;&nbsp;&nbsp; :white_small_square: Node.js <br>
    &nbsp;&nbsp;&nbsp; :white_small_square: PostgreSQL <br>
 
 
@@ -97,11 +99,11 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 ## ONLY Create Issues For The Following :point_up:
 
-- Feature Requests <br>
+- Feature Requests (which are technically Tasks) <br>
 - Bug Fixes <br>
 - EPIC User Stories <br>
 - User Stories <br>
 
-_**note:**_ _Tasks under User Stories should be solved via Pull-Requests that are linked to User Story Issues (not PR issues of their own)_
+_**note:**_ _Tasks under User Stories should be solved via Pull-Requests (Link every PR to its relevant task)_
    
 

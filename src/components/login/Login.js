@@ -12,6 +12,8 @@ if (!global.isLoggedIn){
 }
 function Login() {
 
+    // uses a global variable to check in other components whether we are logged in or not
+    // use state to update the sign in/out button
     const [loginButton, showLoginButton] = useState(true);
     const [logoutButton, showLogoutButton] = useState(false);
     const onSuccessfulLogin = (res) => {
@@ -33,6 +35,7 @@ function Login() {
     };
 
     return (
+        // render props is to refactor the button using primereact 
         <div>
             { loginButton ?
                 <GoogleLogin

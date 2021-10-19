@@ -18,7 +18,8 @@ function useForceUpdate(){
 function Header() {
 
 
-
+    // This function continuously checks whether you are logged in or not.
+    // It updates the account button accordingly
     setInterval(function(event) {
         if (document.getElementById("account") !== null){
     if (document.getElementById("account").disabled === true && global.isLoggedIn === true){

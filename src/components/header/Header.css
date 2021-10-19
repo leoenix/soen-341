@@ -1,0 +1,38 @@
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color:grey;
+    flex:1;
+}
+
+.google-div{
+    background-color:white;
+    border-radius:2rem;
+    position:relative;
+    right:0.8em;
+    height:50px;
+}
+.google-logo{
+    height:50px;
+    padding:5px;
+}
+.header-logo{
+
+    padding:5px;
+    height: 75px;
+
+}
+
+.account-and-login{
+
+    display:inline-flex;
+    padding: 5px;
+
+}
+
+#account{
+    margin-left: 5px;
+    height:4.1em;
+}

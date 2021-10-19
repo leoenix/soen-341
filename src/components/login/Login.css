@@ -1,0 +1,12 @@
+.rounded{
+    border-radius:2rem;
+
+}
+.signInButton {
+    float:none;
+    position:static;
+    display:block;
+    margin:auto;
+    width:max-content;
+    background-color:red;
+}

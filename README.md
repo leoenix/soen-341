@@ -12,10 +12,10 @@ Implement a simplified version of StackOverflow, a Q&A platform, that enables us
 
 Build a simplified version of StackOverflow, which is essentially a Q&A website that enables users to ask questions or share their knowledge of programming by answering questions posted by other users.  The community can indicate which answers are most valuable and appropriate by upvoting them. Users can upvote any answer they want except for their own, and only the OP, the Original Poster of a question, gets to accept the best response
 
-*Extra Feature: A user is awarded 10 reputation points for receiving an upvote on an answer to a question*
+*Extra Feature: A user is awarded 10 reputation points for receiving an upvote on an answer to a question* 
 
 
-## Core Features :point_down:
+## Core Features :point_down:	
 :one: &nbsp; Account Creation and Log in :computer: <br>
 :two: &nbsp; Ask & Answer Questions :question: :memo: <br>
 :three: &nbsp; Upvote An Answer :arrow_up: &nbsp; and Select The Best Answer :star: <br>
@@ -46,15 +46,15 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 ## Technology Stack :gear:
 
-:black_square_button: &nbsp; Front-End <br>
-&nbsp;&nbsp;&nbsp; :black_small_square: HTML <br>
-&nbsp;&nbsp;&nbsp; :black_small_square: CSS <br>
-&nbsp;&nbsp;&nbsp; :black_small_square: Bootstrap <br>
-&nbsp;&nbsp;&nbsp; :black_small_square: Create-React-App <br>
-:white_square_button: &nbsp; Back-End: <br>
-&nbsp;&nbsp;&nbsp; :white_small_square: Java Spring Boot <br>
-&nbsp;&nbsp;&nbsp; :white_small_square: Java Hibernate <br>
-&nbsp;&nbsp;&nbsp; :white_small_square: PostgreSQL <br>
+  :black_square_button: &nbsp; Front-End <br>
+   &nbsp;&nbsp;&nbsp; :black_small_square: HTML <br>
+   &nbsp;&nbsp;&nbsp; :black_small_square: CSS <br>
+   &nbsp;&nbsp;&nbsp; :black_small_square: Bootstrap <br>
+   &nbsp;&nbsp;&nbsp; :black_small_square: Create-React-App <br>
+  :white_square_button: &nbsp; Back-End: <br>
+   &nbsp;&nbsp;&nbsp; :white_small_square: Java Spring Boot <br>
+   &nbsp;&nbsp;&nbsp; :white_small_square: Java Hibernate <br>
+   &nbsp;&nbsp;&nbsp; :white_small_square: PostgreSQL <br>
 
 
 ## Naming Conventions (for code organization) :blue_book:
@@ -68,29 +68,29 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 **:green_circle: &nbsp; For Branches** (To Solve Issues Through Pull-Requests) <br>
 
-* **For Feature Requests**
-    * **One Branch:**  feature-(issue_number)
-    * **Multiple Branches:** feature-(issue_number)/add-margin
-      &nbsp; &nbsp; &nbsp;     feature-(issue_number)/change-color <br>
+  * **For Feature Requests** 
+    * **One Branch:**  feature-(issue_number) 
+    * **Multiple Branches:** feature-(issue_number)/add-margin 
+    &nbsp; &nbsp; &nbsp;     feature-(issue_number)/change-color <br>
 
-* **For Bug Reports**
-    * **One Branch:**  bug-(issue_number)
-    * **Multiple Branches:** bug-(issue_number)/centralize-margin
-      &nbsp; &nbsp; &nbsp;     bug-(issue_number)/remove-color <br>
+  * **For Bug Reports** 
+    * **One Branch:**  bug-(issue_number) 
+    * **Multiple Branches:** bug-(issue_number)/centralize-margin 
+    &nbsp; &nbsp; &nbsp;     bug-(issue_number)/remove-color <br>
 
-* **For URGENT Bugs**
+  * **For URGENT Bugs** 
     * hotfix-(issue_number) <br>
-
+  
 **:green_circle: &nbsp; For Issues** <br>
-* **Syntax:** [#issue_number: FEATURE/BUG] Issue Topic <br>
-* **Example:** [#40: FEATURE] Add a README.md File <br>
+   * **Syntax:** [#issue_number: FEATURE/BUG] Issue Topic <br>
+   * **Example:** [#40: FEATURE] Add a README.md File <br>
 
 **:green_circle: &nbsp; For Pull-Requests** <br>
-* **Syntax:** [Solves #issue_number] Pull-Request Topic <br>
-* **Example:** [Solves #40] Added a README.md File<br>
+   * **Syntax:** [Solves #issue_number] Pull-Request Topic <br>
+   * **Example:** [Solves #40] Added a README.md File<br>
 
 
-## Workflow Tips :bulb:
+## Workflow Tips :bulb: 
 
 :one: &nbsp; Make your changes and save your code <br>
 :two: &nbsp; Checkout to a new_branch (using the above naming conventions) <br>

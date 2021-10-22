@@ -39,7 +39,7 @@ const App = () => {
   return (
   
 <div className='container mt-5'>
-<h1 className='text-primary mb-3'>Stack Overflow</h1>
+<h1 className='text-primary mb-3'>Stack Overflow Clone App</h1>
 <Header />
         <Route exact path="/account" component ={Account}></Route>
 

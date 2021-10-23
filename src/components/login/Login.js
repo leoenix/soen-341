@@ -7,18 +7,10 @@ import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css';
 import googleLogo from '../../imgs/googleLogo.svg'
 const clientId = "275373425860-n5ev9s124duu5iklhtpg9i03fi59vjr4.apps.googleusercontent.com";
-
 if (!global.isLoggedIn){
     global.isLoggedIn = false;
-
 }
-if (!global.userEmail){
-    global.userEmail = '';
-}
-
-
-
- function Login() {
+function Login() {
 
     // uses a global variable to check in other components whether we are logged in or not
     // use state to update the sign in/out button
@@ -28,23 +20,6 @@ if (!global.userEmail){
         global.isLoggedIn = true;
         showLoginButton(false);
         showLogoutButton(true);
-        console.log('Login Success:', res.profileObj.email);
-        console.log(res);
-        global.userEmail = res.profileObj.email;
-        const onLogin = async e =>{
-            try{
-            const email = res.profileObj.email;
-            const body = {email};
-            const response = await fetch("http://localhost:5000/users", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(body)
-            });
-            } catch (e) {
-                console.error(e.message);
-            }
-        }
-        onLogin();
     };
 
     const onFailedLogin = (res) => {
@@ -53,7 +28,6 @@ if (!global.userEmail){
 
     const onSuccessfulSignOut = () => {
         global.isLoggedIn = false;
-        global.userEmail = '';
         alert("Successful Logout");
         showLoginButton(true);
         showLogoutButton(false);
@@ -61,7 +35,7 @@ if (!global.userEmail){
     };
 
     return (
-        // render props is to refactor the button using primereact
+        // render props is to refactor the button using primereact 
         <div>
             { loginButton ?
                 <GoogleLogin

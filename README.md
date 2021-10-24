@@ -1,7 +1,6 @@
 # :wave: StackOverflow Clone Web App (Soen 341) :wave: <br>
 
 `[Project Google Doc]` **(shorturl.at/hlpPT)** <br>
-`[Project Google Sheet]` **(shorturl.at/chBJT)** <br>
 
 ## Objective :trophy:
 
@@ -19,7 +18,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 :one: &nbsp; Account Creation and Log in :computer: <br>
 :two: &nbsp; Ask & Answer Questions :question: :memo: <br>
 :three: &nbsp; Upvote An Answer :arrow_up: &nbsp; and Select The Best Answer :star: <br>
-:four: &nbsp; :sparkles: Add Comment Sections Under Both Questions And Answers And Create A Page For Each Tag :sparkles:
+:four: &nbsp; :sparkles: Add Comment Sections Under Both Questions And Answers (W/ Voting Functionality):sparkles:
 
 
 ## Progress :alarm_clock:
@@ -50,19 +49,11 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
    &nbsp;&nbsp;&nbsp; :black_small_square: HTML <br>
    &nbsp;&nbsp;&nbsp; :black_small_square: CSS <br>
    &nbsp;&nbsp;&nbsp; :black_small_square: Bootstrap <br>
-   &nbsp;&nbsp;&nbsp; :black_small_square: Create-React-App <br>
+   &nbsp;&nbsp;&nbsp; :black_small_square: React <br>
   :white_square_button: &nbsp; Back-End: <br>
-   &nbsp;&nbsp;&nbsp; :white_small_square: Java Spring Boot <br>
-   &nbsp;&nbsp;&nbsp; :white_small_square: Java Hibernate <br>
-   &nbsp;&nbsp;&nbsp; :white_small_square: PostgreSQL <br>
-
-
-## Naming Conventions (for code organization) :blue_book:
-
-:small_blue_diamond: &nbsp; Variables + Instance Methods: snake case (all lowercase) <br>
-:small_blue_diamond: &nbsp; Class Methods: camelCase (first letter lowercase) <br>
-:small_blue_diamond: &nbsp; Class Names: CamelCase <br>
-
+   &nbsp;&nbsp;&nbsp; :white_small_square: Node.js<br>
+   &nbsp;&nbsp;&nbsp; :white_small_square: Express.js <br>
+   &nbsp;&nbsp;&nbsp; :white_small_square: MySQL <br>
 
 ## Naming Conventions (for Git & Github organization) :green_book:
 

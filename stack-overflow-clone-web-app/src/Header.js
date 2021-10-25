@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStackOverflow } from '@fortawesome/fontawesome-free-brands'
 import {Link} from 'react-router-dom';
+import { useContext } from 'react';
+import UserContext from './UserContext';
 
 
 const StackOverflowHeader = styled.header`
@@ -50,13 +52,16 @@ const SearchBarInput = styled.input`
     color: #085e72;
 `;
 
-const ProfileLink = styled.a`
+const ProfileLink = styled(Link)`
     color: #085e72;
     text-decoration: none;
     line-height: 50px;
 `;
 
 function Header() {
+
+    const {user} = useContext(UserContext);
+
     return(
         <StackOverflowHeader>
             <LogoHyperlink to={'/'} className="logo">
@@ -66,7 +71,14 @@ function Header() {
             <form action="" className="search">
                 <SearchBarInput type="text" placeholder="Search..."/>
             </form>
-        <ProfileLink href="" className="profile">Profile</ProfileLink>
+
+            {user && (
+              <ProfileLink to={'/profile'} className="profile">{user.email}</ProfileLink>
+            )}
+
+            {!user && (
+              <ProfileLink to={'/login'} className="profile">Log in</ProfileLink>
+            )}
       </StackOverflowHeader>
     );
 }

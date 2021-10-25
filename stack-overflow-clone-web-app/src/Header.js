@@ -73,7 +73,7 @@ function Header() {
             </form>
 
             {user && (
-              <ProfileLink to={'/profile'} className="profile">Profile</ProfileLink>
+              <ProfileLink to={'/profile'} className="profile">{user.email}</ProfileLink>
             )}
 
             {!user && (

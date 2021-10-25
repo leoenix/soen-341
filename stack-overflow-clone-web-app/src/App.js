@@ -3,7 +3,7 @@ import styled, {createGlobalStyle} from 'styled-components';
 import Header from './Header';
 import QuestionsPage from './QuestionsPage';
 import AskQuestionPage from './AskQuestionPage';
-import {useState } from 'react';
+import {useState, useEffect } from 'react';
 import UserContext from './UserContext';
 import LoginPage from './LoginPage';
 import axios from 'axios';
@@ -27,14 +27,35 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 function App() {
-  const [user,setUser] = useState(null);
+
+const [user,setUser] = useState(null);
+
+
+function checkAuth() {
+  axios.get('http://localhost:3030/profile', {withCredentials: true})
+  .then(response => {
+     setUser({email: response.data});
+  })
+  .catch(() => {
+    setUser(null);
+  })
+
+}
+
+
+useEffect(() => {
+  checkAuth();
+}, []);
+
+
+
   return (
     <div>
       <Reset />
       <GlobalStyles />
   
       <Router> 
-        <UserContext.Provider value = {{user}}>
+        <UserContext.Provider value = {{user, checkAuth}}>
         <Header />
         <Switch>
             <Route exact path="/" component={QuestionsPage} />

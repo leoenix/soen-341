@@ -3,7 +3,8 @@ import DarkCyanButton from './DarkCyanButton';
 import Header1 from './Header1';
 import Input from './Input';
 import axios from 'axios';
-import { Component } from 'react';
+import { Component, useContext } from 'react';
+import UserContext from './UserContext';
 
 
 const Container = styled.div`
@@ -26,7 +27,10 @@ class LoginPage extends Component {
         axios.post('http://localhost:3030/login', {
             email: this.state.email,
             password: this.state.password,
-        }, {withCredentials: true});
+        }, {withCredentials: true})
+        .then(() => {
+            this.context.checkAuth();
+        });
     }
 
     render() {
@@ -41,6 +45,8 @@ class LoginPage extends Component {
         </>);
     }
     }
+
+LoginPage.contextType = UserContext;
     
     
 

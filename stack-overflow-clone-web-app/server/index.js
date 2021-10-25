@@ -29,7 +29,7 @@ app.get('/', function(req,res){
 app.get('/profile', function(req, res){
 
     const token = req.cookies.token;
-    
+
     jwt.verify(token, secret, (err, data) => {
 
         if(err){

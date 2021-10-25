@@ -77,7 +77,7 @@ function Header() {
             )}
 
             {!user && (
-              <ProfileLink to={'/login'} className="profile">Login</ProfileLink>
+              <ProfileLink to={'/login'} className="profile">Log in</ProfileLink>
             )}
       </StackOverflowHeader>
     );

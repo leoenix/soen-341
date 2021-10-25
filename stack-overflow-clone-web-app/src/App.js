@@ -5,6 +5,7 @@ import QuestionsPage from './QuestionsPage';
 import AskQuestionPage from './AskQuestionPage';
 import {useState } from 'react';
 import UserContext from './UserContext';
+import LoginPage from './LoginPage';
 
 import {
   BrowserRouter as Router,
@@ -36,6 +37,7 @@ function App() {
         <Header />
         <Switch>
             <Route exact path="/" component={QuestionsPage} />
+            <Route exact path="/login" component = {LoginPage} />
           <Route exact path="/ask" component={AskQuestionPage} />
         </Switch>
         </UserContext.Provider>

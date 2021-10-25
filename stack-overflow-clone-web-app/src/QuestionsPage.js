@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import QuestionRow from './QuestionRow';
 
 const TopQuestionsHeader = styled.h1`
     font-size: 1.8rem;
-    color: #000000;
+    color: #085e72;
 `;
 
 const TopQuestionsHeaderRow = styled.div`
@@ -11,13 +12,12 @@ const TopQuestionsHeaderRow = styled.div`
     padding: 30px 20px;
 `;
 
-const BlueButton = styled.button`
-    background-color: #378ad3;
+const DarkCyanButton = styled.button`
+    background-color: #085e72;
     color: #fff;
     border: 0;
     border-radius: 5px;
     padding: 12px 10px;
-    
 `;
 
 function QuestionsPage() {
@@ -25,8 +25,17 @@ function QuestionsPage() {
         <main>
             <TopQuestionsHeaderRow>
                 <TopQuestionsHeader>Top Questions</TopQuestionsHeader>
-                <BlueButton>Ask&nbsp;Question</BlueButton>
+                <DarkCyanButton>Ask&nbsp;Question</DarkCyanButton>
             </TopQuestionsHeaderRow>
+            <QuestionRow />
+            <QuestionRow />
+            <QuestionRow />
+            <QuestionRow />
+            <QuestionRow />
+            <QuestionRow />
+            <QuestionRow />
+            <QuestionRow />
+            <QuestionRow />
         </main>
     );
 }

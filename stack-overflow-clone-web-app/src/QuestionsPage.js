@@ -3,8 +3,6 @@ import QuestionRow from './QuestionRow';
 import Header1 from './Header1';
 import DarkCyanButtonLink from './DarkCyanButtonLink';
 
-
-
 const TopQuestionsHeaderRow = styled.div`
     display: grid;
     grid-template-columns: 1fr min-content;

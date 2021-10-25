@@ -3,6 +3,8 @@ import styled, {createGlobalStyle} from 'styled-components';
 import Header from './Header';
 import QuestionsPage from './QuestionsPage';
 import AskQuestionPage from './AskQuestionPage';
+import {useState } from 'react';
+import UserContext from './UserContext';
 
 import {
   BrowserRouter as Router,
@@ -10,6 +12,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
 
 
 const GlobalStyles = createGlobalStyle`
@@ -22,17 +25,20 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 function App() {
+  const [user,setUser] = useState(null);
   return (
     <div>
       <Reset />
       <GlobalStyles />
   
       <Router> 
+        <UserContext.Provider value = {{user}}>
         <Header />
         <Switch>
             <Route exact path="/" component={QuestionsPage} />
           <Route exact path="/ask" component={AskQuestionPage} />
         </Switch>
+        </UserContext.Provider>
       </Router>
     </div>
   );

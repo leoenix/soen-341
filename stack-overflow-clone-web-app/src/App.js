@@ -30,12 +30,10 @@ function App() {
       <Router> 
         <Header />
         <Switch>
-          <Route path="/ask" component={AskQuestionPage} />
-          <Route path="/" component={QuestionsPage} />
+            <Route exact path="/" component={QuestionsPage} />
+          <Route exact path="/ask" component={AskQuestionPage} />
         </Switch>
       </Router>
-      <QuestionsPage />
-      <AskQuestionPage />
     </div>
   );
 }

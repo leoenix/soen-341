@@ -37,7 +37,7 @@ const Tag = styled.span `
     font-size: .9rem;
 `;
 
-const StyledQuestionRow = styled.div`
+const StyledQuestionRow = styled.div `
     background-color: rgba(121, 159, 168, .1);
     color: #000000;
     padding: 15px 15px 10px;
@@ -54,28 +54,26 @@ const AuthorAndTime = styled.div `
     padding: 10px 0;
 `;
 
-const UserHyperlink = styled.a`
-    color: #085e72;
+const UserHyperlink = styled.a `
+    color: #F48024;
 `;
 
 
 function QuestionRow() {
-    return (
+    return ( 
         <StyledQuestionRow>
-        <QuestionStats>0<span>votes</span></QuestionStats>
-        <QuestionStats>1<span>answers</span></QuestionStats>
-        <QuestionStats>6<span>views</span></QuestionStats>
+        <QuestionStats> 0 <span> votes </span></QuestionStats>
+        <QuestionStats> 1 <span> answers </span></QuestionStats>
+        <QuestionStats> 6 <span> views </span></QuestionStats>
         <QuestionTitleArea>
-            <QuestionHyperlink> How to create a full stack website</QuestionHyperlink>
-            <AuthorAndTime> 
-                asked 15 mins ago <UserHyperlink>njayem</UserHyperlink>
-            </AuthorAndTime>
-            <Tag>javascript</Tag>
-            <Tag>html</Tag>
-            <Tag>css</Tag>
-            <Tag>Node.js</Tag>
-        </QuestionTitleArea>
-    </StyledQuestionRow>
+        <QuestionHyperlink> How to create a full stack website </QuestionHyperlink> 
+        <AuthorAndTime> asked 15 mins ago <UserHyperlink> njayem </UserHyperlink> </AuthorAndTime> 
+        <Tag> javascript </Tag> 
+        <Tag> html </Tag> 
+        <Tag> css </Tag> 
+        <Tag> Node.js </Tag> 
+        </QuestionTitleArea> 
+        </StyledQuestionRow>
     );
 
 }

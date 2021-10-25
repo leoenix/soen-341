@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStackOverflow } from '@fortawesome/fontawesome-free-brands'
+import {Link} from 'react-router-dom';
 
 
-const StackOverflowHeader = styled.header `
+const StackOverflowHeader = styled.header`
     background-color: EDF8F8;
     box-shadow: 0 2px 2px rgba(0,0,0,1);
     display: grid;
@@ -11,7 +12,7 @@ const StackOverflowHeader = styled.header `
     grid-column-gap: 20px;
 `;
 
-const LogoHyperlink = styled.a`
+const LogoHyperlink = styled(Link)`
     color: #F48024;
     text-decoration: none;
     display: inline-block;
@@ -58,7 +59,7 @@ const ProfileLink = styled.a`
 function Header() {
     return(
         <StackOverflowHeader>
-            <LogoHyperlink href="" className="logo">
+            <LogoHyperlink to={'/'} className="logo">
                 <FontAwesomeIcon icon={faStackOverflow} size="2x"/>
                 <span>stack<b>overflow</b> </span>
             </LogoHyperlink>

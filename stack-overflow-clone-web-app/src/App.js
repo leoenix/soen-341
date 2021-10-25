@@ -2,6 +2,14 @@ import { Reset } from 'styled-reset';
 import styled, {createGlobalStyle} from 'styled-components';
 import Header from './Header';
 import QuestionsPage from './QuestionsPage';
+import AskQuestionPage from './AskQuestionPage';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 const GlobalStyles = createGlobalStyle`
@@ -18,8 +26,16 @@ function App() {
     <div>
       <Reset />
       <GlobalStyles />
-      <Header />
+  
+      <Router> 
+        <Header />
+        <Switch>
+          <Route path="/ask" component={AskQuestionPage} />
+          <Route path="/" component={QuestionsPage} />
+        </Switch>
+      </Router>
       <QuestionsPage />
+      <AskQuestionPage />
     </div>
   );
 }

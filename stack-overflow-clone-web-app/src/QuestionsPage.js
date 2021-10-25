@@ -17,6 +17,7 @@ const BlueButton = styled.button`
     border: 0;
     border-radius: 5px;
     padding: 12px 10px;
+    
 `;
 
 function QuestionsPage() {

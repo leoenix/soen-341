@@ -4,15 +4,15 @@ import { faStackOverflow } from '@fortawesome/fontawesome-free-brands'
 
 
 const StackOverflowHeader = styled.header `
-    background-color: #FC9F3F;
-    box-shadow: 0 2px 2px rgba(0,0,0,2);
+    background-color: EDF8F8;
+    box-shadow: 0 2px 2px rgba(0,0,0,1);
     display: grid;
     grid-template-columns: 220px 1fr 200px;
     grid-column-gap: 20px;
 `;
 
 const LogoHyperlink = styled.a`
-    color: #000000;
+    color: #F48024;
     text-decoration: none;
     display: inline-block;
     height: 50px;
@@ -22,7 +22,6 @@ const LogoHyperlink = styled.a`
         margin-top: 7px;
         display: inline-block;
         float: left;
-
     }
     span{
         display: inline-block;
@@ -44,13 +43,14 @@ const SearchBarInput = styled.input`
     box-sizing: border-box;
     border: 1px solid #000;
     border-radius: 3px;
-    background: rgba(252, 159, 63, 4);
+    background: rgba(121, 159, 168, .1);
     padding: 8px 10px;
     margin-top: 9px;
+    color: #085e72;
 `;
 
 const ProfileLink = styled.a`
-    color: #000000;
+    color: #085e72;
     text-decoration: none;
     line-height: 50px;
 `;

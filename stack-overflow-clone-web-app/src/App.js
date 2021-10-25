@@ -1,6 +1,7 @@
 import { Reset } from 'styled-reset';
 import styled, {createGlobalStyle} from 'styled-components';
 import Header from './Header';
+import QuestionsPage from './QuestionsPage';
 
 
 const GlobalStyles = createGlobalStyle`
@@ -18,7 +19,7 @@ function App() {
       <Reset />
       <GlobalStyles />
       <Header />
-
+      <QuestionsPage />
     </div>
   );
 }

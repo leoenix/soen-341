@@ -23,10 +23,10 @@ class LoginPage extends Component {
     }
 
     login() {
-        axios.post('http://localhost:3030', {
+        axios.post('http://localhost:3030/login', {
             email: this.state.email,
             password: this.state.password,
-        })
+        }, {withCredentials: true});
     }
 
     render() {

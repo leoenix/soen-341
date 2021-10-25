@@ -6,6 +6,7 @@ import AskQuestionPage from './AskQuestionPage';
 import {useState } from 'react';
 import UserContext from './UserContext';
 import LoginPage from './LoginPage';
+import axios from 'axios';
 
 import {
   BrowserRouter as Router,

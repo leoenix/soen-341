@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dbfa424-c371-40ef-9e58-5cde04595104" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/server/UserController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/LoginPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,5 +72,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

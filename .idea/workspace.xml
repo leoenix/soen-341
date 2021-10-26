@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9dbfa424-c371-40ef-9e58-5cde04595104" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/server/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/server/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/AccountPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/AccountPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/AskQuestionPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/AskQuestionPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/SignUpPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/SignUpPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +98,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/stack-overflow-clone-web-app/server/UserController.js</url>
-          <line>15</line>
+          <line>6</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

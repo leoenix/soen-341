@@ -27,7 +27,7 @@ export default function AskQuestionPage() {
     const [description, setDescription] = useState();
 
     function askQuestion(ev){
-        
+        ev.preventDefault();
         axios.post('http://localhost:3030/askquestion', {
             title: title,
                 description: description,

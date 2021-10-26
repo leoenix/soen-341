@@ -56,6 +56,7 @@ const ProfileLink = styled(Link)`
     color: #085e72;
     text-decoration: none;
     line-height: 50px;
+    margin:7px; 
 `;
 
 function Header() {
@@ -77,7 +78,10 @@ function Header() {
             )}
 
             {!user && (
+                <span>
               <ProfileLink to={'/login'} className="profile">Log in</ProfileLink>
+                <ProfileLink to={'/signup'} className="profile">Create Account</ProfileLink>
+                    </span>
             )}
       </StackOverflowHeader>
     );

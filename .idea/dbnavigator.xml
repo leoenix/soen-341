@@ -32,25 +32,21 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="ddac0d5d-a376-4935-ba6b-cf9ac1fbada5">
-      <console name="Connection" type="STANDARD" schema="stackoverflow" session="Main"><![CDATA[CREATE TABLE users
-(
-    userid int auto_increment,
-    email varchar(200),
-    password varchar(200) NULL,
-    PRIMARY KEY(userid)
-)]]></console>
+      <console name="Connection" type="STANDARD" schema="stackoverflow" session="Main"><![CDATA[GRANT ALL ON [stackoverflow].* TO 'root'@'127.0.0.1' IDENTIFIED BY '[PASSWORD]']]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="ddac0d5d-a376-4935-ba6b-cf9ac1fbada5" object-ref="consoles/Connection" />
+      <object connection-id="ddac0d5d-a376-4935-ba6b-cf9ac1fbada5" object-ref="schemas/stackoverflow/tables/users" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="ddac0d5d-a376-4935-ba6b-cf9ac1fbada5" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="ddac0d5d-a376-4935-ba6b-cf9ac1fbada5" dataset="stackoverflow.users" active-filter-id="" />
+    <filter-actions connection-id="ddac0d5d-a376-4935-ba6b-cf9ac1fbada5" dataset="stackoverflow.users" active-filter-id="4a5683d5-d017-4632-95a0-ee56f94958a2">
+      <filter id="4a5683d5-d017-4632-95a0-ee56f94958a2" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND" />
+    </filter-actions>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -74,7 +70,9 @@
     <filters />
   </component>
   <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
-    <recently-used-interfaces />
+    <recently-used-interfaces>
+      <mapping database-type="MYSQL" interface-id="DEFAULT" />
+    </recently-used-interfaces>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
@@ -94,7 +92,7 @@
           <database value="mysql" />
           <type value="USER_PASSWORD" />
           <user value="root" />
-          <deprecated-pwd value="cm9vdA==" />
+          <deprecated-pwd value="cGFzc3dvcmQ=" />
         </database>
         <properties>
           <auto-commit value="false" />

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "knex": "^0.95.11",
     "styled-reset": "^4.3.4"
   }
 }

@@ -5,7 +5,7 @@ import Input from './Input';
 import axios from 'axios';
 import { Component, useContext } from 'react';
 import UserContext from './UserContext';
-
+import {Redirect} from 'react-router-dom';
 
 const Container = styled.div`
     padding: 30px 20px;
@@ -20,6 +20,7 @@ class LoginPage extends Component {
         this.state = {
             email: '',
             password: '',
+            goToIndex: false,
         }
     }
 
@@ -29,13 +30,17 @@ class LoginPage extends Component {
             password: this.state.password,
         }, {withCredentials: true})
         .then(() => {
-            this.context.checkAuth();
+            this.context.checkAuth().then(user => {
+            this.setState({goToIndex: true});
+            });
         });
     }
 
     render() {
         return(<>
-
+            {this.state.goToIndex && (
+                <Redirect to ={'/'} />
+            )}
             <Container>
             <Header1 style={{marginBottom: '20px'}}>Login</Header1>
             <Input placeholder={'email'} type="email" value={this.state.email} onChange={ev => this.setState({email: ev.target.value})} />

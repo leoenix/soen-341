@@ -32,13 +32,18 @@ const [user,setUser] = useState(null);
 
 
 function checkAuth() {
-  axios.get('http://localhost:3030/profile', {withCredentials: true})
-  .then(response => {
-     setUser({email: response.data});
-  })
-  .catch(() => {
-    setUser(null);
-  })
+    return new Promise(((resolve, reject) => {
+        axios.get('http://localhost:3030/profile', {withCredentials: true})
+            .then(response => {
+                setUser({email: response.data});
+                resolve(response.data);
+            })
+            .catch(() => {
+                setUser(null);
+                reject(null);
+            })
+    }))
+
 
 }
 

@@ -21,4 +21,15 @@ QuestionController.post('/askquestion', (req, res) => {
 
 })
 
+QuestionController.get('/question/:questionid', (req, res) => {
+
+    const questionid = req.params.questionid;
+    pool.select('*').from('questions').where({questionid}).first().then(info => {
+        res.json(info).send();
+
+        }
+    ).catch(() => res.sendStatus(403));
+
+})
+
 export default QuestionController;

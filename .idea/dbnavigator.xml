@@ -26,6 +26,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="ddac0d5d-a376-4935-ba6b-cf9ac1fbada5">
+        <schema name="mysql" object-types="table, view, procedure, function" />
         <schema name="stackoverflow" object-types="table, view, procedure, function, constraint, index, column, dataset trigger" />
       </connection>
     </loaded-nodes>
@@ -45,7 +46,7 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="ddac0d5d-a376-4935-ba6b-cf9ac1fbada5" dataset="stackoverflow.users" active-filter-id="4a5683d5-d017-4632-95a0-ee56f94958a2">
-      <filter id="4a5683d5-d017-4632-95a0-ee56f94958a2" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND" />
+      <filter id="4a5683d5-d017-4632-95a0-ee56f94958a2" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND" />
     </filter-actions>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">

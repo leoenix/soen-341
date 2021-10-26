@@ -31,19 +31,18 @@ UserController.get('/profile', function(req, res){
 
 UserController.post('/login', function(req,res){
     const {email,password} = req.body;
-    const isLoginOk = email === 'test@example.com' && password === 'test';
+    console.log(password);
+    pool.select('password').where({email}).from('users').first().then(user=> {
 
-    isLoginOk && jwt.sign(email, secondtoken, (err, token) => {
-        if(err){
-            res.status(403).send();
-        }else{
-            res.cookie('token', token).send();
-        }
+        user.password === password && jwt.sign(email, secondtoken, (error, token) =>{
+            if (error){
+                res.status(403).send();
+            } else {
+                res.cookie('token', token).send();
+            }
+        })
+
     })
-
-    if (!isLoginOk){
-        res.status(403).send();
-    }
 
 });
 

@@ -64,5 +64,8 @@ UserController.post('/signup', ((req, res) =>
     });
 }));
 
+UserController.post('/logout', ((req, res) => {
+    res.clearCookie('token').send();
+}));
 
 export default UserController;

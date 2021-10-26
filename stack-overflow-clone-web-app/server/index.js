@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import UserController from "./UserController.js";
+import QuestionController from "./QuestionController.js";
 
 const app = express();
 const port = 3030;
@@ -24,6 +25,7 @@ app.get('/', function(req,res){
     res.send('test1');
 });
 
+app.use(QuestionController);
 app.use(UserController);
 
 

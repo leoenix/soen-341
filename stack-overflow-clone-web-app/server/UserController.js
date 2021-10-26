@@ -1,17 +1,8 @@
 import jwt from 'jsonwebtoken'
 import knex from 'knex'
 import express from 'express';
-
+import pool from './pool.js';
 const UserController = express.Router();
-const pool = knex({
-    client: 'mysql',
-    connection: {
-        host: 'localhost',
-        user: 'root',
-        database: 'stackoverflow',
-        password: 'password'
-    }
-})
 
 const secondtoken = 'secondtoken';
 UserController.get('/profile', function(req, res){
@@ -39,11 +30,10 @@ UserController.post('/login', function(req,res){
                 res.status(403).send();
                 console.log('theres error');
             } else {
-                res.cookie('token', token).send();
-                res.status(200).send();
+                pool('users').where({email}).update({token}).then(() => res.cookie('token', token).send()).catch(
+                    () => res.sendStatus(403));
+
             }
-            console.log('dude');
-            return res.status(403).send();
         })
 
     }).catch(error =>{

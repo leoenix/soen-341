@@ -8,7 +8,7 @@ import UserContext from './UserContext';
 import {Redirect} from 'react-router-dom';
 
 const Container = styled.div`
-    padding: 30px 20px;
+    padding: 18px;
 `;
 
 
@@ -20,6 +20,7 @@ class LoginPage extends Component {
         this.state = {
             email: '',
             password: '',
+            wrongCredentials: false,
             goToIndex: false,
         }
     }
@@ -33,7 +34,7 @@ class LoginPage extends Component {
             this.context.checkAuth().then(user => {
             this.setState({goToIndex: true});
             });
-        });
+        }).catch(() => this.setState({wrongCredentials:true}));
     }
 
     render() {
@@ -46,6 +47,9 @@ class LoginPage extends Component {
             <Input placeholder={'email'} type="email" value={this.state.email} onChange={ev => this.setState({email: ev.target.value})} />
             <Input placeholder={'password'} type="password" value={this.state.password} onChange={ev => this.setState({password: ev.target.value})}/>
             <DarkCyanButton onClick={() => this.login()}>Login</DarkCyanButton>
+                {this.state.wrongCredentials && (
+                    <span style={{color: 'red', padding: 12 + 'px'}}>  Wrong credentials</span>
+                )}
             </Container>
         </>);
     }

@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dbfa424-c371-40ef-9e58-5cde04595104" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/AccountPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/server/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/server/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/AccountPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/AccountPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/AskQuestionPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/AskQuestionPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/SignUpPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/stack-overflow-clone-web-app/src/SignUpPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +44,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -91,6 +93,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

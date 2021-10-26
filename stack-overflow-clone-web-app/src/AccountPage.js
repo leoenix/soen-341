@@ -7,7 +7,7 @@ import Header1 from './Header1';
 import UserContext from './UserContext';
 
 const Container = styled.div`
-    padding: 30px 20px;
+    padding: 18px;
 `;
 
 function AccountPage() {

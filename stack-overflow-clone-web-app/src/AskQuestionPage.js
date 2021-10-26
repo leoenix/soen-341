@@ -5,7 +5,7 @@ import Header1 from './Header1';
 import Input from './Input';
 
 const Container = styled.div`
-    padding: 30px 20px;
+    padding: 18px;
 `;
 
 

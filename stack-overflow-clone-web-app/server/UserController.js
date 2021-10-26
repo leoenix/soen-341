@@ -37,11 +37,17 @@ UserController.post('/login', function(req,res){
         user.password === password && jwt.sign(email, secondtoken, (error, token) =>{
             if (error){
                 res.status(403).send();
+                console.log('theres error');
             } else {
                 res.cookie('token', token).send();
+                res.status(200).send();
             }
+            console.log('dude');
+            return res.status(403).send();
         })
 
+    }).catch(error =>{
+        res.status(403).send();
     })
 
 });

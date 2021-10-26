@@ -7,6 +7,7 @@ import {useState, useEffect } from 'react';
 import UserContext from './UserContext';
 import LoginPage from './LoginPage';
 import axios from 'axios';
+import SignUpPage from './SignUpPage'
 
 import {
   BrowserRouter as Router,
@@ -66,6 +67,7 @@ useEffect(() => {
             <Route exact path="/" component={QuestionsPage} />
             <Route exact path="/login" component = {LoginPage} />
           <Route exact path="/ask" component={AskQuestionPage} />
+            <Route exact path="/signup" component={SignUpPage} />
         </Switch>
         </UserContext.Provider>
       </Router>

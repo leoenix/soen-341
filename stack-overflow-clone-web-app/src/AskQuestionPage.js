@@ -5,6 +5,8 @@ import Header1 from './Header1';
 import Input from './Input';
 import {useState} from 'react';
 import axios from "axios";
+import {Redirect} from 'react-router-dom';
+
 const Container = styled.div`
     padding: 18px;
 `;
@@ -25,6 +27,7 @@ const QuestionBodyTextArea = styled.textarea`
 export default function AskQuestionPage() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState();
+    const [goToQuestion, setGoToQuestion] = useState('');
 
     function askQuestion(ev){
         ev.preventDefault();
@@ -32,11 +35,13 @@ export default function AskQuestionPage() {
             title: title,
                 description: description,
 
-        }, {withCredentials:true}).then(res => console.log(res))
+        }, {withCredentials:true}).then(res => setGoToQuestion('/question/' + res.data[0]))
     }
 
     return (
-        <Container>
+        <Container>{
+            goToQuestion && (<Redirect to ={goToQuestion} />)
+        }
             <Header1 style={{marginBottom: '20px'}}>Ask a public question</Header1>
             <form onSubmit ={ev => askQuestion(ev)}>
             <Input type="text" placeholder="Title..." value = {title} onChange={ev => setTitle(ev.target.value)}/>

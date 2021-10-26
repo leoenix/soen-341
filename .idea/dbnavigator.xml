@@ -38,9 +38,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="ddac0d5d-a376-4935-ba6b-cf9ac1fbada5" object-ref="schemas/stackoverflow/tables/questions" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="ddac0d5d-a376-4935-ba6b-cf9ac1fbada5" />

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 
 const QuestionStats = styled.div `
     display: inline-block;
@@ -18,8 +20,8 @@ const QuestionTitleArea = styled.div `
     padding: 0 30px;
 `;
 
-const QuestionHyperlink = styled.a `
-    margin-bottom: 5px:
+const QuestionHyperlink = styled(Link) `
+    margin-bottom: 5px;
     text-decoration: none;
     color: #085e72;
     font-size: 1.1rem;
@@ -59,22 +61,27 @@ const UserHyperlink = styled.a `
 `;
 
 
-function QuestionRow() {
+function QuestionRow({title, qid}) {
     return ( 
         <StyledQuestionRow>
         <QuestionStats> 0 <span> votes </span></QuestionStats>
         <QuestionStats> 1 <span> answers </span></QuestionStats>
         <QuestionStats> 6 <span> views </span></QuestionStats>
         <QuestionTitleArea>
-        <QuestionHyperlink> How to create a full stack website </QuestionHyperlink> 
+        <QuestionHyperlink to ={'question/' + qid}> {title} </QuestionHyperlink>
         <AuthorAndTime> asked 15 mins ago <UserHyperlink> njayem </UserHyperlink> </AuthorAndTime> 
         <Tag> javascript </Tag> 
         <Tag> html </Tag> 
-        <Tag> css </Tag> 
-        <Tag> Node.js </Tag> 
+        <Tag> css </Tag>
         </QuestionTitleArea> 
         </StyledQuestionRow>
     );
+
+}
+
+QuestionRow.propTypes = {
+    title: PropTypes.string.isRequired,
+    qid: PropTypes.number.isRequired,
 
 }
 

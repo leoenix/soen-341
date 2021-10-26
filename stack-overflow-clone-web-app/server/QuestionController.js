@@ -11,8 +11,8 @@ QuestionController.post('/askquestion', (req, res) => {
             console.log('here' + description);
             pool('questions').insert({
                 title, description, userid:user.userid,
-            }).then(() => {
-                res.sendStatus(200);
+            }).then(qInfo => {
+                res.json(qInfo).sendStatus(200);
             }).catch(() => res.sendStatus(403));
         } else {
             res.sendStatus(404);
@@ -30,6 +30,11 @@ QuestionController.get('/question/:questionid', (req, res) => {
         }
     ).catch(() => res.sendStatus(403));
 
+})
+
+QuestionController.get('/questions', (req, res) => {
+    console.log('here');
+    pool.select('*').from('questions').orderBy('questionid', 'desc').then(allQuestions => {res.json(allQuestions).send();}).catch(() => res.sendStatus(403));
 })
 
 export default QuestionController;

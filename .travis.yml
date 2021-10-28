@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- 14.8.1
+  - 14.8.0
 cache: npm
 
 install:
@@ -8,12 +8,9 @@ install:
 
 script:
   - npm test
-  - npm run build
 
-
-deplay:
+deploy:
   provider: pages
-  skip-cleanup: true
   github-token: $GITHUB_TOKEN
   local_dir: build
   on:

@@ -20,11 +20,11 @@ function QuestionsPage() {
     return(
         <main>
             <TopQuestionsHeaderRow>
-                <Header1>Top Questions</Header1>
+                <Header1>All questions</Header1>
                 <DarkCyanButtonLink to={'/ask'}>Ask&nbsp;Question</DarkCyanButtonLink>
             </TopQuestionsHeaderRow>
             {allQuestions && allQuestions.length > 0 && allQuestions.map(q => (
-                <QuestionRow title = {q.title} qid = {q.questionid} />
+                <QuestionRow title = {q.title} qid = {q.questionid} description = {q.description}/>
             ))}
         </main>
     );

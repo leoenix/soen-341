@@ -3,6 +3,9 @@ node_js:
   - 14.8.1
 cache: npm
 
+before_install:
+  - npm i -g npm@14.8.1
+
 install:
   - npm ci
 

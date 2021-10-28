@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 
 const QuestionStats = styled.div `
-    display: inline-block;
+    
     text-align: center;
     font-size: 1.2rem;
     color: #085e72;
@@ -18,14 +18,20 @@ const QuestionStats = styled.div `
 
 const QuestionTitleArea = styled.div `
     padding: 0 30px;
+  flex: 1 auto;
+  width: auto;
+  float: none;
+  margin: 0;
+  overflow: hidden;
 `;
 
 const QuestionHyperlink = styled(Link) `
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     text-decoration: none;
-    color: #085e72;
-    font-size: 1.1rem;
+    color: cornflowerblue;
+    font-size: 1.6rem;
     display: block;
+  padding-top: 15px;
 `;
 
 const Tag = styled.span `
@@ -43,7 +49,7 @@ const StyledQuestionRow = styled.div `
     background-color: rgba(121, 159, 168, .1);
     color: #000000;
     padding: 15px 15px 10px;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(3, 50px) 1fr;
     border-top: 1px solid #555;
 `;
@@ -56,23 +62,45 @@ const AuthorAndTime = styled.div `
     padding: 10px 0;
 `;
 
-const UserHyperlink = styled.a `
-    color: #F48024;
+const StatsContainer = styled.div `
+
+    color: #085e72;
+    font-size: .8rem;
+    float:none;
+ 
 `;
 
+const UserHyperlink = styled.div `
+    color: #F48024;
+`;
+const TagsAndAuthor = styled.div`
+display:flex;
+  padding-top: 1rem;
 
-function QuestionRow({title, qid}) {
+  justify-content: space-between;`
+const AllTags = styled.div`
+  display:flex;`
+
+
+function QuestionRow({title, qid, description}) {
     return ( 
         <StyledQuestionRow>
+        <StatsContainer>
         <QuestionStats> 0 <span> votes </span></QuestionStats>
         <QuestionStats> 1 <span> answers </span></QuestionStats>
         <QuestionStats> 6 <span> views </span></QuestionStats>
-        <QuestionTitleArea>
+        </StatsContainer>
+            <QuestionTitleArea>
         <QuestionHyperlink to ={'question/' + qid}> {title} </QuestionHyperlink>
-        <AuthorAndTime> asked 15 mins ago <UserHyperlink> njayem </UserHyperlink> </AuthorAndTime> 
-        <Tag> javascript </Tag> 
-        <Tag> html </Tag> 
-        <Tag> css </Tag>
+                <div>{description}</div>
+                <TagsAndAuthor><div>
+                    <Tag> javascript </Tag>
+                    <Tag> html </Tag>
+                    <Tag> css </Tag>
+                </div>
+                    <AuthorAndTime> asked 15 mins ago <UserHyperlink>by njayem </UserHyperlink> </AuthorAndTime>
+
+</TagsAndAuthor>
         </QuestionTitleArea> 
         </StyledQuestionRow>
     );

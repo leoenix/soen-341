@@ -28,3 +28,8 @@ To be added soon
 - [ ] Task 4: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()
 - [ ] Additional Tasks as necessary
 
+## Basic Flow (ends in success):
+1) 
+2)
+3)
+4) add more steps as needed

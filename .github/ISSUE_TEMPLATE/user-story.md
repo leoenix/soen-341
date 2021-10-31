@@ -15,6 +15,12 @@ pipelines: 'Product Backlog'
 ## Total Story Points
 [ ] Points
 
+## Priority Level:
+Urgent / Important / It can wait
+
+## Risk
+To be added soon
+
 ## Acceptance Criterion / Tasks To Be Completed _(Ordered based on priority)_ :white_check_mark:
 - [ ] Task 1: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()
 - [ ] Task 2: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()

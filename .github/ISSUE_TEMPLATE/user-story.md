@@ -15,6 +15,12 @@ pipelines: 'Product Backlog'
 ## Total Story Points
 [ ] Points
 
+## Priority Level:
+Urgent / Important / It can wait
+
+## Risk
+To be added soon
+
 ## Acceptance Criterion / Tasks To Be Completed _(Ordered based on priority)_ :white_check_mark:
 - [ ] Task 1: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()
 - [ ] Task 2: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()
@@ -22,3 +28,8 @@ pipelines: 'Product Backlog'
 - [ ] Task 4: Task Description - Assignee (First Name) - Story Point/Ideal Hours ()
 - [ ] Additional Tasks as necessary
 
+## Basic Flow (ends in success):
+1) 
+2)
+3)
+4) add more steps as needed

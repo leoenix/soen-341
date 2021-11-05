@@ -8,12 +8,6 @@ pipelines: 'Product Backlog'
 
 # **Feature Request** :electron: 
 
-## Priority Level:
-Urgent / Important / It can wait
-
-## Risk
-To be added soon
-
 ## **Is your feature request / task related to a problem? Please describe.** <br>
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] <br>
 

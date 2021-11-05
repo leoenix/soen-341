@@ -16,7 +16,9 @@ function QuestionsPage() {
     function getAllQuestions(){
         axios.get('http://localhost:3030/questions', {withCredentials:true}).then(res => setAllQuestions(res.data));
     }
+
     useEffect(() => getAllQuestions(), []);
+
     return(
         <main>
             <TopQuestionsHeaderRow>

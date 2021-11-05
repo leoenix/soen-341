@@ -24,8 +24,8 @@ QuestionController.post('/askquestion', (req, res) => {
 QuestionController.get('/question/:questionid', (req, res) => {
 
     const questionid = req.params.questionid;
-    pool.select('*').from('questions').where({questionid}).first().then(info => {
-        res.json(info).send();
+    pool.select('questions.*', pool.raw('users.email')).from('questions').join('users', 'users.userid', '=', 'questions.userid').where({questionid}).first().then(info => {
+        res.json(info).sendStatus(200);
 
         }
     ).catch(() => res.sendStatus(403));

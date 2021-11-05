@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dbfa424-c371-40ef-9e58-5cde04595104" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/AnswerController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VotingComponent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/QuestionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/QuestionController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuestionsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuestionsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/AnswerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/AnswerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/UserController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SpecificQuestionPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpecificQuestionPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/VotingComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/VotingComponent.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -24,8 +24,45 @@ AnswerController.post('/postanswer', (req, res) => {
 AnswerController.get('/answers/:questionid', (req, res) => {
 
     const questionid = req.params.questionid;
-    console.log(questionid);
-    pool.select('answers.*', pool.raw('users.email')).from('answers').join('users', 'users.userid', '=', 'answers.userid').where({'answers.questionid': questionid}).then(info => {
+    pool.select('answers.*', pool.raw('users.email')).from('answers').join('users', 'users.userid', '=', 'answers.userid').where({'answers.questionid': questionid}).orderBy('bestanswer', 'DESC').then(info => {
+            res.json(info).sendStatus(200);
+
+        }
+    ).catch(() => res.sendStatus(403));
+
+})
+
+AnswerController.put('/bestanswer/:questionid/:answerid', (req, res) => {
+
+    const questionid = req.params.questionid;
+    const answerid = req.params.answerid;
+
+
+    pool('answers').where({'answers.questionid': questionid}).update({bestanswer: '0'}).then(info => {
+
+            res.json(info).sendStatus(200);
+
+        }
+    ).catch(() => res.sendStatus(403));
+
+    pool('answers').where({'answers.questionid': questionid, 'answers.answerid': answerid}).update({bestanswer: '1'}).then(info => {
+
+            res.json(info).sendStatus(200);
+
+        }
+    ).catch(() => res.sendStatus(403));
+
+})
+
+
+AnswerController.put('/removebestanswer/:questionid/:answerid', (req, res) => {
+
+    const questionid = req.params.questionid;
+    const answerid = req.params.answerid;
+
+
+    pool('answers').where({'answers.questionid': questionid, 'answers.answerid': answerid}).update({bestanswer: '0'}).then(info => {
+
             res.json(info).sendStatus(200);
 
         }

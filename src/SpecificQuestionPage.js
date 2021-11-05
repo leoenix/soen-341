@@ -23,6 +23,18 @@ const QuestionBodyTextArea = styled.textarea`
   margin-bottom: 20px;
 `;
 
+const CheckBestAnswer = styled.div `
+  display: inline-block;
+  transform: rotate(45deg);
+  height: 25px;
+  width: 12px;
+  margin-left: 30%;
+  border-bottom: 7px solid ${props => props.valid ? 'lightgreen' : 'lightgrey'};
+  border-right: 7px solid  ${props => props.valid ? 'lightgreen' : 'lightgrey'};
+  cursor:${props => props.disabled ? 'not-allowed' : 'pointer'};
+  pointer-events: ${props => props.disabled ? 'none' : 'pointer'};
+  `
+
 
 function SpecificQuestionPage(props) {
     const [specificQuestion, setSpecificQuestion] = useState(false);
@@ -33,7 +45,7 @@ function SpecificQuestionPage(props) {
     console.log(specificQuestion);
     const questionid = props.match.params.questionid;
     const [info, setInfo] = useState(false);
-
+    const [user,setUser] = useState('');
     function getQuestion() {
         axios.get('http://localhost:3030/question/' + questionid).then(res => {
             setInfo(res.data);
@@ -74,17 +86,61 @@ function SpecificQuestionPage(props) {
             setAnswers(res.data);
         });}
 
+
+
+    function getUser() {
+            axios.get('http://localhost:3030/user', {withCredentials: true})
+                .then(response => {
+                    console.log('here')
+                    console.log(response.data.userid)
+                    setUser(response.data.userid);
+                    console.log('here again')
+
+                })
+                .catch(() => {
+                    setUser(null);
+                })
+    }
+
+    function selectBestAnswer(answerid, bestanswer){
+        if (bestanswer === 1){
+            axios.put('http://localhost:3030/removebestanswer/' + questionid + '/' + answerid, {withCredentials: true})
+                .then(response => {
+
+                    window.location.reload();
+                })
+                .catch(() => {
+                    console.log('some error happened');
+                })}
+
+        else {
+        axios.put('http://localhost:3030/bestanswer/' + questionid + '/' + answerid, {withCredentials: true})
+            .then(response => {
+
+            window.location.reload();
+            })
+            .catch(() => {
+                console.log('some error happened');
+            })}
+    }
+
+
+//disabled = {specificQuestion.userid = user.userid}
+
+
         useEffect(() => {
             getQuestion();
             getAnswers();
+            getUser();
         }, []);
+
         return (
             <>
 
                 <Box>
-                    <div><Header1>{info && info.title}</Header1></div>
+                    <div><Header1>{info && info.title} </Header1></div>
                     <hr style={{borderColor: 'lightgrey', width: '-webkit-fill-available'}}></hr>
-                    <div style = {{display:'flex', justifyContent:'space-between'}}><div style={{color: 'black', display: 'flex'}}> <VotingComponent></VotingComponent>
+                    <div style = {{display:'flex', justifyContent:'space-between'}}><div style={{color: 'black', display: 'flex'}}> <VotingComponent value = {1} vote = {1}></VotingComponent>
                         <div><div children = {info.description} style ={{color:'black', padding: "15px 40px"}}></div>  </div>
 
                     </div>
@@ -93,12 +149,12 @@ function SpecificQuestionPage(props) {
                     </div>
 
 
-                    <Header1 style ={{margin:'20px 0px'}}>Answers</Header1>
+                    <Header1 style ={{margin:'20px 0px'}}>Answers </Header1>
                     {answers && answers.length > 0 && answers.map(a => (<>
 
                             <hr style={{borderColor: 'lightgrey', width: '-webkit-fill-available'}}></hr>
-                            <div style = {{display:'flex', justifyContent:'space-between'}}><div style={{color: 'black', display: 'flex'}}>voting arrow up <br/> number of votes <br/> voting
-                                arrow down
+                            <div style = {{display:'flex', justifyContent:'space-between'}}><div style={{color: 'black', display: 'flex'}}> <div> <VotingComponent value = {1} vote = {1}></VotingComponent>
+                                <CheckBestAnswer valid ={a.bestanswer === 1} disabled = {specificQuestion.userid !== user} onClick = {() => selectBestAnswer(a.answerid, a.bestanswer)} ></CheckBestAnswer> </div>
                                 <div children = {a.description} style ={{color:'black', padding: "15px 40px"}}></div>
 
                             </div>

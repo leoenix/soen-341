@@ -3,7 +3,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import UserController from "./UserController.js";
 import QuestionController from "./QuestionController.js";
-
+import AnswerController from "./AnswerController.js";
 const app = express();
 const port = 3030;
 
@@ -27,7 +27,7 @@ app.get('/', function(req,res){
 
 app.use(QuestionController);
 app.use(UserController);
-
+app.use(AnswerController);
 
 app.listen(port, function(){
     console.log('listening on port: ' + port);

@@ -63,7 +63,7 @@ function SpecificQuestionPage(props) {
 
     function postAnswer(ev) {
         ev.preventDefault();
-        // const data = {description: theAnswer, questionid: specificQuestion.questionid }
+        const data = {description: theAnswer, questionid: specificQuestion.questionid }
         axios.post('http://localhost:3030/postanswer', {
             description: theAnswer,
             questionid: specificQuestion.questionid
@@ -80,7 +80,7 @@ function SpecificQuestionPage(props) {
         axios.get('http://localhost:3030/question/' + questionid).then(res => {
             setInfo(res.data);
             setSpecificQuestion(res.data);
-            setVoteCount(res.data.question.vote_count)
+            // setVoteCount(res.data.question.vote_count);
         });
     }
 
@@ -142,7 +142,6 @@ function SpecificQuestionPage(props) {
     }
 
 
-    //disabled = {specificQuestion.userid = user.userid}
 
 
     useEffect(() => {
@@ -156,7 +155,7 @@ function SpecificQuestionPage(props) {
         <Box>
         <div> <Header1> { info && info.title } </Header1></div>
         <hr style = {
-            { borderColor: 'lightgrey', width: '-webkit-fill-available' }} > </hr> <div style = {
+            { borderColor: 'lightgrey', width: '-webkit-fill-available' }} />  <div style = {
             { display: 'flex', justifyContent: 'space-between' }} > <div style = {
             { color: 'black', display: 'flex' }} >
         <VotingArrows style = {{ marginTop: '10px' }}
@@ -171,7 +170,7 @@ function SpecificQuestionPage(props) {
         /> <div > < div children = { info.description }
         style = {
             { color: 'black', padding: "15px 40px" }
-        } > </div>  </div >
+        } > {info.description }</div>  </div >
 
         </div>
 
@@ -185,7 +184,7 @@ function SpecificQuestionPage(props) {
         answers && answers.length > 0 && answers.map(a => ( < >
 
             <hr style = {
-                { borderColor: 'lightgrey', width: '-webkit-fill-available' }} > </hr> 
+                { borderColor: 'lightgrey', width: '-webkit-fill-available' }} />
                 <div style = {{ display: 'flex', justifyContent: 'space-between' }}> 
                 <div style = {
                 { color: 'black', display: 'flex' }}> 
@@ -199,14 +198,14 @@ function SpecificQuestionPage(props) {
             </CheckBestAnswer> </div >
             <div children = { a.description }
             style = {
-                { color: 'black', padding: "15px 40px" }} > </div>
+                { color: 'black', padding: "15px 40px" }} > {a.description} </div>
 
             </div>
 
             <span style = {
                 { alignSelf: 'flex-end', color: 'black' }
             }
-            children = { a.email } > asked by { a.email } </span> </div >
+            children = {a.email } > asked by { a.email } </span> </div >
 
             </>
         ))
@@ -214,7 +213,7 @@ function SpecificQuestionPage(props) {
 
 
     <hr style = {
-        { borderColor: 'lightgrey', width: '-webkit-fill-available' }}> </hr>
+        { borderColor: 'lightgrey', width: '-webkit-fill-available' }} />
 
 
     <AnswerHeader style = {

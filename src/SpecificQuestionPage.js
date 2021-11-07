@@ -4,6 +4,9 @@ import styled from "styled-components";
 import {useState, useEffect} from 'react'
 import DarkCyanButton from './DarkCyanButton'
 import VotingComponent from './VotingComponent'
+import VotingArrows from "./VotingArrows";
+import TopQuestionsHeader from "./Header1";
+import { config } from "@fortawesome/fontawesome-svg-core";
 
 const Box = styled.div`
   padding: 40px 20px;
@@ -38,6 +41,7 @@ const CheckBestAnswer = styled.div `
 
 function SpecificQuestionPage(props) {
     const [specificQuestion, setSpecificQuestion] = useState(false);
+    const [vote, setVote] = useState(0);
     const AnswerHeader = styled.h2`font-size: 1.5rem;
       color: black;`
     const [answers, setAnswers] = useState([]);
@@ -124,6 +128,18 @@ function SpecificQuestionPage(props) {
             })}
     }
 
+    function handleOnUpArrowClick(){
+        axios.post('http://localhost:3030/vote/up/' + questionid, {withCredentials: true})
+        .then(currentVoteNumber => setVote(currentVoteNumber))
+
+    }
+
+
+    function handleOnDownArrowClick(){
+        axios.post('http://localhost:3030/vote/down/' + questionid, {withCredentials: true})
+        .then(currentVoteNumber => setVote(currentVoteNumber))
+    }
+
 
 //disabled = {specificQuestion.userid = user.userid}
 
@@ -140,7 +156,11 @@ function SpecificQuestionPage(props) {
                 <Box>
                     <div><Header1>{info && info.title} </Header1></div>
                     <hr style={{borderColor: 'lightgrey', width: '-webkit-fill-available'}}></hr>
-                    <div style = {{display:'flex', justifyContent:'space-between'}}><div style={{color: 'black', display: 'flex'}}> <VotingComponent value = {1} vote = {1}></VotingComponent>
+                    <div style = {{display:'flex', justifyContent:'space-between'}}><div style={{color: 'black', display: 'flex'}}>
+                         <VotingArrows style={{marginTop: '10px'}} value={vote}
+                         vote={1}
+                         onUpArrowClick={ () => handleOnUpArrowClick() } 
+                         onDownArrowClick={ () => handleOnDownArrowClick() } />
                         <div><div children = {info.description} style ={{color:'black', padding: "15px 40px"}}></div>  </div>
 
                     </div>
@@ -172,7 +192,7 @@ function SpecificQuestionPage(props) {
                     <AnswerHeader style={{margin: '10px 0px 10px'}}>Your answer</AnswerHeader>
 
                     <QuestionBodyTextArea value={theAnswer} onChange={ev => setTheAnswer(ev.target.value)}
-                                          placeholder="Please describe your answer in detail (using Markdown)."/>
+                                          placeholder="Please type in your answer in detail."/>
                     <DarkCyanButton style={{width: 'fit-content'}} type={'submit'} onClick={ev => postAnswer(ev)}>Post
                         answer</DarkCyanButton>
                 </Box>

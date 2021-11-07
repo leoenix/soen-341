@@ -45,7 +45,7 @@ export default function AskQuestionPage() {
             <Header1 style={{marginBottom: '20px'}}>Ask a public question</Header1>
             <form onSubmit ={ev => askQuestion(ev)}>
             <Input type="text" placeholder="Title..." value = {title} onChange={ev => setTitle(ev.target.value)}/>
-            <QuestionBodyTextArea value = {description} onChange = {ev => setDescription(ev.target.value)} placeholder="Please describe your question in detail (using Markdown)."/>
+            <QuestionBodyTextArea value = {description} onChange = {ev => setDescription(ev.target.value)} placeholder="Please describe your question in detail."/>
             <DarkCyanButton type ={'submit'} >Post question</DarkCyanButton>
             </form>
         </Container>

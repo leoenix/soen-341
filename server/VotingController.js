@@ -1,6 +1,7 @@
 import express from "express";
 import pool from "./pool.js";
 import { getLoggedInUser } from "./UserFunctions.js";
+import { getPostTotal } from "./VotingFunctions.js";
 
 const VotingController = express.Router();
 
@@ -11,39 +12,58 @@ VotingController.post("/vote/:direction/:questionid", (req, res) => {
 		const direction = req.params.direction === "up" ? 1 : -1;
 
 		pool
-			.select("*")
+			.select("votes.*")
 			.from("votes")
 			.where({
-				questionid: questionid,
-				userid: user.id,
+				"votes.questionid": questionid,
+				"votes.userid": user.id,
 			})
 			.first()
 			.then((vote) => {
+				console.log(vote);
 				// No vote
 				if (!vote) {
-					pool("votes")
+					return pool("votes")
 						.insert({
-							questionid: questionid,
-							userid: user.id,
-							vote: direction,
+							"votes.questionid": questionid,
+							"votes.userid": user.id,
+							"votes.vote": direction,
 						})
-						.then(() => res.send())
-						.catch((e) => console.log(e) && res.status(422).send());
+						.then(() =>
+							getPostTotal(questionid)
+								.then((count) => res.json(count).sendStatus(200))
+								.catch((e) => console.log(e.res) && res.status(422).send())
+						)
+						.catch((e) => console.log(e.res) && res.status(422).send());
 				} else if (direction === vote.vote) {
+					console.log("here");
 					// delete vote
-					pool("votes")
-						.where({ id: vote.id })
+					return pool("votes")
+						.where({ "votes.id": vote.id })
 						.del()
-						.then(() => res.send())
-						.catch((e) => console.log(e) && res.status(422).send());
+						.then(() =>
+							getPostTotal(questionid)
+								.then((count) => res.json(count).sendStatus(200))
+								.catch((e) => console.log(e.res) && res.status(422).send())
+						)
+						.catch((e) => console.log(e.res) && res.status(422).send());
 				} else {
 					// Update vote
-					pool("votes")
-						.where({ id: vote.id })
+					console.log("here again");
+					return pool("votes")
+						.where({ "votes.id": vote.id })
 						.update({ vote: direction })
-						.then(() => res.send())
-						.catch((e) => console.log(e) && res.status(422).send());
+						.then(() =>
+							getPostTotal(questionid)
+								.then((count) => res.json(count).sendStatus(200))
+								.catch((e) => console.log(e.res) && res.status(422).send())
+						)
+						.catch((e) => console.log(e.res) && res.status(422).send());
 				}
+			}) //if it fails
+			.catch((e) => {
+				console.log(e.res);
+				res.status(422).send();
 			});
 	});
 });

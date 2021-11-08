@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import DarkCyanButton from "./DarkCyanButton";
 import VotingArrows from "./VotingArrows";
+import TopQuestionsHeader from "./Header1";
 
 const Box = styled.div`
 	padding: 40px 20px;
@@ -49,6 +50,8 @@ function SpecificQuestionPage(props) {
 	const questionid = props.match.params.questionid;
 	const [info, setInfo] = useState(false);
 	const [user, setUser] = useState("");
+	const [vote, setVote] = useState(0);
+
 	function getQuestion() {
 		axios.get("http://localhost:3030/question/" + questionid).then((res) => {
 			setInfo(res.data);
@@ -56,9 +59,25 @@ function SpecificQuestionPage(props) {
 		});
 	}
 
-	function handleOnUpvote() {}
+	function handleOnUpvote() {
+		axios
+			.post(
+				"http://localhost:3030/vote/up/" + specificQuestion.questionid,
+				{},
+				{ withCredentials: true }
+			)
+			.then((currentVoteCount) => setVote(currentVoteCount));
+	}
 
-	function handleOnDownvote() {}
+	function handleOnDownvote() {
+		axios
+			.post(
+				"http://localhost:3030/vote/down/" + specificQuestion.questionid,
+				{},
+				{ withCredentials: true }
+			)
+			.then((currentVoteCount) => setVote(currentVoteCount));
+	}
 
 	console.log(answers);
 
@@ -173,10 +192,10 @@ function SpecificQuestionPage(props) {
 					<div style={{ color: "black", display: "flex" }}>
 						{" "}
 						<VotingArrows
-							value={1}
+							value={vote}
 							vote={1}
-							onUpvote={() => {}}
-							onDownvote={() => {}}
+							onUpvote={() => handleOnUpvote()}
+							onDownvote={() => handleOnDownvote()}
 						/>
 						<div>
 							<div
@@ -188,7 +207,8 @@ function SpecificQuestionPage(props) {
 					<span
 						style={{ alignSelf: "flex-end", color: "black" }}
 						children={specificQuestion.email}>
-						asked x time ago by {specificQuestion.email}{" "}
+						asked x time ago by{" "}
+						<span style={{ color: "#f48024" }}> {specificQuestion.email} </span>{" "}
 					</span>
 				</div>
 
@@ -230,7 +250,8 @@ function SpecificQuestionPage(props) {
 									}}
 									children={a.email}>
 									{" "}
-									x time ago by {a.email}{" "}
+									x time ago by{" "}
+									<span style={{ color: "#f48024" }}> {a.email} </span>{" "}
 								</span>
 							</div>
 						</>

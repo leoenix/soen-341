@@ -42,12 +42,12 @@ const VoteTotal = styled.div`
 function VotingArrows(props) {
 	return (
 		<div {...props}>
-			<ArrowButton disabled={props.vote === 1}>
+			<ArrowButton onClick={() => props.onUpvote}>
 				{" "}
 				<UpwardArrow active={props.vote === 1} />{" "}
 			</ArrowButton>
 			<VoteTotal> {props.value} </VoteTotal>
-			<ArrowButton disabled={props.vote === -1}>
+			<ArrowButton onClick={() => props.onDownvote}>
 				{" "}
 				<DownwardArrow active={props.vote === -1} />{" "}
 			</ArrowButton>

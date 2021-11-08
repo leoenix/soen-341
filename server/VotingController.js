@@ -5,9 +5,11 @@ import { getPostTotal } from "./VotingFunctions.js";
 
 const VotingController = express.Router();
 
-VotingController.post("/vote/:direction/:questionid", (req, res) => {
+VotingController.post("/vote/:direction/:questionid/:type", (req, res) => {
 	const token = req.cookies.token;
+	const type = req.params.type;
 	getLoggedInUser(token).then((user) => {
+
 		const questionid = req.params.questionid;
 		const direction = req.params.direction === "up" ? 1 : -1;
 
@@ -15,34 +17,37 @@ VotingController.post("/vote/:direction/:questionid", (req, res) => {
 			.select("votes.*")
 			.from("votes")
 			.where({
-				"votes.questionid": questionid,
-				"votes.userid": user.id,
+				"votes.qatype": type,
+				"votes.qaid": questionid,
+				"votes.userid": user.userid,
 			})
 			.first()
 			.then((vote) => {
 				console.log(vote);
 				// No vote
 				if (!vote) {
+					console.log('hello?');
 					return pool("votes")
 						.insert({
-							"votes.questionid": questionid,
-							"votes.userid": user.id,
+							"votes.qaid": questionid,
+							"votes.userid": user.userid,
 							"votes.vote": direction,
+							"votes.qatype": type
 						})
 						.then(() =>
-							getPostTotal(questionid)
+							getPostTotal(questionid, type)
 								.then((count) => res.json(count).sendStatus(200))
 								.catch((e) => console.log(e.res) && res.status(422).send())
 						)
 						.catch((e) => console.log(e.res) && res.status(422).send());
 				} else if (direction === vote.vote) {
-					console.log("here");
+
 					// delete vote
 					return pool("votes")
-						.where({ "votes.id": vote.id })
+						.where({ "votes.id": vote.id, "votes.qatype": type })
 						.del()
 						.then(() =>
-							getPostTotal(questionid)
+							getPostTotal(questionid,type)
 								.then((count) => res.json(count).sendStatus(200))
 								.catch((e) => console.log(e.res) && res.status(422).send())
 						)
@@ -51,10 +56,10 @@ VotingController.post("/vote/:direction/:questionid", (req, res) => {
 					// Update vote
 					console.log("here again");
 					return pool("votes")
-						.where({ "votes.id": vote.id })
+						.where({ "votes.id": vote.id, "votes.qatype": type})
 						.update({ vote: direction })
 						.then(() =>
-							getPostTotal(questionid)
+							getPostTotal(questionid,type)
 								.then((count) => res.json(count).sendStatus(200))
 								.catch((e) => console.log(e.res) && res.status(422).send())
 						)

@@ -6,32 +6,29 @@ const QuestionController = express.Router();
 
 QuestionController.get("/question/:questionid", (req, res) => {
 	const questionid = req.params.questionid;
+	const {token} = req.cookies;
 
-	getLoggedInUser(req.cookies.token).then((user) => {
+	const type = 'question';
+	getLoggedInUser(token).then(user => {
+
 		pool
-			.select(
-				"questions.*",
-				pool.raw("votes2.vote as user_vote"),
-				pool.raw("users.email"),
-				pool.raw("sum(distinct votes.vote) as vote_sum")
-			)
-			.from("questions")
-			.join("users", "users.userid", "=", "questions.userid")
-			.leftJoin("votes", "questions.questionid", "=", "votes.questionid")
-			.leftJoin(
-				pool.raw(
-					"votes votes2 on votes2.questionid = questions.questionid and votes2.userid = " +
-						userid
-				)
-			)
-			.where({ questionid })
-			.groupByRaw("questions.questionid")
-			.first()
-			.then((info) => {
-				res.json(info).sendStatus(200);
-			})
-			.catch(() => res.sendStatus(403));
-	});
+		.select(
+			"questions.*", 'uservote.vote as uservote', pool.raw('users.email'), pool.raw('sum(votes.vote) as total')
+		)
+		.from("questions").join('users', 'users.userid', '=', 'questions.userid').leftJoin('votes', function() {this.on('votes.qaid', 'questions.questionid')
+
+		}).leftJoin(pool.raw('votes uservote on uservote.qaid = questions.questionid and uservote.userid =' + user.userid))
+
+		.where({ "questions.questionid": questionid,
+			"votes.qatype": type
+		})
+		.then((info) => {
+			res.json(info).sendStatus(200);
+		})
+		.catch(err => console.log(err));})
+
+
+
 });
 
 QuestionController.get("/questions", (req, res) => {

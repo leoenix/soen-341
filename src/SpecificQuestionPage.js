@@ -55,43 +55,30 @@ function SpecificQuestionPage(props) {
 	const [userVote, setUserVote] = useState(0);
 	const [voteCount, setVoteCount] = useState(0);
 
-	function getQuestion() {
-		axios
-			.get("http://localhost:3030/question/" + questionid, {
-				withCredentials: true,
-			})
-			.then((res) => {
-				setInfo(res.data);
-				setSpecificQuestion(res.data);
-				const voteSum = res.data.specificQuestion.vote_sum;
-				setVoteCount(voteSum === null ? 0 : voteSum);
-				setUserVote(res.data.question.user_vote);
-			});
-	}
-
-	function handleOnUpvote() {
+	function handleOnUpvote(type) {
 		setUserVote(userVote === 1 ? 0 : 1);
 		axios
 			.post(
-				"http://localhost:3030/vote/up/" + specificQuestion.questionid,
+				"http://localhost:3030/vote/up/" + specificQuestion[0].questionid + "/" + type,
 				{},
 				{ withCredentials: true }
 			)
 			.then((res) => setVoteCount(res.data));
 	}
 
-	function handleOnDownvote() {
-		setUserVote(userVote === 1 ? 0 : -1);
+	function handleOnDownvote(type) {
+		setUserVote(userVote === -1 ? 0 : -1);
 		axios
 			.post(
-				"http://localhost:3030/vote/down/" + specificQuestion.questionid,
+				"http://localhost:3030/vote/down/" + specificQuestion[0].questionid + "/" + type,
 				{},
 				{ withCredentials: true }
 			)
-			.then((res) => setVoteCount(res.data));
+			.then((res) => {setVoteCount(res.data); 		});
+
 	}
 
-	console.log(answers);
+
 
 	function postAnswer(ev) {
 		ev.preventDefault();
@@ -112,13 +99,17 @@ function SpecificQuestionPage(props) {
 	}
 
 	function getQuestion() {
-		axios.get("http://localhost:3030/question/" + questionid).then((res) => {
+		axios.get("http://localhost:3030/question/" + questionid, {withCredentials: true}).then((res) => {
+
 			setInfo(res.data);
 			setSpecificQuestion(res.data);
+			setVoteCount(res.data[0].total === null ? 0 : res.data[0].total);
+			setUserVote(res.data[0].uservote)
+			console.log('lol');
+			console.log(specificQuestion.description);
 		});
 	}
 
-	console.log("length is " + answers);
 	function getAnswers() {
 		axios
 			.get("http://localhost:3030/answers/" + questionid, {
@@ -133,10 +124,10 @@ function SpecificQuestionPage(props) {
 		axios
 			.get("http://localhost:3030/user", { withCredentials: true })
 			.then((response) => {
-				console.log("here");
-				console.log(response.data.userid);
+
+
 				setUser(response.data.userid);
-				console.log("here again");
+
 			})
 			.catch(() => {
 				setUser(null);
@@ -181,7 +172,6 @@ function SpecificQuestionPage(props) {
 		getAnswers();
 		getUser();
 	}, []);
-
 	return (
 		<>
 			<Box>
@@ -192,7 +182,7 @@ function SpecificQuestionPage(props) {
 							marginBottom: "10px",
 							fontWeight: "bold",
 						}}>
-						{info && info.title}
+					{specificQuestion[0] && specificQuestion[0].title}
 					</Header1>
 				</div>
 				<hr
@@ -206,22 +196,22 @@ function SpecificQuestionPage(props) {
 						<VotingArrows
 							total={voteCount}
 							userVote={userVote}
-							onUpvote={() => handleOnUpvote()}
-							onDownvote={() => handleOnDownvote()}>
+							onUpvote={() => handleOnUpvote('question')}
+							onDownvote={() => handleOnDownvote('question')}>
 							{" "}
 						</VotingArrows>
 						<div>
 							<div
-								children={info.description}
-								style={{ color: "black", padding: "15px 40px" }}></div>{" "}
+
+								style={{ color: "black", padding: "15px 40px" }}>{specificQuestion[0] && specificQuestion[0].description}</div>{" "}
 						</div>
 					</div>
 
 					<span
 						style={{ alignSelf: "flex-end", color: "black" }}
 						children={specificQuestion.email}>
-						asked x time ago by (NOT SHOWING USER EMAIL WHY?){" "}
-						<span style={{ color: "#f48024" }}> {specificQuestion.email} </span>{" "}
+						asked by {specificQuestion.email}{" "}{specificQuestion[0] && specificQuestion[0].email}
+						<span style={{ color: "#f48024" }}>  </span>{" "}
 					</span>
 				</div>
 
@@ -242,7 +232,10 @@ function SpecificQuestionPage(props) {
 									{" "}
 									<div>
 										{" "}
-										<VotingArrows total={1} userVote={1}></VotingArrows>
+										<VotingArrows total={1} userVote={1}
+													  onUpvote={() => handleOnUpvote('answer')}
+														  onDownvote={() => handleOnDownvote('answer')}
+										></VotingArrows>
 										<CheckBestAnswer
 											valid={a.bestanswer === 1}
 											disabled={specificQuestion.userid !== user}
@@ -263,7 +256,7 @@ function SpecificQuestionPage(props) {
 									}}
 									children={a.email}>
 									{" "}
-									x time ago by{" "}
+									answered by{" "}
 									<span style={{ color: "#f48024" }}> {a.email} </span>{" "}
 								</span>
 							</div>

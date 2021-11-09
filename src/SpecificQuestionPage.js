@@ -55,26 +55,44 @@ function SpecificQuestionPage(props) {
 	const [userVote, setUserVote] = useState(0);
 	const [voteCount, setVoteCount] = useState(0);
 
-	function handleOnUpvote(type) {
-		setUserVote(userVote === 1 ? 0 : 1);
+	function handleOnUpvote(type, answerid = -1) {
+	if (answerid === -1){	setUserVote(userVote === 1 ? 0 : 1);
 		axios
 			.post(
 				"http://localhost:3030/vote/up/" + specificQuestion[0].questionid + "/" + type,
 				{},
 				{ withCredentials: true }
 			)
-			.then((res) => setVoteCount(res.data));
-	}
-
-	function handleOnDownvote(type) {
-		setUserVote(userVote === -1 ? 0 : -1);
+			.then((res) => setVoteCount(res.data));} else {
 		axios
 			.post(
-				"http://localhost:3030/vote/down/" + specificQuestion[0].questionid + "/" + type,
+				"http://localhost:3030/vote/up/" + answerid + "/" + type,
 				{},
 				{ withCredentials: true }
 			)
-			.then((res) => {setVoteCount(res.data); 		});
+			.then((res) => console.log(res.data));
+	}
+	}
+
+	function handleOnDownvote(type, answerid = -1) {
+		if (answerid === -1){	setUserVote(userVote === -1 ? 0 : -1);
+			axios
+				.post(
+					"http://localhost:3030/vote/down/" + specificQuestion[0].questionid + "/" + type,
+					{},
+					{ withCredentials: true }
+				)
+				.then((res) => {setVoteCount(res.data); 		});} else {
+
+			axios
+				.post(
+					"http://localhost:3030/vote/down/" + answerid + "/" + type,
+					{},
+					{ withCredentials: true }
+				)
+				.then((res) => {console.log(res.data); 		})
+		}
+
 
 	}
 
@@ -105,8 +123,6 @@ function SpecificQuestionPage(props) {
 			setSpecificQuestion(res.data);
 			setVoteCount(res.data[0].total === null ? 0 : res.data[0].total);
 			setUserVote(res.data[0].uservote)
-			console.log('lol');
-			console.log(specificQuestion.description);
 		});
 	}
 
@@ -172,6 +188,8 @@ function SpecificQuestionPage(props) {
 		getAnswers();
 		getUser();
 	}, []);
+	console.log('the user')
+	console.log(!!user);
 	return (
 		<>
 			<Box>
@@ -194,6 +212,7 @@ function SpecificQuestionPage(props) {
 					<div style={{ color: "black", display: "flex" }}>
 						{" "}
 						<VotingArrows
+							disabled = {!user}
 							total={voteCount}
 							userVote={userVote}
 							onUpvote={() => handleOnUpvote('question')}
@@ -232,9 +251,9 @@ function SpecificQuestionPage(props) {
 									{" "}
 									<div>
 										{" "}
-										<VotingArrows total={1} userVote={1}
-													  onUpvote={() => handleOnUpvote('answer')}
-														  onDownvote={() => handleOnDownvote('answer')}
+										<VotingArrows total={1} userVote={1} disabled = {!user}
+													  onUpvote={() => handleOnUpvote('answer', a.answerid)}
+														  onDownvote={() => handleOnDownvote('answer', a.answerid)}
 										></VotingArrows>
 										<CheckBestAnswer
 											valid={a.bestanswer === 1}

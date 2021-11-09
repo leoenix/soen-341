@@ -31,6 +31,7 @@ const ArrowButton = styled.button`
 	flexdirection: "column" as "column";
 	cursor: pointer;
 	text-align: center;
+	pointer-events: ${(props) => (props.disabled ? "none" : "pointer")};
 `;
 
 const VoteTotal = styled.div`
@@ -46,14 +47,14 @@ function VotingArrows(props) {
 	console.log("userVote", props.userVote);
 	return (
 		<div {...props}>
-			<ArrowButton onClick={() => props.onUpvote()}>
+			<ArrowButton onClick={() => props.onUpvote()} disabled = {props.disabled} >
 				{" "}
 				<UpwardArrow uservote={props.userVote} />{" "}
 			</ArrowButton>
 			<VoteTotal> {props.total} </VoteTotal>
-			<ArrowButton onClick={() => props.onDownvote()}>
+			<ArrowButton onClick={() => props.onDownvote()} disabled = {props.disabled}>
 				{" "}
-				<DownwardArrow uservote={props.userVote} />{" "}
+				<DownwardArrow uservote={props.userVote}  />{" "}
 			</ArrowButton>
 		</div>
 	);
@@ -64,6 +65,7 @@ VotingArrows.propTypes = {
 	userVote: PropTypes.number.isRequired,
 	onUpvote: PropTypes.any,
 	onDownvote: PropTypes.any,
+	disabled: PropTypes.bool
 };
 
 export default VotingArrows;

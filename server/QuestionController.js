@@ -9,6 +9,7 @@ QuestionController.get("/question/:questionid", (req, res) => {
 	const {token} = req.cookies;
 
 	const type = 'question';
+    if (token){
 	getLoggedInUser(token).then(user => {
 
 		pool
@@ -25,7 +26,23 @@ QuestionController.get("/question/:questionid", (req, res) => {
 		.then((info) => {
 			res.json(info).sendStatus(200);
 		})
-		.catch(err => console.log(err));})
+		.catch(err => console.log(err));})} else {
+        pool
+            .select(
+                "questions.*", pool.raw('users.email'), pool.raw('sum(votes.vote) as total')
+            )
+            .from("questions").join('users', 'users.userid', '=', 'questions.userid').leftJoin('votes', function() {this.on('votes.qaid', 'questions.questionid')
+
+        })
+
+            .where({ "questions.questionid": questionid,
+                "votes.qatype": type
+            })
+            .then((info) => {
+                res.json(info).sendStatus(200);
+            })
+            .catch(err => console.log(err));
+    }
 
 
 

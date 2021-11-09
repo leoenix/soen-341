@@ -1,67 +1,63 @@
 # **Acceptance Tests For Our 4 Core Features** :white_check_mark: <br>
 
-## :one: &nbsp; Account Creation and Log in :computer: <br>
+## :one: &nbsp; Account Creation and Log in
 
-_**Scenario #1**_
+Scenario #1
 
+**_Scenario #2_**
 
-_**Scenario #2**_
-
-_
-**Scenario #3**_
+**_Scenario #3_**
 
 
-_**Scenario #4**_
+**_Scenario #4_**
 
 
 
 
-## two: &nbsp; Ask & Answer Questions :question: :memo: <br>
+## :two: &nbsp; Ask & Answer Questions
 
-_**Scenario #1**_
-
-
-_**Scenario #2**_
+**_Scenario #1_**
 
 
-**Scenario #3**_
+**_Scenario #2_**
 
 
-_**Scenario #4**_
+**_Scenario #3_**
 
 
-
-## :three: &nbsp; Upvote An Answer :arrow_up: &nbsp; and Select The Best Answer :star: <br>
-
-
-**Scenario #1**_
-
-
-_**Scenario #2**_
-
-
-**Scenario #3**_
-
-
-_**Scenario #4**_
+**_Scenario #4_**
 
 
 
-## :four: &nbsp; :sparkles: Add Comment Sections Under Both Questions And Answers (W/ Voting Functionality):sparkles:
+## :three: &nbsp; Upvote An Answer and Select The Best Answer
 
 
-**Scenario #1**_
+**_Scenario #1_**
 
 
-_**Scenario #2**_
+**_Scenario #2_**
 
 
-**Scenario #3**_
+**_Scenario #3_**
 
 
-_**Scenario #4**_
+**_Scenario #4_**
 
 
+
+## :four: &nbsp; Add Comment Sections Under Both Questions And Answers (W/ Voting Functionality)
+
+
+**_Scenario #1_**
+
+
+**_Scenario #2_**
+
+
+**_Scenario #3_**
+
+
+**_Scenario #4_**
 
 
 

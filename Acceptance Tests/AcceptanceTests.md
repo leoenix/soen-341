@@ -35,21 +35,21 @@ Scenario #1
 **_Scenario #1_** 
 - Given i'm not a signed-in user
 - when i try to upvote
-- then i am redirected to the "Login Page/Sign-up Page"
+- then my Upvote is not registered.
 
 **_Scenario #2_**
--Given i am a signed-in user and i am directed to the "Question/Answer Page"
--when i click Upvote or Downvote
--then the question gets the  Upvote/Downvote
+-Given i am a signed-in user and i am on a specific "Question Page"
+-when i click Upvote
+-then the Answer gets the Upvote
 
 **_Scenario #3_**
 - Given i am a signed-in user and not the owner of the question
-- when i click upvote
+- when i click the best answer button
 - then it will not be selected as the best answer
 
 **_Scenario #4_**
 - Given i am a signed-in user and the question owner
-- when i click the best answer
+- when i click the best answer with highest Upvote
 - then it becomes the best selected answer
 
 

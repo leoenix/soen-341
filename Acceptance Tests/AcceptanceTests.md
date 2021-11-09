@@ -49,8 +49,8 @@ Scenario #1
 
 **_Scenario #4_**
 - Given i am a signed-in user and the question owner
-- when i click the best answer with highest Upvote
-- then it becomes the best selected answer
+- when i click the best answer from the list of answers for a specific question
+- then it becomes the best selected answer for that question 
 
 
 ## :four: &nbsp; Add Comment Sections Under Both Questions And Answers (W/ Voting Functionality)

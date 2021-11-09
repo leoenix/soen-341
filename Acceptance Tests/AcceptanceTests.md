@@ -2,22 +2,30 @@
 
 ## :one: &nbsp; Account Creation and Log in
 
-Scenario #1
+**Scenario #1**
+Given that I am not a registered user.
+Then I can click on the button "Create Account" to register.
+When I enter an invalid email format an error message is displayed "Invalid email".
 
 **_Scenario #2_**
+Given that I am a not registered user.
+Then I can click on the button "Create an Account" to register.
+When I enter an valid email format a message is displayed "Account successfully created. If you wish to log in, head to the log in page".
 
 **_Scenario #3_**
-
+Given that I am a registered user.
+When I can click on the button log in.
+Then an error message displays "Wrong credentials" if an invalid email or password was entered. 
 
 **_Scenario #4_**
-
-
+Given that I am a registered user.
+When I can click on the button log in.
+Then I will be forwarded to the "post Question" page if login information was valid.
 
 
 ## :two: &nbsp; Ask & Answer Questions
 
 **_Scenario #1_**
-
 
 **_Scenario #2_**
 

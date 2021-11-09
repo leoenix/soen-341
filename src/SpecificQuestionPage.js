@@ -41,6 +41,7 @@ const CheckBestAnswer = styled.div`
 
 function SpecificQuestionPage(props) {
 	const [specificQuestion, setSpecificQuestion] = useState(false);
+	const [render, setRender] = useState([]);
 	const AnswerHeader = styled.h2`
 		font-size: 1.5rem;
 		color: black;
@@ -70,7 +71,7 @@ function SpecificQuestionPage(props) {
 				{},
 				{ withCredentials: true }
 			)
-			.then((res) => console.log(res.data));
+			.then((res) => window.location.reload());
 	}
 	}
 
@@ -90,7 +91,7 @@ function SpecificQuestionPage(props) {
 					{},
 					{ withCredentials: true }
 				)
-				.then((res) => {console.log(res.data); 		})
+				.then((res) => window.location.reload())
 		}
 
 
@@ -106,7 +107,7 @@ function SpecificQuestionPage(props) {
 				"http://localhost:3030/postanswer",
 				{
 					description: theAnswer,
-					questionid: specificQuestion.questionid,
+					questionid: specificQuestion[0].questionid,
 				},
 				{ withCredentials: true }
 			)
@@ -121,8 +122,10 @@ function SpecificQuestionPage(props) {
 
 			setInfo(res.data);
 			setSpecificQuestion(res.data);
+			if (res.data[0].total){
 			setVoteCount(res.data[0].total === null ? 0 : res.data[0].total);
 			setUserVote(res.data[0].uservote)
+				}
 		});
 	}
 
@@ -132,6 +135,7 @@ function SpecificQuestionPage(props) {
 				withCredentials: true,
 			})
 			.then((res) => {
+
 				setAnswers(res.data);
 			});
 	}
@@ -239,7 +243,7 @@ function SpecificQuestionPage(props) {
 				</Header1>
 				{answers &&
 					answers.length > 0 &&
-					answers.map((a) => (
+					answers.map((a, index) => (
 						<>
 							<hr
 								style={{
@@ -251,13 +255,13 @@ function SpecificQuestionPage(props) {
 									{" "}
 									<div>
 										{" "}
-										<VotingArrows total={1} userVote={1} disabled = {!user}
+										<VotingArrows total={a.total === null ? 0 : a.total} userVote={a.uservote} disabled = {!user}
 													  onUpvote={() => handleOnUpvote('answer', a.answerid)}
 														  onDownvote={() => handleOnDownvote('answer', a.answerid)}
 										></VotingArrows>
 										<CheckBestAnswer
 											valid={a.bestanswer === 1}
-											disabled={specificQuestion.userid !== user}
+											disabled={specificQuestion[0].userid !== user}
 											onClick={() =>
 												selectBestAnswer(a.answerid, a.bestanswer)
 											}></CheckBestAnswer>{" "}

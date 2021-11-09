@@ -1,5 +1,6 @@
 import express from "express";
 import pool from "./pool.js";
+import {getLoggedInUser} from "./UserFunctions.js";
 
 const AnswerController = express.Router();
 
@@ -32,16 +33,43 @@ AnswerController.post("/postanswer", (req, res) => {
 });
 AnswerController.get("/answers/:questionid", (req, res) => {
 	const questionid = req.params.questionid;
-	pool
-		.select("answers.*", pool.raw("users.email"))
-		.from("answers")
-		.join("users", "users.userid", "=", "answers.userid")
-		.where({ "answers.questionid": questionid })
-		.orderBy("bestanswer", "DESC")
-		.then((info) => {
-			res.json(info).sendStatus(200);
-		})
-		.catch(() => res.sendStatus(403));
+    const {token} = req.cookies;
+    const type = 'answer';
+	if (token) {
+		getLoggedInUser(token).then(user => {	pool
+			.select("answers.*", pool.raw("users.email"), pool.raw('sum(votes.vote) as total'), 'uservote.vote as uservote' )
+			.from("answers")
+			.join("users", "users.userid", "=", "answers.userid").leftJoin('votes', function() {this.on('votes.qaid', 'answers.answerid')
+				this.andOnVal('votes.qatype', '=', 'answer')
+			}).leftJoin(pool.raw('votes uservote on uservote.qaid = answers.answerid and uservote.qatype = ' + pool.raw('?', ['answer']) + ' and uservote.userid =' + user.userid))
+			.where({ "answers.questionid": questionid }).groupBy("answers.answerid")
+
+			.then((info) => {
+
+				res.json(info).sendStatus(200);
+
+
+
+			})
+			.catch(err => console.log(err));})} else {
+		pool
+			.select("answers.*", pool.raw("users.email"), pool.raw('sum(votes.vote) as total') )
+			.from("answers")
+			.join("users", "users.userid", "=", "answers.userid").leftJoin('votes', function() {this.on('votes.qaid', 'answers.answerid')
+			this.andOnVal('votes.qatype', '=', 'answer')
+		}).where({ "answers.questionid": questionid }).groupBy("answers.answerid")
+
+			.then((info) => {
+
+				res.json(info).sendStatus(200);
+
+
+
+			})
+			.catch(err => console.log(err))
+
+	}
+
 });
 
 AnswerController.put("/bestanswer/:questionid/:answerid", (req, res) => {

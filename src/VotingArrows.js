@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import axios from "axios";
+import { useState } from "react";
 
 const UpwardArrow = styled.div`
 	width: 0;
@@ -7,7 +9,7 @@ const UpwardArrow = styled.div`
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
 	border-bottom: 20px solid
-		${(props) => (props.active ? "#f48024;" : "lightgrey")};
+		${(props) => (props.uservote === 1 ? "#f48024;" : "lightgrey")};
 	padding: 0;
 `;
 
@@ -16,7 +18,8 @@ const DownwardArrow = styled.div`
 	height: 0;
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
-	border-top: 20px solid ${(props) => (props.active ? "#f48024;" : "lightgrey")};
+	border-top: 20px solid
+		${(props) => (props.uservote === -1 ? "#f48024;" : "lightgrey")};
 	padding: 0;
 `;
 
@@ -28,11 +31,12 @@ const ArrowButton = styled.button`
 	flexdirection: "column" as "column";
 	cursor: pointer;
 	text-align: center;
+	pointer-events: ${(props) => (props.disabled ? "none" : "pointer")};
 `;
 
 const VoteTotal = styled.div`
 	text-align: center;
-	width: 50px;
+	width: 52px;
 	padding: 7px 0 5px;
 	font-size: 1.4rem;
 	color: black;
@@ -40,25 +44,28 @@ const VoteTotal = styled.div`
 `;
 
 function VotingArrows(props) {
+	console.log("userVote", props.userVote);
 	return (
 		<div {...props}>
-			<ArrowButton onClick={() => props.onUpvote}>
+			<ArrowButton onClick={() => props.onUpvote()} disabled = {props.disabled} >
 				{" "}
-				<UpwardArrow active={props.vote === 1} />{" "}
+				<UpwardArrow uservote={props.userVote} />{" "}
 			</ArrowButton>
-			<VoteTotal> {props.value} </VoteTotal>
-			<ArrowButton onClick={() => props.onDownvote}>
+			<VoteTotal> {props.total} </VoteTotal>
+			<ArrowButton onClick={() => props.onDownvote()} disabled = {props.disabled}>
 				{" "}
-				<DownwardArrow active={props.vote === -1} />{" "}
+				<DownwardArrow uservote={props.userVote}  />{" "}
 			</ArrowButton>
 		</div>
 	);
 }
 
 VotingArrows.propTypes = {
-	value: PropTypes.number.isRequired,
-	onUpvote: PropTypes.func,
-	onDownvote: PropTypes.func,
+	total: PropTypes.number.isRequired,
+	userVote: PropTypes.number.isRequired,
+	onUpvote: PropTypes.any,
+	onDownvote: PropTypes.any,
+	disabled: PropTypes.bool
 };
 
 export default VotingArrows;

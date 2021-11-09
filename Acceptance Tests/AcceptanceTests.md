@@ -17,17 +17,25 @@ Scenario #1
 ## :two: &nbsp; Ask & Answer Questions
 
 **_Scenario #1_**
-
+Given that I am not a signed in user
+When I click the "Ask Question" button 
+Then I will be redirected to the login page
 
 **_Scenario #2_**
-
+Given that I am a signed in user
+When I click the "Ask Question" button 
+Then I will be redirected to the Ask Question page.
 
 **_Scenario #3_**
-
+Given that I am a signed in user
+When I click on the button "Ask Question"
+Then I will be redirected to the "Ask a public question" page
+If the title or description field is missing a message will be displayed "missing information".
 
 **_Scenario #4_**
-
-
+Given that I am a signed in user
+When I click on a specific question from the list of "All questions"
+Then I will be directed to the "Answers" page
 
 ## :three: &nbsp; Upvote An Answer and Select The Best Answer
 

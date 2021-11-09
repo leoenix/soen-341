@@ -1,40 +1,59 @@
-import express from 'express';
-import pool from './pool.js';
+import express from "express";
+import pool from "./pool.js";
 const QuestionController = express.Router();
 
-QuestionController.post('/askquestion', (req, res) => {
-    const {title, description} = req.body;
-    const {token} = req.cookies;
-    console.log(req);
-    pool.select('userid').from('users').where({token}).first().then(user => {
-        if (user && user.userid){
-            console.log('here' + description);
-            pool('questions').insert({
-                title, description, userid:user.userid,
-            }).then(qInfo => {
-                res.json(qInfo).sendStatus(200);
-            }).catch(() => res.sendStatus(403));
-        } else {
-            res.sendStatus(404);
-        }
-    })
+QuestionController.post("/askquestion", (req, res) => {
+	const { title, description } = req.body;
+	const { token } = req.cookies;
+	console.log(req);
+	pool
+		.select("userid")
+		.from("users")
+		.where({ token })
+		.first()
+		.then((user) => {
+			if (user && user.userid) {
+				console.log("here" + description);
+				pool("questions")
+					.insert({
+						title,
+						description,
+						userid: user.userid,
+					})
+					.then((qInfo) => {
+						res.json(qInfo).sendStatus(200);
+					})
+					.catch(() => res.sendStatus(403));
+			} else {
+				res.sendStatus(404);
+			}
+		});
+});
 
-})
+QuestionController.get("/question/:questionid", (req, res) => {
+	const questionid = req.params.questionid;
+	pool
+		.select("questions.*", pool.raw("users.email"))
+		.from("questions")
+		.join("users", "users.userid", "=", "questions.userid")
+		.where({ questionid })
+		.first()
+		.then((info) => {
+			res.json(info).sendStatus(200);
+		})
+		.catch(() => res.sendStatus(403));
+});
 
-QuestionController.get('/question/:questionid', (req, res) => {
-
-    const questionid = req.params.questionid;
-    pool.select('questions.*', pool.raw('users.email')).from('questions').join('users', 'users.userid', '=', 'questions.userid').where({questionid}).first().then(info => {
-        res.json(info).sendStatus(200);
-
-        }
-    ).catch(() => res.sendStatus(403));
-
-})
-
-QuestionController.get('/questions', (req, res) => {
-    console.log('here');
-    pool.select('*').from('questions').orderBy('questionid', 'desc').then(allQuestions => {res.json(allQuestions).send();}).catch(() => res.sendStatus(403));
-})
+QuestionController.get("/questions", (req, res) => {
+	console.log("here");
+	pool
+		.select("*")
+		.from("questions")
+		.orderBy("questionid", "desc")
+		.then((allQuestions) => {
+			res.json(allQuestions).send();
+		})
+		.catch(() => res.sendStatus(403));
+});
 
 export default QuestionController;

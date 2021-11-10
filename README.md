@@ -10,13 +10,13 @@ Implement a simplified version of StackOverflow, a Q&A platform, that enables us
 
 Build a simplified version of StackOverflow, which is essentially a Q&A website that enables users to ask questions or share their knowledge of programming by answering questions posted by other users.  The community can indicate which answers are most valuable and appropriate by upvoting them. Users can upvote any answer they want except for their own, and only the OP, the Original Poster of a question, gets to accept the best response
 
-*Extra Feature: A user is awarded 10 reputation points for receiving an upvote on an answer to a question*
+*Extra Feature: Add Comment Sections Under Both Questions And Answers (W/ Voting Functionality)*
 
 
 ## Core Features :point_down:
 :one: &nbsp; Account Creation and Log in :computer: <br>
 :two: &nbsp; Ask & Answer Questions :question: :memo: <br>
-:three: &nbsp; Upvote An Answer :arrow_up: &nbsp; and Select The Best Answer :star: <br>
+:three: &nbsp; Vote On A Question Or An Answer :arrow_up: &nbsp; And Select The Best Answer ✔️ <br>
 :four: &nbsp; :sparkles: Add Comment Sections Under Both Questions And Answers (W/ Voting Functionality):sparkles:
 
 
@@ -24,7 +24,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 - [X]  Sprint 1
 - [X]  Sprint 2
-- [ ]  Sprint 3
+- [X]  Sprint 3
 - [ ]  Sprint 4
 
 

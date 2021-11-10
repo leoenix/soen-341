@@ -57,7 +57,7 @@ When I enter the correct login credentials associated with my account, I will be
 
 
 
-## :three: &nbsp; Upvote An Answer and Select The Best Answer
+## :three: &nbsp; Vote On A Question Or An Answer and Select The Best Answer
 
 
 **_Scenario #1_**

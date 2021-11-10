@@ -17,27 +17,41 @@ Scenario #1
 ## :two: &nbsp; Ask & Answer Questions
 
 **_Scenario #1_**
-Given that I am not a signed in user
-When I click the "Ask Question" button 
-Then I will be redirected to the "ask question" page
-when I try click the post question buttion
-Then an error message will display "Please log in first"
+
+Given that I am `a Logged-in User`,
+When I click the "Ask Question" button,
+Then I will be redirected to the "Ask Question page.
+
 
 **_Scenario #2_**
-Given that I am a signed in user
-When I click the "Ask Question" button 
-Then I will be redirected to the Ask Question page.
+
+Given that I am `NOT a Logged-in User`,
+When I click "Post question" button, after having filled in the question title and question body (upon Ask Question button redirection),
+Then I will get an error message displaying "Please log in first".
 
 **_Scenario #3_**
-Given that I am a signed in user
-When I click on the button "Ask Question"
-Then I will be redirected to the "Ask a public question" page
-If the title or description field is missing a message will be displayed "Please fill out this field".
+
+Given that I am `a Logged-in User`,
+When I click on the "Ask Question" button which redirects me to the "Ask Question" page and I forget to fill in either the question title or question body fields,
+Then I will get an error message saying "Please fill out this field".
 
 **_Scenario #4_**
-Given that I am or not a signed in user
-When I click on a specific question from the list of "All questions"
-Then I will be directed to the "Specific question" page
+
+Given that I am either `a Logged-in User OR a Not Logged-in User`,
+When I click on a specific question's title from the list of "Top Questions",
+Then I will be redirected to the "Specific question" page of that question.
+
+**_Scenario #5_**
+
+Given that I am a `NOT a Logged-in User`,
+When I click on a specific question's title from the list of "Top Questions" which will redirect me to the specific page of that question and I attempt to provide an answer and press the "Post answer" button,
+Then my answer fails to get posted and I will not be redirected to the "Specific Question" page (system does nothing).
+
+**_Scenario #6_**
+
+Given that I am `a Logged-in User`,
+When I click on a specific question's title from the list of "Top Questions" which will redirect me to the specific page of that question and I attempt to provide an answer and press the "Post answer" button,
+Then my answer will get successfully posted and I will be redirected to the "Specific Question" page where I can see my posted answer.
 
 ## :three: &nbsp; Upvote An Answer and Select The Best Answer
 

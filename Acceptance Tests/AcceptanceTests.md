@@ -29,28 +29,32 @@ Scenario #1
 
 
 
-## :three: &nbsp; Upvote An Answer and Select The Best Answer
+## :three: &nbsp; Vote On An Answer and Select The Best Answer
 
 
 **_Scenario #1_** 
-- Given i'm not a signed-in user
-- when i try to upvote
-- then my Upvote is not registered.
+
+Given I am `NOT a Logged-in User`,
+When I try to vote on a question or an answer,
+Then my vote will fail to get through and the counter will NOT update its value (system does nothing).
 
 **_Scenario #2_**
--Given i am a signed-in user and i am on a specific "Question Page"
--when i click Upvote
--then the Answer gets the Upvote
+
+Given I am `a Logged-in User`,
+When I try to vote on a question or an answer,
+Then my vote will successfully get through and the counter will update its value accordingly.
 
 **_Scenario #3_**
-- Given i am a signed-in user and not the owner of the question
-- when i click the best answer button
-- then it will not be selected as the best answer
+
+Given I am `a Logged-in User and NOT the Question Author`,
+When I attempt to click the best answer button for one of the answers provided to a question I haven't posted,
+Then the system will disable the cursor and prevent me from being able to click the best answer button.
 
 **_Scenario #4_**
-- Given i am a signed-in user and the question owner
-- when i click the best answer from the list of answers for a specific question
-- then it becomes the best selected answer for that question 
+
+Given I am `a Logged-in User and Question Author`,
+When I click the best answer button to an answer provided to my question,
+Then that answer will become the current best answer to my question. 
 
 
 ## :four: &nbsp; Add Comment Sections Under Both Questions And Answers (W/ Voting Functionality)

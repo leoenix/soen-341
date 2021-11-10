@@ -81,20 +81,33 @@ Given that I am `a Logged-in User`,
 When I click on a specific question's title from the list of "Top Questions" which will redirect me to the specific page of that question and I attempt to provide an answer and press the "Post answer" button,
 Then my answer will get successfully posted and I will be redirected to the "Specific Question" page where I can see my posted answer.
 
+
 ## :three: &nbsp; Vote On A Question Or An Answer and Select The Best Answer
 
 
-**_Scenario #1_**
+**_Scenario #1_** 
 
+Given I am `NOT a Logged-in User`,
+When I try to vote on a question or an answer,
+Then my vote will fail to get through and the counter will NOT update its value (system does nothing).
 
 **_Scenario #2_**
 
+Given I am `a Logged-in User`,
+When I try to vote on a question or an answer,
+Then my vote will successfully get through and the counter will update its value accordingly.
 
 **_Scenario #3_**
 
+Given I am `a Logged-in User and NOT the Question Author`,
+When I attempt to click the best answer button for one of the answers provided to a question I haven't posted,
+Then the system will disable the cursor and prevent me from being able to click the best answer button.
 
 **_Scenario #4_**
 
+Given I am `a Logged-in User and Question Author`,
+When I click the best answer button to an answer provided to my question,
+Then that answer will become the current best answer to my question. 
 
 
 ## :four: &nbsp; Add Comment Sections Under Both Questions And Answers (W/ Voting Functionality)

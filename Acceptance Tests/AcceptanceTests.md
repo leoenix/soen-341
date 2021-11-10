@@ -49,24 +49,25 @@ Scenario #1
 
 
 **_Scenario #1_**
-Given I'm a signed-in user 
-when I try to comment under answers
-then my comment is not added
+Given I'm `a Logged-in User`, 
+When I try to comment under a question,
+Then my comment will get successfully appended to that question's thread.
 
 **_Scenario #2_**
-Given I'm a signed-in user 
-when I try to comment under questions
-then my comment is not added
+Given I'm `NOT a Logged-in User`, 
+When I try to comment under a question,
+Then my comment will fail to get appended to that question's thread (system does nothing).
 
 **_Scenario #3_**
-Given I'm not a signed-in user 
-when I try to comment under questions
-then my comment is not added
+Given I'm `a Logged-in User`, 
+When I try to comment under an answer,
+Then my comment will get successfully appended to that answer's thread.
 
 **_Scenario #4_**
-Given I'm not a signed-in user 
-when I try to comment under answers 
-then my comment is not added
+Given I'm `NOT a Logged-in User`, 
+When I try to comment under an answer,
+Then my comment will fail to get appended to that answer's thread (system does nothing).
+
 
 
 

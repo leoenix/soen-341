@@ -49,15 +49,24 @@ Scenario #1
 
 
 **_Scenario #1_**
-
+Given I'm not a signed-in user 
+when I try to comment under questions
+then my comment is not added
 
 **_Scenario #2_**
-
+Given I'm not a signed-in user 
+when I try to comment under answers 
+then my comment is not added
 
 **_Scenario #3_**
-
+Given I'm a signed-in user 
+when I try to comment under answers
+then my comment is not added
 
 **_Scenario #4_**
+Given I'm a signed-in user 
+when I try to comment under questions
+then my comment is not added
 
 
 

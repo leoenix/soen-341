@@ -13,6 +13,7 @@ const TopQuestionsHeaderRow = styled.div`
 
 function QuestionsPage() {
     const [allQuestions, setAllQuestions] = useState([]);
+
     function getAllQuestions(){
         axios.get('http://localhost:3030/questions', {withCredentials:true}).then(res => setAllQuestions(res.data));
     }
@@ -26,7 +27,7 @@ function QuestionsPage() {
                 <DarkCyanButtonLink to={'/ask'}>Ask&nbsp;Question</DarkCyanButtonLink>
             </TopQuestionsHeaderRow>
             {allQuestions && allQuestions.length > 0 && allQuestions.map(q => (
-                <QuestionRow title = {q.title} qid = {q.questionid} description = {q.description}/>
+                <QuestionRow email = {q.email} title = {q.title} qid = {q.questionid} description = {q.description}/>
             ))}
         </main>
     );

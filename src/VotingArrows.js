@@ -6,9 +6,9 @@ import { useState } from "react";
 const UpwardArrow = styled.div`
 	width: 0;
 	height: 0;
-	border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
-	border-bottom: 20px solid
+	border-left: ${props => props.size === "small" ? '10px' : '20px'} solid transparent;
+	border-right: ${props => props.size === "small" ? '10px' : '20px'} solid transparent;
+	border-bottom: ${props => props.size === "small" ? '10px' : '20px'} solid
 		${(props) => (props.uservote === 1 ? "#f48024;" : "lightgrey")};
 	padding: 0;
 `;
@@ -16,9 +16,9 @@ const UpwardArrow = styled.div`
 const DownwardArrow = styled.div`
 	width: 0;
 	height: 0;
-	border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
-	border-top: 20px solid
+	border-left: ${props => props.size === "small" ? '10px' : '20px'} solid transparent;
+	border-right: ${props => props.size === "small" ? '10px' : '20px'} solid transparent;
+	border-top: ${props => props.size === "small" ? '10px' : '20px'} solid
 		${(props) => (props.uservote === -1 ? "#f48024;" : "lightgrey")};
 	padding: 0;
 `;
@@ -36,11 +36,11 @@ const ArrowButton = styled.button`
 
 const VoteTotal = styled.div`
 	text-align: center;
-	width: 52px;
-	padding: 7px 0 5px;
-	font-size: 1.4rem;
+	width: ${props => props.size === "small" ? '31px' : '52px'};
+	padding: ${props => props.size === "small" ? '2px 0 2px' : '7px 0 7px'};
+	font-size:${props => props.size === "small" ? '1rem' : '1.4rem'};
 	color: black;
-	line-height: 1.4rem;
+	line-height: ${props => props.size === "small" ? '1rem' : '1.4rem'};
 `;
 
 function VotingArrows(props) {
@@ -49,12 +49,12 @@ function VotingArrows(props) {
 		<div {...props}>
 			<ArrowButton onClick={() => props.onUpvote()} disabled = {props.disabled} >
 				{" "}
-				<UpwardArrow uservote={props.userVote} />{" "}
+				<UpwardArrow uservote={props.userVote} size = {props.size}/>{" "}
 			</ArrowButton>
-			<VoteTotal> {props.total} </VoteTotal>
+			<VoteTotal size = {props.size}> {props.total} </VoteTotal>
 			<ArrowButton onClick={() => props.onDownvote()} disabled = {props.disabled}>
 				{" "}
-				<DownwardArrow uservote={props.userVote}  />{" "}
+				<DownwardArrow uservote={props.userVote}   size = {props.size} />{" "}
 			</ArrowButton>
 		</div>
 	);

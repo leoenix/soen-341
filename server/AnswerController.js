@@ -7,7 +7,7 @@ const AnswerController = express.Router();
 AnswerController.post("/postanswer", (req, res) => {
 	const { description, questionid } = req.body;
 	const { token } = req.cookies;
-	console.log(req);
+	if (token){
 	pool
 		.select("userid")
 		.from("users")
@@ -29,7 +29,9 @@ AnswerController.post("/postanswer", (req, res) => {
 			} else {
 				res.sendStatus(404);
 			}
-		});
+		});} else {
+		res.sendStatus(404);
+	}
 });
 AnswerController.get("/answers/:questionid", (req, res) => {
 	const questionid = req.params.questionid;
@@ -42,7 +44,7 @@ AnswerController.get("/answers/:questionid", (req, res) => {
 			.join("users", "users.userid", "=", "answers.userid").leftJoin('votes', function() {this.on('votes.qaid', 'answers.answerid')
 				this.andOnVal('votes.qatype', '=', 'answer')
 			}).leftJoin(pool.raw('votes uservote on uservote.qaid = answers.answerid and uservote.qatype = ' + pool.raw('?', ['answer']) + ' and uservote.userid =' + user.userid))
-			.where({ "answers.questionid": questionid }).groupBy("answers.answerid")
+			.where({ "answers.questionid": questionid }).groupBy("answers.answerid").orderBy("answers.bestanswer", "DESC")
 
 			.then((info) => {
 

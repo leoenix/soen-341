@@ -76,8 +76,8 @@ QuestionController.get("/question/:questionid", (req, res) => {
 QuestionController.get("/questions", (req, res) => {
 
     pool
-        .select("*")
-        .from("questions")
+        .select("*", pool.raw('users.email'))
+        .from("questions").join('users', 'users.userid', '=', 'questions.userid')
         .orderBy("questionid", "desc")
         .then((allQuestions) => {
             res.json(allQuestions).send();
@@ -89,7 +89,7 @@ QuestionController.post("/askquestion", (req, res) => {
     const {title, description} = req.body;
     const {token} = req.cookies;
     console.log(req);
-    pool
+   if (token){ pool
         .select("userid")
         .from("users")
         .where({token})
@@ -110,7 +110,9 @@ QuestionController.post("/askquestion", (req, res) => {
             } else {
                 res.sendStatus(404);
             }
-        });
+        }); } else {
+       res.sendStatus(403);
+   }
 });
 
 export default QuestionController;

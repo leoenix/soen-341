@@ -39,7 +39,20 @@ const CheckBestAnswer = styled.div`
 	pointer-events: ${(props) => (props.disabled ? "none" : "pointer")};
 `;
 
+const Comments = styled.div`
+color:black;
+	border-bottom:lightgrey 1px solid;
+	border-top: lightgrey 1px solid;
+	font-size:13px;
+	padding:10px;
+	margin-left:90px;
+	margin-top:10px;
+	display:flex;
+	justify-content:space-between
+`
+
 function SpecificQuestionPage(props) {
+
 	const [specificQuestion, setSpecificQuestion] = useState(false);
 	const [render, setRender] = useState([]);
 	const AnswerHeader = styled.h2`
@@ -52,7 +65,7 @@ function SpecificQuestionPage(props) {
 	const questionid = props.match.params.questionid;
 	const [info, setInfo] = useState(false);
 	const [user, setUser] = useState("");
-
+	const [notLoggedIn, setnotLoggedIn] = useState(false);
 	const [userVote, setUserVote] = useState(0);
 	const [voteCount, setVoteCount] = useState(0);
 
@@ -114,7 +127,8 @@ function SpecificQuestionPage(props) {
 			.then((res) => {
 				setTheAnswer("");
 				window.location.reload();
-			});
+			}).catch(() => setnotLoggedIn(true));
+
 	}
 
 	function getQuestion() {
@@ -185,7 +199,6 @@ function SpecificQuestionPage(props) {
 		}
 	}
 
-	//disabled = {specificQuestion.userid = user.userid}
 
 	useEffect(() => {
 		getQuestion();
@@ -233,11 +246,25 @@ function SpecificQuestionPage(props) {
 					<span
 						style={{ alignSelf: "flex-end", color: "black" }}
 						children={specificQuestion.email}>
-						asked by {specificQuestion.email}{" "}{specificQuestion[0] && specificQuestion[0].email}
-						<span style={{ color: "#f48024" }}>  </span>{" "}
+						asked by {" "}
+						<span style={{ color: "#f48024" }}>{specificQuestion[0] && specificQuestion[0].email}  </span>
 					</span>
 				</div>
-
+ 				<Comments>	<span style = {{display: "inline-flex"}}><VotingArrows
+					size = {"small"}
+					disabled = {!user}
+					total={voteCount}
+					userVote={userVote}
+					onUpvote={() => handleOnUpvote('question')}
+					onDownvote={() => handleOnDownvote('question')}>
+					{" "}
+				</VotingArrows>sadas dsad asd asd asd asdasdasdasdasd asd asd asd asd asdsadasdasd asd asdasdasdasdas das dsadasdasdasd asdas d</span>
+					<span
+						style={{ alignSelf: "flex-end", color: "black" }}
+						children={specificQuestion.email}>
+						asked by {" "}
+						<span style={{ color: "#f48024" }}>{specificQuestion[0] && specificQuestion[0].email}  </span></span>
+				 </Comments>
 				<Header1 style={{ margin: "30px 0px 10px 0px", padding: "10px 0" }}>
 					Answers{" "}
 				</Header1>
@@ -258,10 +285,10 @@ function SpecificQuestionPage(props) {
 										<VotingArrows total={a.total === null ? 0 : a.total} userVote={a.uservote} disabled = {!user}
 													  onUpvote={() => handleOnUpvote('answer', a.answerid)}
 														  onDownvote={() => handleOnDownvote('answer', a.answerid)}
-										></VotingArrows>
+										>{a.total}</VotingArrows>
 										<CheckBestAnswer
 											valid={a.bestanswer === 1}
-											disabled={specificQuestion[0].userid !== user}
+											disabled={specificQuestion[0] && (specificQuestion[0].userid !== user)}
 											onClick={() =>
 												selectBestAnswer(a.answerid, a.bestanswer)
 											}></CheckBestAnswer>{" "}
@@ -307,6 +334,13 @@ function SpecificQuestionPage(props) {
 					onClick={(ev) => postAnswer(ev)}>
 					Post answer
 				</DarkCyanButton>
+
+				{!!notLoggedIn && (
+					<div style={{ color: "red", paddingTop: 12 + "px" }}>
+						{" "}
+						Please log in first
+					</div>
+				)}
 			</Box>
 		</>
 	);

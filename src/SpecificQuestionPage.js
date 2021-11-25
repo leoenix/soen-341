@@ -41,7 +41,6 @@ const CheckBestAnswer = styled.div`
 
 const Comments = styled.div`
 color:black;
-	border-bottom:lightgrey 1px solid;
 	border-top: lightgrey 1px solid;
 	font-size:13px;
 	padding:10px;
@@ -60,7 +59,9 @@ function SpecificQuestionPage(props) {
 		color: black;
 	`;
 	const [answers, setAnswers] = useState([]);
+	const [comments, setComments] = useState([]);
 	const [theAnswer, setTheAnswer] = useState("");
+	const [theComment, setTheComment] = useState("");
 	console.log(specificQuestion);
 	const questionid = props.match.params.questionid;
 	const [info, setInfo] = useState(false);
@@ -114,7 +115,6 @@ function SpecificQuestionPage(props) {
 
 	function postAnswer(ev) {
 		ev.preventDefault();
-		// const data = {description: theAnswer, questionid: specificQuestion.questionid }
 		axios
 			.post(
 				"http://localhost:3030/postanswer",
@@ -126,6 +126,26 @@ function SpecificQuestionPage(props) {
 			)
 			.then((res) => {
 				setTheAnswer("");
+				window.location.reload();
+			}).catch(() => setnotLoggedIn(true));
+
+	}
+
+
+	function postComment(ev) {
+		ev.preventDefault();
+		axios
+			.post(
+				"http://localhost:3030/postcomment",
+				{
+					content: theComment,
+					postid: specificQuestion[0].questionid,
+					type:"question"
+				},
+				{ withCredentials: true }
+			)
+			.then((res) => {
+				setTheComment("");
 				window.location.reload();
 			}).catch(() => setnotLoggedIn(true));
 
@@ -151,6 +171,16 @@ function SpecificQuestionPage(props) {
 			.then((res) => {
 
 				setAnswers(res.data);
+			});
+	}
+	function getComments() {
+		axios
+			.get("http://localhost:3030/comments/" + questionid, {
+				withCredentials: true,
+			})
+			.then((res) => {
+
+				setComments(res.data);
 			});
 	}
 
@@ -204,6 +234,7 @@ function SpecificQuestionPage(props) {
 		getQuestion();
 		getAnswers();
 		getUser();
+		getComments();
 	}, []);
 	console.log('the user')
 	console.log(!!user);
@@ -250,21 +281,52 @@ function SpecificQuestionPage(props) {
 						<span style={{ color: "#f48024" }}>{specificQuestion[0] && specificQuestion[0].email}  </span>
 					</span>
 				</div>
- 				<Comments>	<span style = {{display: "inline-flex"}}><VotingArrows
+
+				{comments && comments.length > 0 && comments.map((a, index) => (	<Comments>	<span style = {{display: "inline-flex"}}><VotingArrows
 					size = {"small"}
 					disabled = {!user}
 					total={voteCount}
 					userVote={userVote}
-					onUpvote={() => handleOnUpvote('question')}
-					onDownvote={() => handleOnDownvote('question')}>
+					onUpvote={() => handleOnUpvote('comment')}
+					onDownvote={() => handleOnDownvote('comment')}>
 					{" "}
-				</VotingArrows>sadas dsad asd asd asd asdasdasdasdasd asd asd asd asd asdsadasdasd asd asdasdasdasdas das dsadasdasdasd asdas d</span>
+				</VotingArrows><span style = {{width:"95%"}}>{comments[index].content}</span> </span>
 					<span
-						style={{ alignSelf: "flex-end", color: "black" }}
-						children={specificQuestion.email}>
-						asked by {" "}
-						<span style={{ color: "#f48024" }}>{specificQuestion[0] && specificQuestion[0].email}  </span></span>
-				 </Comments>
+						style={{ alignSelf: "flex-end", color: "black", minWidth:"max-content"}}
+						children={comments.email}>
+						 commented by {" "}
+						<span style={{ color: "#f48024" }}>{comments[index] && comments[index].email}  </span></span>
+
+				</Comments> ))}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<Comments style = {{display:"block"}}>
+					<QuestionBodyTextArea
+						value={theComment}
+						onChange={(ev) => setTheComment(ev.target.value)}
+						placeholder="Please type in your comment."
+					/>
+					<DarkCyanButton
+						style={{ width: "fit-content" }}
+						type={"submit"}
+						onClick={(ev) => postComment(ev)}>
+						Post comment
+					</DarkCyanButton>
+				</Comments>
+
 				<Header1 style={{ margin: "30px 0px 10px 0px", padding: "10px 0" }}>
 					Answers{" "}
 				</Header1>

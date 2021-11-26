@@ -132,24 +132,45 @@ function SpecificQuestionPage(props) {
 	}
 
 
-	function postComment(ev) {
+	function postComment(ev, answerid = -1) {
+
 		ev.preventDefault();
-		axios
-			.post(
-				"http://localhost:3030/postcomment",
-				{
-					content: theComment,
-					postid: specificQuestion[0].questionid,
-					type:"question"
-				},
-				{ withCredentials: true }
-			)
-			.then((res) => {
-				setTheComment("");
-				window.location.reload();
-			}).catch(() => setnotLoggedIn(true));
+		if (answerid === -1) {
+			axios
+				.post(
+					"http://localhost:3030/postcomment",
+					{
+						content: theComment,
+						postid: specificQuestion[0].questionid,
+						type: "question"
+					},
+					{withCredentials: true}
+				)
+				.then((res) => {
+					setTheComment("");
+					window.location.reload();
+				}).catch(() => setnotLoggedIn(true));
+		} else {
+			axios
+				.post(
+					"http://localhost:3030/postcomment",
+					{
+						content: document.getElementById(answerid).value,
+						postid: answerid,
+						type: "answer"
+					},
+					{withCredentials: true}
+				)
+				.then((res) => {
+					setTheComment("");
+					window.location.reload();
+				}).catch(() => setnotLoggedIn(true));
+		}
 
 	}
+
+
+
 
 	function getQuestion() {
 		axios.get("http://localhost:3030/question/" + questionid, {withCredentials: true}).then((res) => {
@@ -181,6 +202,10 @@ function SpecificQuestionPage(props) {
 			.then((res) => {
 
 				setComments(res.data);
+				console.log(comments);
+				console.log('above');
+				console.log(comments.filter((comments, index ) => comments.postid === 24));
+				console.log('kik')
 			});
 	}
 
@@ -236,8 +261,6 @@ function SpecificQuestionPage(props) {
 		getUser();
 		getComments();
 	}, []);
-	console.log('the user')
-	console.log(!!user);
 	return (
 		<>
 			<Box>
@@ -282,19 +305,21 @@ function SpecificQuestionPage(props) {
 					</span>
 				</div>
 
-				{comments && comments.length > 0 && comments.map((a, index) => (	<Comments>	<span style = {{display: "inline-flex"}}><VotingArrows
+
+
+				{comments && comments.length > 0 && comments.filter((a,index) => comments[index].type === 'question' ).map((a, newindex) => (	<Comments>	<span style = {{display: "inline-flex"}}><VotingArrows
 					size = {"small"}
 
 					total={a.total === null ? 0 : a.total} userVote={a.uservote} disabled = {!user}
 					onUpvote={() => handleOnUpvote('comment', a.id)}
 					onDownvote={() => handleOnDownvote('comment', a.id)}>
 					{" "}
-				</VotingArrows><span style = {{width:"95%"}}>{comments[index].content}</span> </span>
+				</VotingArrows><span style = {{width:"95%"}}>{a.content}</span> </span>
 					<span
 						style={{ alignSelf: "flex-end", color: "black", minWidth:"max-content"}}
 						children={comments.email}>
 						 commented by {" "}
-						<span style={{ color: "#f48024" }}>{comments[index] && comments[index].email}  </span></span>
+						<span style={{ color: "#f48024" }}>{a && a.email}  </span></span>
 
 				</Comments> ))}
 
@@ -311,9 +336,9 @@ function SpecificQuestionPage(props) {
 
 
 
-
 				<Comments style = {{display:"block"}}>
 					<QuestionBodyTextArea
+						style = {{minHeight:'0'}}
 						value={theComment}
 						onChange={(ev) => setTheComment(ev.target.value)}
 						placeholder="Please type in your comment."
@@ -371,6 +396,41 @@ function SpecificQuestionPage(props) {
 									<span style={{ color: "#f48024" }}> {a.email} </span>{" "}
 								</span>
 							</div>
+							{comments && comments.length > 0 && comments.filter(function (e) {
+								return e.postid === a.answerid && e.type === 'answer';
+							}).map((comment, newindex) => (<>	<Comments>	<span style = {{display: "inline-flex"}}><VotingArrows
+								size = {"small"}
+
+								total={comment.total === null ? 0 : comment.total} userVote={comment.uservote} disabled = {!user}
+								onUpvote={() => handleOnUpvote('comment', comment.id)}
+								onDownvote={() => handleOnDownvote('comment', comment.id)}>
+					{" "}
+				</VotingArrows><span style = {{width:"95%"}}>{comment.content}</span> </span>
+								<span
+									style={{ alignSelf: "flex-end", color: "black", minWidth:"max-content"}}
+									children={comment.email}>
+						 commented by {" "}
+									<span style={{ color: "#f48024" }}>{comment && comment.email}  </span></span>
+
+							</Comments>
+
+								</>
+							))}
+							<Comments style = {{display:"block"}}>
+								<form><QuestionBodyTextArea
+									style = {{minHeight:'0'}}
+									placeholder="Please type in your comment."
+									id = {a.answerid}
+								/>
+									<DarkCyanButton
+										style={{ width: "fit-content" }}
+										type={"submit"}
+										onClick={(ev) => postComment(ev, a.answerid)}>
+										Post comment
+									</DarkCyanButton>
+								</form>
+							</Comments>
+
 						</>
 					))}
 

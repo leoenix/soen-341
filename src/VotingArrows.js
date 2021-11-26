@@ -32,6 +32,7 @@ const ArrowButton = styled.button`
 	cursor: pointer;
 	text-align: center;
 	pointer-events: ${(props) => (props.disabled ? "none" : "pointer")};
+	
 `;
 
 const VoteTotal = styled.div`
@@ -49,7 +50,7 @@ function VotingArrows(props) {
 		<div {...props}>
 			<ArrowButton onClick={() => props.onUpvote()} disabled = {props.disabled} >
 				{" "}
-				<UpwardArrow uservote={props.userVote} size = {props.size}/>{" "}
+				<UpwardArrow uservote={props.userVote} disabled = {props.disabled} size = {props.size}/>{" "}
 			</ArrowButton>
 			<VoteTotal size = {props.size}> {props.total} </VoteTotal>
 			<ArrowButton onClick={() => props.onDownvote()} disabled = {props.disabled}>

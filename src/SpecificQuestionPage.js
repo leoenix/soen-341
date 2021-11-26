@@ -260,7 +260,7 @@ function SpecificQuestionPage(props) {
 					<div style={{ color: "black", display: "flex" }}>
 						{" "}
 						<VotingArrows
-							disabled = {!user}
+						 style = {{ cursor: !user && 'not-allowed'}}
 							total={voteCount}
 							userVote={userVote}
 							onUpvote={() => handleOnUpvote('question')}
@@ -284,7 +284,7 @@ function SpecificQuestionPage(props) {
 
 				{comments && comments.length > 0 && comments.map((a, index) => (	<Comments>	<span style = {{display: "inline-flex"}}><VotingArrows
 					size = {"small"}
-
+					style = {{ cursor: !user && 'not-allowed'}}
 					total={a.total === null ? 0 : a.total} userVote={a.uservote} disabled = {!user}
 					onUpvote={() => handleOnUpvote('comment', a.id)}
 					onDownvote={() => handleOnDownvote('comment', a.id)}>
@@ -321,7 +321,8 @@ function SpecificQuestionPage(props) {
 					<DarkCyanButton
 						style={{ width: "fit-content" }}
 						type={"submit"}
-						onClick={(ev) => postComment(ev)}>
+						onClick={(ev) => postComment(ev)}disabled = {!user}>
+
 						Post comment
 					</DarkCyanButton>
 				</Comments>
@@ -343,7 +344,7 @@ function SpecificQuestionPage(props) {
 									{" "}
 									<div>
 										{" "}
-										<VotingArrows total={a.total === null ? 0 : a.total} userVote={a.uservote} disabled = {!user}
+										<VotingArrows total={a.total === null ? 0 : a.total} userVote={a.uservote} disabled = {!user} style = {{ cursor: !user && 'not-allowed'}}
 													  onUpvote={() => handleOnUpvote('answer', a.answerid)}
 														  onDownvote={() => handleOnDownvote('answer', a.answerid)}
 										>{a.total}</VotingArrows>
@@ -392,7 +393,7 @@ function SpecificQuestionPage(props) {
 				<DarkCyanButton
 					style={{ width: "fit-content" }}
 					type={"submit"}
-					onClick={(ev) => postAnswer(ev)}>
+					onClick={(ev) => postAnswer(ev)} disabled = {!user}>
 					Post answer
 				</DarkCyanButton>
 

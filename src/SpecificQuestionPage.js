@@ -39,7 +39,19 @@ const CheckBestAnswer = styled.div`
 	pointer-events: ${(props) => (props.disabled ? "none" : "pointer")};
 `;
 
+const Comments = styled.div`
+color:black;
+	border-top: lightgrey 1px solid;
+	font-size:13px;
+	padding:10px;
+	margin-left:90px;
+	margin-top:10px;
+	display:flex;
+	justify-content:space-between
+`
+
 function SpecificQuestionPage(props) {
+
 	const [specificQuestion, setSpecificQuestion] = useState(false);
 	const [render, setRender] = useState([]);
 	const AnswerHeader = styled.h2`
@@ -47,17 +59,19 @@ function SpecificQuestionPage(props) {
 		color: black;
 	`;
 	const [answers, setAnswers] = useState([]);
+	const [comments, setComments] = useState([]);
 	const [theAnswer, setTheAnswer] = useState("");
+	const [theComment, setTheComment] = useState("");
 	console.log(specificQuestion);
 	const questionid = props.match.params.questionid;
 	const [info, setInfo] = useState(false);
 	const [user, setUser] = useState("");
-
+	const [notLoggedIn, setnotLoggedIn] = useState(false);
 	const [userVote, setUserVote] = useState(0);
 	const [voteCount, setVoteCount] = useState(0);
 
 	function handleOnUpvote(type, answerid = -1) {
-	if (answerid === -1){	setUserVote(userVote === 1 ? 0 : 1);
+	if (answerid === -1 && type !== 'comment'){	setUserVote(userVote === 1 ? 0 : 1);
 		axios
 			.post(
 				"http://localhost:3030/vote/up/" + specificQuestion[0].questionid + "/" + type,
@@ -76,7 +90,7 @@ function SpecificQuestionPage(props) {
 	}
 
 	function handleOnDownvote(type, answerid = -1) {
-		if (answerid === -1){	setUserVote(userVote === -1 ? 0 : -1);
+		if (answerid === -1 && type !== 'comment'){	setUserVote(userVote === -1 ? 0 : -1);
 			axios
 				.post(
 					"http://localhost:3030/vote/down/" + specificQuestion[0].questionid + "/" + type,
@@ -101,7 +115,6 @@ function SpecificQuestionPage(props) {
 
 	function postAnswer(ev) {
 		ev.preventDefault();
-		// const data = {description: theAnswer, questionid: specificQuestion.questionid }
 		axios
 			.post(
 				"http://localhost:3030/postanswer",
@@ -114,7 +127,28 @@ function SpecificQuestionPage(props) {
 			.then((res) => {
 				setTheAnswer("");
 				window.location.reload();
-			});
+			}).catch(() => setnotLoggedIn(true));
+
+	}
+
+
+	function postComment(ev) {
+		ev.preventDefault();
+		axios
+			.post(
+				"http://localhost:3030/postcomment",
+				{
+					content: theComment,
+					postid: specificQuestion[0].questionid,
+					type:"question"
+				},
+				{ withCredentials: true }
+			)
+			.then((res) => {
+				setTheComment("");
+				window.location.reload();
+			}).catch(() => setnotLoggedIn(true));
+
 	}
 
 	function getQuestion() {
@@ -137,6 +171,16 @@ function SpecificQuestionPage(props) {
 			.then((res) => {
 
 				setAnswers(res.data);
+			});
+	}
+	function getComments() {
+		axios
+			.get("http://localhost:3030/comments/" + questionid, {
+				withCredentials: true,
+			})
+			.then((res) => {
+
+				setComments(res.data);
 			});
 	}
 
@@ -185,12 +229,12 @@ function SpecificQuestionPage(props) {
 		}
 	}
 
-	//disabled = {specificQuestion.userid = user.userid}
 
 	useEffect(() => {
 		getQuestion();
 		getAnswers();
 		getUser();
+		getComments();
 	}, []);
 	console.log('the user')
 	console.log(!!user);
@@ -216,7 +260,7 @@ function SpecificQuestionPage(props) {
 					<div style={{ color: "black", display: "flex" }}>
 						{" "}
 						<VotingArrows
-							disabled = {!user}
+						 style = {{ cursor: !user && 'not-allowed'}}
 							total={voteCount}
 							userVote={userVote}
 							onUpvote={() => handleOnUpvote('question')}
@@ -233,10 +277,55 @@ function SpecificQuestionPage(props) {
 					<span
 						style={{ alignSelf: "flex-end", color: "black" }}
 						children={specificQuestion.email}>
-						asked by {specificQuestion.email}{" "}{specificQuestion[0] && specificQuestion[0].email}
-						<span style={{ color: "#f48024" }}>  </span>{" "}
+						asked by {" "}
+						<span style={{ color: "#f48024" }}>{specificQuestion[0] && specificQuestion[0].email}  </span>
 					</span>
 				</div>
+
+				{comments && comments.length > 0 && comments.map((a, index) => (	<Comments>	<span style = {{display: "inline-flex"}}><VotingArrows
+					size = {"small"}
+					style = {{ cursor: !user && 'not-allowed'}}
+					total={a.total === null ? 0 : a.total} userVote={a.uservote} disabled = {!user}
+					onUpvote={() => handleOnUpvote('comment', a.id)}
+					onDownvote={() => handleOnDownvote('comment', a.id)}>
+					{" "}
+				</VotingArrows><span style = {{width:"95%"}}>{comments[index].content}</span> </span>
+					<span
+						style={{ alignSelf: "flex-end", color: "black", minWidth:"max-content"}}
+						children={comments.email}>
+						 commented by {" "}
+						<span style={{ color: "#f48024" }}>{comments[index] && comments[index].email}  </span></span>
+
+				</Comments> ))}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<Comments style = {{display:"block"}}>
+					<QuestionBodyTextArea
+						value={theComment}
+						onChange={(ev) => setTheComment(ev.target.value)}
+						placeholder="Please type in your comment."
+					/>
+					<DarkCyanButton
+						style={{ width: "fit-content" }}
+						type={"submit"}
+						onClick={(ev) => postComment(ev)}disabled = {!user}>
+
+						Post comment
+					</DarkCyanButton>
+				</Comments>
 
 				<Header1 style={{ margin: "30px 0px 10px 0px", padding: "10px 0" }}>
 					Answers{" "}
@@ -255,13 +344,13 @@ function SpecificQuestionPage(props) {
 									{" "}
 									<div>
 										{" "}
-										<VotingArrows total={a.total === null ? 0 : a.total} userVote={a.uservote} disabled = {!user}
+										<VotingArrows total={a.total === null ? 0 : a.total} userVote={a.uservote} disabled = {!user} style = {{ cursor: !user && 'not-allowed'}}
 													  onUpvote={() => handleOnUpvote('answer', a.answerid)}
 														  onDownvote={() => handleOnDownvote('answer', a.answerid)}
-										></VotingArrows>
+										>{a.total}</VotingArrows>
 										<CheckBestAnswer
 											valid={a.bestanswer === 1}
-											disabled={specificQuestion[0].userid !== user}
+											disabled={specificQuestion[0] && (specificQuestion[0].userid !== user)}
 											onClick={() =>
 												selectBestAnswer(a.answerid, a.bestanswer)
 											}></CheckBestAnswer>{" "}
@@ -304,9 +393,16 @@ function SpecificQuestionPage(props) {
 				<DarkCyanButton
 					style={{ width: "fit-content" }}
 					type={"submit"}
-					onClick={(ev) => postAnswer(ev)}>
+					onClick={(ev) => postAnswer(ev)} disabled = {!user}>
 					Post answer
 				</DarkCyanButton>
+
+				{!!notLoggedIn && (
+					<div style={{ color: "red", paddingTop: 12 + "px" }}>
+						{" "}
+						Please log in first
+					</div>
+				)}
 			</Box>
 		</>
 	);

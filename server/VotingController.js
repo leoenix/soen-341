@@ -69,7 +69,7 @@ VotingController.post("/vote/:direction/:questionid/:type", (req, res) => {
 			.catch((e) => {
 				console.log(e.res);
 				res.status(422).send();
-			});} else if (type === 'answer'){
+			});} else if (type === 'answer' || type === 'comment'){
 			pool
 				.select("votes.*")
 				.from("votes")

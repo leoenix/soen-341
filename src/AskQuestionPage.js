@@ -28,14 +28,14 @@ export default function AskQuestionPage() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState();
     const [goToQuestion, setGoToQuestion] = useState('');
-
+   const [notLoggedIn, setnotLoggedIn] = useState(false);
     function askQuestion(ev){
         ev.preventDefault();
         axios.post('http://localhost:3030/askquestion', {
             title: title,
                 description: description,
 
-        }, {withCredentials:true}).then(res => setGoToQuestion('/question/' + res.data[0]))
+        }, {withCredentials:true}).then(res => setGoToQuestion('/question/' + res.data[0])).catch(() => setnotLoggedIn(true))
     }
 
     return (
@@ -44,10 +44,16 @@ export default function AskQuestionPage() {
         }
             <Header1 style={{marginBottom: '20px'}}>Ask a public question</Header1>
             <form onSubmit ={ev => askQuestion(ev)}>
-            <Input type="text" placeholder="Title..." value = {title} onChange={ev => setTitle(ev.target.value)}/>
-            <QuestionBodyTextArea value = {description} onChange = {ev => setDescription(ev.target.value)} placeholder="Please describe your question in detail."/>
+            <Input required type="text" placeholder="Title..." value = {title} onChange={ev => setTitle(ev.target.value)}/>
+            <QuestionBodyTextArea required value = {description} onChange = {ev => setDescription(ev.target.value)} placeholder="Please describe your question in detail."/>
             <DarkCyanButton type ={'submit'} >Post question</DarkCyanButton>
             </form>
+            {!!notLoggedIn && (
+                <div style={{ color: "red", paddingTop: 12 + "px" }}>
+							{" "}
+                    Please log in first
+						</div>
+            )}
         </Container>
     );
 

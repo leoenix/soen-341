@@ -82,7 +82,7 @@ const AllTags = styled.div`
   display:flex;`
 
 
-function QuestionRow({title, qid, description}) {
+function QuestionRow({title, qid, description, email}) {
     return ( 
         <StyledQuestionRow>
         <StatsContainer>
@@ -98,7 +98,7 @@ function QuestionRow({title, qid, description}) {
                     <Tag> html </Tag>
                     <Tag> css </Tag>
                 </div>
-                    <AuthorAndTime> asked 15 mins ago <UserHyperlink>by njayem </UserHyperlink> </AuthorAndTime>
+                    <AuthorAndTime> asked  <UserHyperlink>by {email} </UserHyperlink> </AuthorAndTime>
 
 </TagsAndAuthor>
         </QuestionTitleArea> 

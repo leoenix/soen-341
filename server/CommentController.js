@@ -5,7 +5,7 @@ import {getLoggedInUser} from "./UserFunctions.js";
 const CommentController = express.Router();
 
 CommentController.post("/postcomment", (req, res) => {
-    const { content, postid } = req.body;
+    const { content, postid, type } = req.body;
     const { token } = req.cookies;
     if (token){
         pool
@@ -21,7 +21,7 @@ CommentController.post("/postcomment", (req, res) => {
                             content,
                             userid: user.userid,
                             postid,
-                            type:"question"
+                            type
                         })
                         .then((qInfo) => {
                             res.json(qInfo).sendStatus(200);
@@ -45,7 +45,7 @@ CommentController.get("/comments/:questionid", (req, res) => {
             .join("users", "users.userid", "=", "comments.userid").leftJoin('votes', function() {this.on('votes.qaid', 'comments.id')
                 this.andOnVal('votes.qatype', '=', 'comment')
             }).leftJoin(pool.raw('votes uservote on uservote.qaid = comments.id and uservote.qatype = ' + pool.raw('?', ['comment']) + ' and uservote.userid =' + user.userid))
-            .where({ "comments.postid": questionid }).groupBy("comments.id")
+            .where({ "comments.postid": questionid }).groupBy("comments.id").orWhere({"comments.type": 'answer'})
 
             .then((info) => {
 

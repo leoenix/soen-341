@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dbfa424-c371-40ef-9e58-5cde04595104" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/CommentController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/VotingController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/VotingController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/CommentController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/CommentController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SpecificQuestionPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpecificQuestionPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

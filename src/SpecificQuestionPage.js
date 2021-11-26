@@ -71,7 +71,7 @@ function SpecificQuestionPage(props) {
 	const [voteCount, setVoteCount] = useState(0);
 
 	function handleOnUpvote(type, answerid = -1) {
-	if (answerid === -1){	setUserVote(userVote === 1 ? 0 : 1);
+	if (answerid === -1 && type !== 'comment'){	setUserVote(userVote === 1 ? 0 : 1);
 		axios
 			.post(
 				"http://localhost:3030/vote/up/" + specificQuestion[0].questionid + "/" + type,
@@ -90,7 +90,7 @@ function SpecificQuestionPage(props) {
 	}
 
 	function handleOnDownvote(type, answerid = -1) {
-		if (answerid === -1){	setUserVote(userVote === -1 ? 0 : -1);
+		if (answerid === -1 && type !== 'comment'){	setUserVote(userVote === -1 ? 0 : -1);
 			axios
 				.post(
 					"http://localhost:3030/vote/down/" + specificQuestion[0].questionid + "/" + type,
@@ -284,11 +284,10 @@ function SpecificQuestionPage(props) {
 
 				{comments && comments.length > 0 && comments.map((a, index) => (	<Comments>	<span style = {{display: "inline-flex"}}><VotingArrows
 					size = {"small"}
-					disabled = {!user}
-					total={voteCount}
-					userVote={userVote}
-					onUpvote={() => handleOnUpvote('comment')}
-					onDownvote={() => handleOnDownvote('comment')}>
+
+					total={a.total === null ? 0 : a.total} userVote={a.uservote} disabled = {!user}
+					onUpvote={() => handleOnUpvote('comment', a.id)}
+					onDownvote={() => handleOnDownvote('comment', a.id)}>
 					{" "}
 				</VotingArrows><span style = {{width:"95%"}}>{comments[index].content}</span> </span>
 					<span

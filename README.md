@@ -87,6 +87,8 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 * **Syntax:** [Solves #issue_number] Pull-Request Topic <br>
 * **Example:** [Solves #40] Add a README.md File<br>
 
+## Coding Style & Naming Convention :notebook: 
+
 
 
 

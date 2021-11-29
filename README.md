@@ -32,14 +32,19 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 | #   | Name                 | ID        | Github Username     |
 | --- | :------------------- | :-------- | :------------------ |
-| 1   | Nadine El-Mufti      | 40017347  |  `njayem`           | 
-| 2   | Warda Ahmed Salem    | 40085148  |  `wardasalem`       |
-| 3   | Safaa Kadhim         | 40123596  |  `safaaraed99`      | 
+| 1   | Nadine El-Mufti (Team Lead)| 40017347|  `njayem`       | 
+| 2   | Eric Hanna           | 40113678  |  `leoenix`          |
+| 3   | Michael Warner       | 40124302  |  `narroarrow`       |
 | 4   | Arandeep Grewal      | 40129705  |  `Arandeep24`       |
-| 5   | Nicolas Towa Kamgne  | 40154685  |  `nicotowa`         |
-| 6   | Eric Hanna           | 40113678  |  `leoenix`          |
-| 7   | Michael Warner       | 40124302  |  `narroarrow`       |
-| 8   | Raja Singh Chandi    | 40078603  |  `rajachandi`       |
+| 5   | Raja Singh Chandi    | 40078603  |  `rajachandi`       |
+| 6   | Warda Ahmed Salem    | 40085148  |  `wardasalem`       |
+| 7   | Safaa Kadhim         | 40123596  |  `safaaraed99`      | 
+| 8   | Nicolas Towa Kamgne  | 40154685  |  `nicotowa`         |
+
+
+
+
+
 
 
 ## Technology Stack :gear:
@@ -54,31 +59,6 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 &nbsp;&nbsp;&nbsp; :white_small_square: Express.js <br>
 &nbsp;&nbsp;&nbsp; :white_small_square: MySQL <br>
 
-## Naming Conventions (for Git & Github organization) :green_book:
-
-**:green_circle: &nbsp; For Branches** (To Solve Issues Through Pull-Requests) <br>
-
-* **For Feature Requests**
-    * **One Branch:**  feature-(issue_number)
-    * **Multiple Branches:** feature-(issue_number)/add-margin
-      &nbsp; &nbsp; &nbsp;     feature-(issue_number)/change-color <br>
-
-* **For Bug Reports**
-    * **One Branch:**  bug-(issue_number)
-    * **Multiple Branches:** bug-(issue_number)/centralize-margin
-      &nbsp; &nbsp; &nbsp;     bug-(issue_number)/remove-color <br>
-
-* **For URGENT Bugs**
-    * hotfix-(issue_number) <br>
-
-**:green_circle: &nbsp; For Issues** <br>
-* **Syntax:** [#issue_number: FEATURE/BUG] Issue Topic <br>
-* **Example:** [#40: FEATURE] Add a README.md File <br>
-
-**:green_circle: &nbsp; For Pull-Requests** <br>
-* **Syntax:** [Solves #issue_number] Pull-Request Topic <br>
-* **Example:** [Solves #40] Added a README.md File<br>
-
 
 ## Workflow Tips :bulb:
 
@@ -88,13 +68,29 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 :four: &nbsp; Push this branch to Github <br>
 :five: &nbsp; Address an Issue / have your code added to main/master by creating a PR: (Main) <--- (new_branch) <br>
 
-## ONLY Create Issues For The Following :point_up:
+## Naming Conventions (for Git & Github organization) :green_book:
 
-- Feature Requests (which are technically Tasks) <br>
-- Bug Fixes <br>
-- EPIC User Stories <br>
-- User Stories <br>
 
-_**note:**_ _Tasks under User Stories should be solved via Pull-Requests (Link every PR to its relevant task)_
+**:green_circle: &nbsp; For Code** <br>
+* **Example: Variables** blahblahblah... <br>
+* **Example: Methods** blahblahblah... <br><br>
+
+**:green_circle: &nbsp; Naming Convention Used For Branches** <br>
+* **Syntax:** feature-(#issue_number/Issue-Topic) <br>
+* **Example:** feature-(#40/Add-a-README.md-File) <br><br>
+   
+**:green_circle: &nbsp; Naming Convention Used For Issues** <br>
+* **Syntax:** [#issue_number: FEATURE/BUG] Issue Topic <br>
+* **Example:** [#40: FEATURE] Add a README.md File <br><br>
+
+**:green_circle: &nbsp; Naming Convention Used For Pull-Requests** <br>
+* **Syntax:** [Solves #issue_number] Pull-Request Topic <br>
+* **Example:** [Solves #40] Add a README.md File<br>
+
+## Coding Style & Naming Convention :notebook: 
+
+
+
+
    
 

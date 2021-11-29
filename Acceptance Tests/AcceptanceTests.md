@@ -4,19 +4,19 @@
 
 **_Scenario #1_**
 
-Given I am `NOT a Registered User`.
+Given I am `NOT a Registered User`,
 When I can click on the button "Create Account" in order to register and I enter an invalid email,
 Then I get an error that says "Invalid email".
 
 **_Scenario #2_**
 
-Given I am `NOT a Registered User`.
+Given I am `NOT a Registered User`,
 When I can click on the button "Create an Account" in order to register and I enter a valid email and password,
 Then I get a message saying "Account successfully created. If you wish to log in, head to the log in page".
 
 **_Scenario #3_**
 
-Given I am `NOT a Registered User`.
+Given I am `NOT a Registered User`,
 When I can click on the button "Create an Account" in order to register and I enter a valid email address that is already associated with a pre-existing user.
 Then I will get an error message saying "User already exists".
 

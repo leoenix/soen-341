@@ -71,10 +71,6 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 ## Naming Conventions (for Git & Github organization) :green_book:
 
 
-**:green_circle: &nbsp; For Code** <br>
-* **Example: Variables** blahblahblah... <br>
-* **Example: Methods** blahblahblah... <br><br>
-
 **:green_circle: &nbsp; Naming Convention Used For Branches** <br>
 * **Syntax:** feature-(#issue_number/Issue-Topic) <br>
 * **Example:** feature-(#40/Add-a-README.md-File) <br><br>

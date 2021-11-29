@@ -31,12 +31,12 @@ QuestionController.get("/question/:questionid", (req, res) => {
                     if (info[0].questionid === null) {
                         pool.select('questions.*', pool.raw('users.email')).from('questions').join('users', 'users.userid', '=', 'questions.userid').where({questionid}).then(info => {
 
-                                res.json(info).sendStatus(200);
+                                res.json(info);
 
                             }
                         ).catch(() => res.sendStatus(403));
                     } else {
-                        res.json(info).sendStatus(200);
+                        res.json(info);
                     }
                 })
                 .catch(err => console.log(err));
@@ -80,7 +80,7 @@ QuestionController.get("/questions", (req, res) => {
         .from("questions").join('users', 'users.userid', '=', 'questions.userid')
         .orderBy("questionid", "desc")
         .then((allQuestions) => {
-            res.json(allQuestions).send();
+            res.json(allQuestions);
         })
         .catch(() => res.sendStatus(403));
 });
@@ -104,7 +104,7 @@ QuestionController.post("/askquestion", (req, res) => {
                         userid: user.userid,
                     })
                     .then((qInfo) => {
-                        res.json(qInfo).sendStatus(200);
+                        res.json(qInfo);
                     })
                     .catch(() => res.sendStatus(403));
             } else {

@@ -10,12 +10,14 @@ const TopQuestionsHeaderRow = styled.div`
     grid-template-columns: 1fr min-content;
     padding: 30px 20px;
 `;
-
+// render the page
 function QuestionsPage() {
     const [allQuestions, setAllQuestions] = useState([]);
     const [user, setUser] = useState("");
     function getAllQuestions(){
-        axios.get('http://localhost:3030/questions', {withCredentials:true}).then(res => setAllQuestions(res.data));
+        axios.get('http://localhost:3030/questions', {withCredentials:true}).then(res => {setAllQuestions(res.data);
+    }).catch(() => {console.log('err');
+});
     }
     function getUser() {
         axios

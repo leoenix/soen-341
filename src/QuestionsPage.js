@@ -42,7 +42,7 @@ function QuestionsPage() {
                 <DarkCyanButtonLink disabled = {!user} to={ !user ? '' : '/ask'}>Ask&nbsp;Question</DarkCyanButtonLink>
             </TopQuestionsHeaderRow>
             {allQuestions && allQuestions.length > 0 && allQuestions.map(q => (
-                <QuestionRow email = {q.email} title = {q.title} qid = {q.questionid} description = {q.description}/>
+                <QuestionRow email = {q.email} title = {q.title} qid = {q.questionid} description = {q.description} total = {q.total ? q.total : 0} views = {q.views}/>
             ))}
         </main>
     );

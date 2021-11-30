@@ -82,16 +82,15 @@ const AllTags = styled.div`
   display:flex;`
 
 
-function QuestionRow({title, qid, description, email}) {
-    return ( 
+function QuestionRow({title, qid, description, email, views, total}) {
+    return (
         <StyledQuestionRow>
-        <StatsContainer>
-        <QuestionStats> 0 <span> votes </span></QuestionStats>
-        <QuestionStats> 1 <span> answers </span></QuestionStats>
-        <QuestionStats> 6 <span> views </span></QuestionStats>
-        </StatsContainer>
+            <StatsContainer>
+                <br/><br/><br/>
+                <QuestionStats> {views} <span> views </span></QuestionStats>
+            </StatsContainer>
             <QuestionTitleArea>
-        <QuestionHyperlink to ={'question/' + qid}> {title} </QuestionHyperlink>
+                <QuestionHyperlink to ={'question/' + qid}> {title} </QuestionHyperlink>
                 <div>{description}</div>
                 <TagsAndAuthor><div>
                     <Tag> javascript </Tag>
@@ -100,8 +99,8 @@ function QuestionRow({title, qid, description, email}) {
                 </div>
                     <AuthorAndTime> asked  <UserHyperlink>by {email} </UserHyperlink> </AuthorAndTime>
 
-</TagsAndAuthor>
-        </QuestionTitleArea> 
+                </TagsAndAuthor>
+            </QuestionTitleArea>
         </StyledQuestionRow>
     );
 

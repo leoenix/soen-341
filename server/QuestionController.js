@@ -3,7 +3,14 @@ import pool from "./pool.js";
 import {getLoggedInUser} from "./UserFunctions.js";
 
 const QuestionController = express.Router();
+QuestionController.put("/question/:questionid", (req,res) => {
 
+    const questionid = req.params.questionid;
+    pool("questions").increment('views').where({"questions.questionid": questionid}).then((info) => {
+        res.json(info).sendStatus(200);
+    })
+        .catch(err => console.log(err));
+})
 QuestionController.get("/question/:questionid", (req, res) => {
     const questionid = req.params.questionid;
     const {token} = req.cookies;

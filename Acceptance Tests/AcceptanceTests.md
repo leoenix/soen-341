@@ -4,19 +4,19 @@
 
 **_Scenario #1_**
 
-Given I am `NOT a Registered User`.
+Given I am `NOT a Registered User`,
 When I can click on the button "Create Account" in order to register and I enter an invalid email,
 Then I get an error that says "Invalid email".
 
 **_Scenario #2_**
 
-Given I am `NOT a Registered User`.
+Given I am `NOT a Registered User`,
 When I can click on the button "Create an Account" in order to register and I enter a valid email and password,
 Then I get a message saying "Account successfully created. If you wish to log in, head to the log in page".
 
 **_Scenario #3_**
 
-Given I am `NOT a Registered User`.
+Given I am `NOT a Registered User`,
 When I can click on the button "Create an Account" in order to register and I enter a valid email address that is already associated with a pre-existing user.
 Then I will get an error message saying "User already exists".
 
@@ -114,42 +114,50 @@ Then that answer will become the current best answer to my question.
 
 
 **_Scenario #1_**
+
 Given I'm `a Logged-in User`, 
 When I try to comment under a question,
 Then my comment will get successfully appended to that question's thread.
 
 **_Scenario #2_**
+
 Given I'm `a Logged-in User`, 
 When I try to vote on a comment under a question,
 Then my vote will successfully get through and the counter will update its value accordingly.
 
 **_Scenario #3_**
+
 Given I'm `NOT a Logged-in User`, 
 When I try to comment under a question,
 Then my comment will fail to get appended to that question's thread (system does nothing).
 
 **_Scenario #4_**
+
 Given I'm `NOT a Logged-in User`, 
 When I try to vote on a comment under a question,
 Then my vote will fail to get through and the counter will NOT update its value (system does nothing).
 
 
 **_Scenario #5_**
+
 Given I'm `a Logged-in User`, 
 When I try to comment under an answer,
 Then my comment will get successfully appended to that answer's thread.
 
 **_Scenario #6_**
+
 Given I'm `a Logged-in User`, 
 When I try to vote on a comment an answer,
 Then my vote will successfully get through and the counter will update its value accordingly.
 
 **_Scenario #7_**
+
 Given I'm `NOT a Logged-in User`, 
 When I try to comment under an answer,
 Then my comment will fail to get appended to that answer's thread (system does nothing).
 
 **_Scenario #8_**
+
 Given I'm `NOT a Logged-in User`, 
 When I try to vote on a comment under an answer,
 Then my vote will fail to get through and the counter will NOT update its value (system does nothing).

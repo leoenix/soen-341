@@ -193,6 +193,8 @@ function SpecificQuestionPage(props) {
 
 
 	function getQuestion() {
+
+		axios.put("http://localhost:3030/question/" + questionid, {withCredentials: true});
 		axios.get("http://localhost:3030/question/" + questionid, {withCredentials: true}).then((res) => {
 
 			setInfo(res.data);

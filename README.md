@@ -25,7 +25,7 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 - [X]  Sprint 1
 - [X]  Sprint 2
 - [X]  Sprint 3
-- [ ]  Sprint 4
+- [X]  Sprint 4
 
 
 ## Team Members :technologist:

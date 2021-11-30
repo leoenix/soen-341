@@ -7,7 +7,7 @@ QuestionController.put("/question/:questionid", (req,res) => {
 
     const questionid = req.params.questionid;
     pool("questions").increment('views').where({"questions.questionid": questionid}).then((info) => {
-        res.json(info).sendStatus(200);
+        res.json(info);
     })
         .catch(err => console.log(err));
 })
@@ -95,7 +95,7 @@ QuestionController.get("/questions", (req, res) => {
 QuestionController.post("/askquestion", (req, res) => {
     const {title, description} = req.body;
     const {token} = req.cookies;
-    console.log(req);
+
    if (token){ pool
         .select("userid")
         .from("users")
@@ -103,7 +103,7 @@ QuestionController.post("/askquestion", (req, res) => {
         .first()
         .then((user) => {
             if (user && user.userid) {
-                console.log("here" + description);
+
                 pool("questions")
                     .insert({
                         title,

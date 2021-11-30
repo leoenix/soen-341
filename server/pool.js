@@ -6,7 +6,7 @@ const pool = knex({
         host: 'localhost',
         user: 'root',
         database: 'stackoverflow',
-        password: 'rootpassword'
+        password: 'password'
     }
 });
 

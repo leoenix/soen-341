@@ -45,7 +45,7 @@ const VoteTotal = styled.div`
 `;
 
 function VotingArrows(props) {
-	console.log("userVote", props.userVote);
+
 	return (
 		<div {...props}>
 			<ArrowButton onClick={() => props.onUpvote()} disabled = {props.disabled} >

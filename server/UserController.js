@@ -29,13 +29,13 @@ UserController.get('/user', function(req, res){
 
 UserController.post('/login', function(req,res){
     const {email,password} = req.body;
-    console.log(password);
+
     pool.select('password').where({email}).from('users').first().then(user=> {
 
         user.password === password && jwt.sign(email, secondtoken, (error, token) =>{
             if (error){
                 res.status(403).send();
-                console.log('theres error');
+
             } else {
                 pool('users').where({email}).update({token}).then(() => res.cookie('token', token).send()).catch(
                     () => res.sendStatus(403));
@@ -51,7 +51,7 @@ UserController.post('/login', function(req,res){
 
 UserController.post('/signup', ((req, res) =>
 {
-    console.log(req.body);
+
     const {email, password} = req.body;
     pool.select('*').from('users').where({email:email}).then(rows => {
         if (rows.length === 0){

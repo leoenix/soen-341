@@ -23,10 +23,10 @@ VotingController.post("/vote/:direction/:questionid/:type", (req, res) => {
 			})
 			.first()
 			.then((vote) => {
-				console.log(vote);
+
 				// No vote
 				if (!vote) {
-					console.log('hello?');
+
 					return pool("votes")
 						.insert({
 							"votes.qaid": questionid,
@@ -53,8 +53,8 @@ VotingController.post("/vote/:direction/:questionid/:type", (req, res) => {
 						)
 						.catch((e) => console.log(e.res) && res.status(422).send());
 				} else {
-					// Update vote
-					console.log("here again");
+
+
 					return pool("votes")
 						.where({ "votes.id": vote.id, "votes.qatype": type})
 						.update({ vote: direction })
@@ -67,7 +67,7 @@ VotingController.post("/vote/:direction/:questionid/:type", (req, res) => {
 				}
 			}) //if it fails
 			.catch((e) => {
-				console.log(e.res);
+
 				res.status(422).send();
 			});} else if (type === 'answer' || type === 'comment'){
 			pool
@@ -80,7 +80,7 @@ VotingController.post("/vote/:direction/:questionid/:type", (req, res) => {
 				})
 				.first()
 				.then((vote) => {
-					console.log(vote);
+
 					// No vote
 					if (!vote) {
 						return pool("votes")
@@ -110,7 +110,7 @@ VotingController.post("/vote/:direction/:questionid/:type", (req, res) => {
 							.catch((e) => console.log(e.res) && res.status(422).send());
 					} else {
 						// Update vote
-						console.log("here again");
+
 						return pool("votes")
 							.where({ "votes.id": vote.id, "votes.qatype": type})
 							.update({ vote: direction })
@@ -123,7 +123,7 @@ VotingController.post("/vote/:direction/:questionid/:type", (req, res) => {
 					}
 				}) //if it fails
 				.catch((e) => {
-					console.log(e.res);
+
 					res.status(422).send();
 
 		})

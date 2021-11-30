@@ -14,7 +14,7 @@ CommentController.post("/postcomment", (req, res) => {
             .where({ token })
             .first()
             .then((user) => {
-                console.log(user.userid)
+
                 if (user && user.userid) {
                     pool("comments")
                         .insert({

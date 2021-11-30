@@ -15,7 +15,6 @@ AnswerController.post("/postanswer", (req, res) => {
 		.first()
 		.then((user) => {
 			if (user && user.userid) {
-				console.log("here" + description);
 				pool("answers")
 					.insert({
 						description,
@@ -78,21 +77,22 @@ AnswerController.put("/bestanswer/:questionid/:answerid", (req, res) => {
 	const questionid = req.params.questionid;
 	const answerid = req.params.answerid;
 
-	pool("answers")
+	 pool("answers")
 		.where({ "answers.questionid": questionid })
 		.update({ bestanswer: "0" })
 		.then((info) => {
-			res.json(info);
-		})
-		.catch(() => console.log("hi1"));
+			pool("answers")
+				.where({ "answers.questionid": questionid, "answers.answerid": answerid })
+				.update({ bestanswer: "1" })
+				.then((info) => {
 
-	pool("answers")
-		.where({ "answers.questionid": questionid, "answers.answerid": answerid })
-		.update({ bestanswer: "1" })
-		.then((info) => {
-			res.json(info);
+					res.json(info);
+				})
+
 		})
-		.catch(() => console.log("hi"));
+
+
+
 });
 
 AnswerController.put("/removebestanswer/:questionid/:answerid", (req, res) => {

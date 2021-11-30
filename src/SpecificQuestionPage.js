@@ -70,8 +70,8 @@ function SpecificQuestionPage(props) {
 	const [comments, setComments] = useState([]);
 	const [theAnswer, setTheAnswer] = useState("");
 	const [theComment, setTheComment] = useState("");
-	const questionid = 0;
-	if (props.match){
+	var questionid
+ 	if (props.match){
 		questionid = props.match.params.questionid;
 	}
 	
@@ -224,10 +224,7 @@ function SpecificQuestionPage(props) {
 			.then((res) => {
 
 				setComments(res.data);
-				console.log(comments);
-				console.log('above');
-				console.log(comments.filter((comments, index ) => comments.postid === 24));
-				console.log('kik')
+
 			});
 	}
 
@@ -256,7 +253,7 @@ function SpecificQuestionPage(props) {
 					{ withCredentials: true }
 				)
 				.then((response) => {
-				//	window.location.reload();
+				window.location.reload();
 				})
 				.catch(() => {
 					console.log("some error happened");
@@ -307,7 +304,7 @@ function SpecificQuestionPage(props) {
 						<VotingArrows
 						 style = {{ cursor: !user && 'not-allowed'}}
 							total={voteCount}
-							userVote={userVote}
+							userVote={userVote}disabled = {!user}
 							onUpvote={() => handleOnUpvote('question')}
 							onDownvote={() => handleOnDownvote('question')}>
 							{" "}

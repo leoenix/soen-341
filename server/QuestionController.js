@@ -3,7 +3,7 @@ import pool from "./pool.js";
 import {getLoggedInUser} from "./UserFunctions.js";
 
 const QuestionController = express.Router();
-QuestionController.put("/question/:questionid", (req,res) => {
+QuestionController.put("/question/:questionid", (req, res) => {
 
     const questionid = req.params.questionid;
     pool("questions").increment('views').where({"questions.questionid": questionid}).then((info) => {
@@ -96,30 +96,32 @@ QuestionController.post("/askquestion", (req, res) => {
     const {title, description} = req.body;
     const {token} = req.cookies;
 
-   if (token){ pool
-        .select("userid")
-        .from("users")
-        .where({token})
-        .first()
-        .then((user) => {
-            if (user && user.userid) {
+    if (token) {
+        pool
+            .select("userid")
+            .from("users")
+            .where({token})
+            .first()
+            .then((user) => {
+                if (user && user.userid) {
 
-                pool("questions")
-                    .insert({
-                        title,
-                        description,
-                        userid: user.userid,
-                    })
-                    .then((qInfo) => {
-                        res.json(qInfo);
-                    })
-                    .catch(() => res.sendStatus(403));
-            } else {
-                res.sendStatus(404);
-            }
-        }); } else {
-       res.sendStatus(403);
-   }
+                    pool("questions")
+                        .insert({
+                            title,
+                            description,
+                            userid: user.userid,
+                        })
+                        .then((qInfo) => {
+                            res.json(qInfo);
+                        })
+                        .catch(() => res.sendStatus(403));
+                } else {
+                    res.sendStatus(404);
+                }
+            });
+    } else {
+        res.sendStatus(403);
+    }
 });
 
 export default QuestionController;

@@ -5,13 +5,13 @@ import {getLoggedInUser} from "./UserFunctions.js";
 const CommentController = express.Router();
 
 CommentController.post("/postcomment", (req, res) => {
-    const { content, postid, type } = req.body;
-    const { token } = req.cookies;
-    if (token){
+    const {content, postid, type} = req.body;
+    const {token} = req.cookies;
+    if (token) {
         pool
             .select("userid")
             .from("users")
-            .where({ token })
+            .where({token})
             .first()
             .then((user) => {
 
@@ -30,7 +30,8 @@ CommentController.post("/postcomment", (req, res) => {
                 } else {
                     res.sendStatus(404);
                 }
-            });} else {
+            });
+    } else {
         res.sendStatus(404);
     }
 });
@@ -39,33 +40,36 @@ CommentController.get("/comments/:questionid", (req, res) => {
     const {token} = req.cookies;
     const type = 'question';
     if (token) {
-        getLoggedInUser(token).then(user => {	pool
-            .select("comments.*", pool.raw("users.email"), pool.raw('sum(votes.vote) as total'), 'uservote.vote as uservote' )
-            .from("comments")
-            .join("users", "users.userid", "=", "comments.userid").leftJoin('votes', function() {this.on('votes.qaid', 'comments.id')
+        getLoggedInUser(token).then(user => {
+            pool
+                .select("comments.*", pool.raw("users.email"), pool.raw('sum(votes.vote) as total'), 'uservote.vote as uservote')
+                .from("comments")
+                .join("users", "users.userid", "=", "comments.userid").leftJoin('votes', function () {
+                this.on('votes.qaid', 'comments.id')
                 this.andOnVal('votes.qatype', '=', 'comment')
             }).leftJoin(pool.raw('votes uservote on uservote.qaid = comments.id and uservote.qatype = ' + pool.raw('?', ['comment']) + ' and uservote.userid =' + user.userid))
-            .where({ "comments.postid": questionid }).groupBy("comments.id").orWhere({"comments.type": 'answer'})
+                .where({"comments.postid": questionid}).groupBy("comments.id").orWhere({"comments.type": 'answer'})
 
-            .then((info) => {
+                .then((info) => {
 
-                res.json(info);
+                    res.json(info);
 
 
-
-            })
-            .catch(err => console.log(err));})} else {
+                })
+                .catch(err => console.log(err));
+        })
+    } else {
         pool
-            .select("comments.*", pool.raw("users.email"), pool.raw('sum(votes.vote) as total') )
+            .select("comments.*", pool.raw("users.email"), pool.raw('sum(votes.vote) as total'))
             .from("comments")
-            .join("users", "users.userid", "=", "comments.id").leftJoin('votes', function() {this.on('votes.qaid', 'comments.id')
+            .join("users", "users.userid", "=", "comments.id").leftJoin('votes', function () {
+            this.on('votes.qaid', 'comments.id')
             this.andOnVal('votes.qatype', '=', 'comment')
-        }).where({ "comments.postid": questionid }).groupBy("comments.id")
+        }).where({"comments.postid": questionid}).groupBy("comments.id")
 
             .then((info) => {
 
                 res.json(info);
-
 
 
             })

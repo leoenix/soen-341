@@ -21,16 +21,16 @@ const DownVote = styled.div`    width:0;
 
 const Votes = styled.div`text-align:center;`
 
-function VotingComponent(props){
-  return (
+function VotingComponent(props) {
+    return (
 
-      <div {...props}>
-        <UpVote active = {props.vote === 1}></UpVote>
-          <Votes>{props.value}</Votes>
-        <DownVote active = {props.vote === -1}></DownVote>
-      </div>
+        <div {...props}>
+            <UpVote active={props.vote === 1}></UpVote>
+            <Votes>{props.value}</Votes>
+            <DownVote active={props.vote === -1}></DownVote>
+        </div>
 
-  )
+    )
 }
 
 VotingComponent.propTypes = {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import axios from "axios";
-import { useState } from "react";
+import {useState} from "react";
 // render this
 const UpwardArrow = styled.div`
 	width: 0;
@@ -46,27 +46,27 @@ const VoteTotal = styled.div`
 
 function VotingArrows(props) {
 
-	return (
-		<div {...props}>
-			<ArrowButton onClick={() => props.onUpvote()} disabled = {props.disabled} >
-				{" "}
-				<UpwardArrow uservote={props.userVote} disabled = {props.disabled} size = {props.size}/>{" "}
-			</ArrowButton>
-			<VoteTotal size = {props.size}> {props.total} </VoteTotal>
-			<ArrowButton onClick={() => props.onDownvote()} disabled = {props.disabled}>
-				{" "}
-				<DownwardArrow uservote={props.userVote}   size = {props.size} />{" "}
-			</ArrowButton>
-		</div>
-	);
+    return (
+        <div {...props}>
+            <ArrowButton onClick={() => props.onUpvote()} disabled={props.disabled}>
+                {" "}
+                <UpwardArrow uservote={props.userVote} disabled={props.disabled} size={props.size}/>{" "}
+            </ArrowButton>
+            <VoteTotal size={props.size}> {props.total} </VoteTotal>
+            <ArrowButton onClick={() => props.onDownvote()} disabled={props.disabled}>
+                {" "}
+                <DownwardArrow uservote={props.userVote} size={props.size}/>{" "}
+            </ArrowButton>
+        </div>
+    );
 }
 
 VotingArrows.propTypes = {
-	total: PropTypes.number.isRequired,
-	userVote: PropTypes.number.isRequired,
-	onUpvote: PropTypes.any,
-	onDownvote: PropTypes.any,
-	disabled: PropTypes.bool
+    total: PropTypes.number.isRequired,
+    userVote: PropTypes.number.isRequired,
+    onUpvote: PropTypes.any,
+    onDownvote: PropTypes.any,
+    disabled: PropTypes.bool
 };
 
 export default VotingArrows;

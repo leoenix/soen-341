@@ -40,7 +40,7 @@ class SignUpPage extends Component {
                 this.checkBoxChecked(true);
                 this.setState({accountCreated: true})
             }).catch(e => {
-                this.checkBoxChecked(false);
+            this.checkBoxChecked(false);
             this.setState({userExists: true})
         });
     }
@@ -51,7 +51,7 @@ class SignUpPage extends Component {
             this.setState({invalidEmail: false, userExists: false, accountCreated: false, missingPassword: false})
             if (emailRedux.test(email) && this.state.password.length > 0) {
                 this.signup();
-            } else if (this.state.password.length === 0){
+            } else if (this.state.password.length === 0) {
                 this.setState({missingPassword: true})
             } else {
                 this.setState({invalidEmail: true})

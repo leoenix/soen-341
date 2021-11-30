@@ -35,5 +35,4 @@ app.use(AnswerController);
 app.use(VotingController);
 app.use(CommentController);
 app.listen(port, function () {
-	console.log("listening on port: " + port);
 });

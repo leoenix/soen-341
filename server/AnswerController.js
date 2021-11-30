@@ -23,7 +23,7 @@ AnswerController.post("/postanswer", (req, res) => {
 						questionid,
 					})
 					.then((qInfo) => {
-						res.json(qInfo).sendStatus(200);
+						res.json(qInfo);
 					})
 					.catch(() => res.sendStatus(403));
 			} else {
@@ -48,7 +48,7 @@ AnswerController.get("/answers/:questionid", (req, res) => {
 
 			.then((info) => {
 
-				res.json(info).sendStatus(200);
+				res.json(info);
 
 
 
@@ -63,7 +63,7 @@ AnswerController.get("/answers/:questionid", (req, res) => {
 
 			.then((info) => {
 
-				res.json(info).sendStatus(200);
+				res.json(info);
 
 
 
@@ -82,17 +82,17 @@ AnswerController.put("/bestanswer/:questionid/:answerid", (req, res) => {
 		.where({ "answers.questionid": questionid })
 		.update({ bestanswer: "0" })
 		.then((info) => {
-			res.json(info).sendStatus(200);
+			res.json(info);
 		})
-		.catch(() => res.sendStatus(403));
+		.catch(() => console.log("hi1"));
 
 	pool("answers")
 		.where({ "answers.questionid": questionid, "answers.answerid": answerid })
 		.update({ bestanswer: "1" })
 		.then((info) => {
-			res.json(info).sendStatus(200);
+			res.json(info);
 		})
-		.catch(() => res.sendStatus(403));
+		.catch(() => console.log("hi"));
 });
 
 AnswerController.put("/removebestanswer/:questionid/:answerid", (req, res) => {
@@ -103,7 +103,7 @@ AnswerController.put("/removebestanswer/:questionid/:answerid", (req, res) => {
 		.where({ "answers.questionid": questionid, "answers.answerid": answerid })
 		.update({ bestanswer: "0" })
 		.then((info) => {
-			res.json(info).sendStatus(200);
+			res.json(info);
 		})
 		.catch(() => res.sendStatus(403));
 });

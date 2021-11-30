@@ -6,7 +6,7 @@ import axios from 'axios';
 import {Component, useContext} from 'react';
 import UserContext from './UserContext';
 import {Redirect} from 'react-router-dom';
-
+// render
 const Container = styled.div`
   padding: 18px;
 `;
@@ -27,14 +27,20 @@ class SignUpPage extends Component {
         }
     }
 
+    checkBoxChecked(param) {
+        return param
+    }
+
     signup() {
         axios.post('http://localhost:3030/signup', {
             email: this.state.email,
             password: this.state.password,
         }, {withCredentials: true})
             .then(() => {
+                this.checkBoxChecked(true);
                 this.setState({accountCreated: true})
             }).catch(e => {
+                this.checkBoxChecked(false);
             this.setState({userExists: true})
         });
     }

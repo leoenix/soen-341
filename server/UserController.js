@@ -14,7 +14,7 @@ UserController.get('/profile', function(req, res){
         if(err){
             res.status(403).send();
         } else {
-            res.json(data).send();
+            res.json(data);
         }
 
     })
@@ -24,7 +24,7 @@ UserController.get('/user', function(req, res){
 
 
     const {token} = req.cookies;
-    pool.select('userid').from('users').where({token}).first().then(user => {   res.json(user).sendStatus(200);}).catch(() => res.sendStatus(406));
+    pool.select('userid').from('users').where({token}).first().then(user => {   res.json(user);}).catch(() => res.sendStatus(406));
 });
 
 UserController.post('/login', function(req,res){

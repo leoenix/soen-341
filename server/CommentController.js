@@ -24,7 +24,7 @@ CommentController.post("/postcomment", (req, res) => {
                             type
                         })
                         .then((qInfo) => {
-                            res.json(qInfo).sendStatus(200);
+                            res.json(qInfo);
                         })
                         .catch(() => res.sendStatus(403));
                 } else {
@@ -49,7 +49,7 @@ CommentController.get("/comments/:questionid", (req, res) => {
 
             .then((info) => {
 
-                res.json(info).sendStatus(200);
+                res.json(info);
 
 
 
@@ -64,7 +64,7 @@ CommentController.get("/comments/:questionid", (req, res) => {
 
             .then((info) => {
 
-                res.json(info).sendStatus(200);
+                res.json(info);
 
 
 
@@ -75,37 +75,37 @@ CommentController.get("/comments/:questionid", (req, res) => {
 
 });
 
-CommentController.put("/bestanswer/:questionid/:answerid", (req, res) => {
-    const questionid = req.params.questionid;
-    const answerid = req.params.answerid;
+// CommentController.put("/bestanswer/:questionid/:answerid", (req, res) => {
+//     const questionid = req.params.questionid;
+//     const answerid = req.params.answerid;
 
-    pool("answers")
-        .where({ "answers.questionid": questionid })
-        .update({ bestanswer: "0" })
-        .then((info) => {
-            res.json(info).sendStatus(200);
-        })
-        .catch(() => res.sendStatus(403));
+//     pool("answers")
+//         .where({ "answers.questionid": questionid })
+//         .update({ bestanswer: "0" })
+//         .then((info) => {
+//             res.json(info);
+//         })
+//         .catch(() => res.sendStatus(403));
 
-    pool("answers")
-        .where({ "answers.questionid": questionid, "answers.answerid": answerid })
-        .update({ bestanswer: "1" })
-        .then((info) => {
-            res.json(info).sendStatus(200);
-        })
-        .catch(() => res.sendStatus(403));
-});
+//     pool("answers")
+//         .where({ "answers.questionid": questionid, "answers.answerid": answerid })
+//         .update({ bestanswer: "1" })
+//         .then((info) => {
+//             res.json(info);
+//         })
+//         .catch(() => res.sendStatus(403));
+// });
 
-CommentController.put("/removebestanswer/:questionid/:answerid", (req, res) => {
-    const questionid = req.params.questionid;
-    const answerid = req.params.answerid;
+// CommentController.put("/removebestanswer/:questionid/:answerid", (req, res) => {
+//     const questionid = req.params.questionid;
+//     const answerid = req.params.answerid;
 
-    pool("answers")
-        .where({ "answers.questionid": questionid, "answers.answerid": answerid })
-        .update({ bestanswer: "0" })
-        .then((info) => {
-            res.json(info).sendStatus(200);
-        })
-        .catch(() => res.sendStatus(403));
-});
+//     pool("answers")
+//         .where({ "answers.questionid": questionid, "answers.answerid": answerid })
+//         .update({ bestanswer: "0" })
+//         .then((info) => {
+//             res.json(info);
+//         })
+//         .catch(() => res.sendStatus(403));
+// });
 export default CommentController;

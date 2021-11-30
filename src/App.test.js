@@ -1,6 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
 import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
+import { shallow, mount } from 'enzyme';
+// test 10 
+describe("rendering components", () => {
+    it("renders App component without crashing", () => {
+      const Wrapper = shallow(<App />);
+      expect(Wrapper);;
+    });
 });

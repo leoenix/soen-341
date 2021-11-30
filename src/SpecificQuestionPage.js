@@ -48,7 +48,15 @@ color:black;
 	margin-top:10px;
 	display:flex;
 	justify-content:space-between
+
+	
 `
+
+
+function checkBoxChecked(param) {
+	return param
+};
+
 
 function SpecificQuestionPage(props) {
 
@@ -62,14 +70,17 @@ function SpecificQuestionPage(props) {
 	const [comments, setComments] = useState([]);
 	const [theAnswer, setTheAnswer] = useState("");
 	const [theComment, setTheComment] = useState("");
-	console.log(specificQuestion);
-	const questionid = props.match.params.questionid;
+	const questionid = 0;
+	if (props.match){
+		questionid = props.match.params.questionid;
+	}
+	
 	const [info, setInfo] = useState(false);
 	const [user, setUser] = useState("");
 	const [notLoggedIn, setnotLoggedIn] = useState(false);
 	const [userVote, setUserVote] = useState(0);
 	const [voteCount, setVoteCount] = useState(0);
-
+//test these fucntions below
 	function handleOnUpvote(type, answerid = -1) {
 	if (answerid === -1 && type !== 'comment'){	setUserVote(userVote === 1 ? 0 : 1);
 		axios
@@ -85,7 +96,10 @@ function SpecificQuestionPage(props) {
 				{},
 				{ withCredentials: true }
 			)
-			.then((res) => window.location.reload());
+			
+			.then((res) => {window.location.reload();
+			checkBoxChecked(true);}
+			);
 	}
 	}
 
@@ -112,7 +126,7 @@ function SpecificQuestionPage(props) {
 	}
 
 
-
+// checkbox return true on then, false on catch, if this one doesn't work ignore
 	function postAnswer(ev) {
 		ev.preventDefault();
 		axios
@@ -131,10 +145,15 @@ function SpecificQuestionPage(props) {
 
 	}
 
-
+	//same here
 	function postComment(ev, answerid = -1) {
 
 		ev.preventDefault();
+
+		if (answerid < -1){
+			return 1;
+		}else{
+
 		if (answerid === -1) {
 			axios
 				.post(
@@ -166,8 +185,9 @@ function SpecificQuestionPage(props) {
 					window.location.reload();
 				}).catch(() => setnotLoggedIn(true));
 		}
-
+	return 0;
 	}
+}
 
 
 
@@ -236,7 +256,7 @@ function SpecificQuestionPage(props) {
 					{ withCredentials: true }
 				)
 				.then((response) => {
-					window.location.reload();
+				//	window.location.reload();
 				})
 				.catch(() => {
 					console.log("some error happened");

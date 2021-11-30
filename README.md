@@ -85,8 +85,23 @@ Build a simplified version of StackOverflow, which is essentially a Q&A website 
 
 ## Coding Style & Naming Convention :notebook: 
 
+**Indentation**
+Automatic indentation and formatting from webstorm IDE
 
-
+**Variable names**
+Chosen to be as clear and specific as possible. If they have to be long it doesn't matter.
+Start with lowercase. As much as possible they are constants and use react states. If they have multiple words, the next words start in capital as such: allQuestions.
+The setting variable always starts with "set" and continues with the variable name, first letter capital as such
+[variable, setVariable]
 
    
+**HTML components**
+Very little css was used. Most style comes from javascript styled-components so the style is in the same javascript files.
+HTML variables start with a capital letter and are chosen to be as specific and clear as possible regardless of length.
+As little inline-style used as possible and no ids or other classes than the ones defined with styled-components
 
+**Files**
+Start with uppercase. As much as possible files are in javascript. Most components are functional components, VERY FEW CLASS COMPONENTS. Functions used repeatedly are put in a separate file which will be imported in the needed functions to not be redundant. Similarly, repeatedly used html components such as buttons are put in a separate file to be imported. 
+
+**Architecture**
+Code is writen with an MVC architecture in mind. Observer and state behavior patterns are used. Code is written with simplicity and pragmatism in mind first and foremost.

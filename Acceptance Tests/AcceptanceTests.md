@@ -44,38 +44,38 @@ Then I will be forwarded to the "Top Questions" Page.
 
 ## :two: &nbsp; Ask & Answer Questions
 
-**_Scenario #1_**
+**_Scenario #7_**
 
 Given that I am `a Logged-in User`,
 When I click the "Ask Question" button,
 Then I will be redirected to the "Ask Question page.
 
 
-**_Scenario #2_**
+**_Scenario #8_**
 
 Given that I am `NOT a Logged-in User`,
 When I click "Post question" button, after having filled in the question title and question body (upon Ask Question button redirection),
 Then I will get an error message displaying "Please log in first".
 
-**_Scenario #3_**
+**_Scenario #9_**
 
 Given that I am `a Logged-in User`,
 When I click on the "Ask Question" button which redirects me to the "Ask Question" page and I forget to fill in either the question title or question body fields,
 Then I will get an error message saying "Please fill out this field".
 
-**_Scenario #4_**
+**_Scenario #10_**
 
 Given that I am either `a Logged-in User OR a Not Logged-in User`,
 When I click on a specific question's title from the list of "Top Questions",
 Then I will be redirected to the "Specific question" page of that question.
 
-**_Scenario #5_**
+**_Scenario #11_**
 
 Given that I am a `NOT a Logged-in User`,
 When I click on a specific question's title from the list of "Top Questions" which will redirect me to the specific page of that question and I attempt to provide an answer and press the "Post answer" button,
 Then my answer fails to get posted and I will not be redirected to the "Specific Question" page (system does nothing).
 
-**_Scenario #6_**
+**_Scenario #12_**
 
 Given that I am `a Logged-in User`,
 When I click on a specific question's title from the list of "Top Questions" which will redirect me to the specific page of that question and I attempt to provide an answer and press the "Post answer" button,
@@ -85,25 +85,25 @@ Then my answer will get successfully posted and I will be redirected to the "Spe
 ## :three: &nbsp; Vote On A Question Or An Answer and Select The Best Answer
 
 
-**_Scenario #1_** 
+**_Scenario #13_** 
 
 Given I am `NOT a Logged-in User`,
 When I try to vote on a question or an answer,
 Then my vote will fail to get through and the counter will NOT update its value (system does nothing).
 
-**_Scenario #2_**
+**_Scenario #14_**
 
 Given I am `a Logged-in User`,
 When I try to vote on a question or an answer,
 Then my vote will successfully get through and the counter will update its value accordingly.
 
-**_Scenario #3_**
+**_Scenario #15_**
 
 Given I am `a Logged-in User and NOT the Question Author`,
 When I attempt to click the best answer button for one of the answers provided to a question I haven't posted,
 Then the system will disable the cursor and prevent me from being able to click the best answer button.
 
-**_Scenario #4_**
+**_Scenario #16_**
 
 Given I am `a Logged-in User and Question Author`,
 When I click the best answer button to an answer provided to my question,
@@ -113,50 +113,50 @@ Then that answer will become the current best answer to my question.
 ## :four: &nbsp; Add Comment Sections Under Both Questions And Answers (W/ Voting Functionality)
 
 
-**_Scenario #1_**
+**_Scenario #17_**
 
 Given I'm `a Logged-in User`, 
 When I try to comment under a question,
 Then my comment will get successfully appended to that question's thread.
 
-**_Scenario #2_**
+**_Scenario #18_**
 
 Given I'm `a Logged-in User`, 
 When I try to vote on a comment under a question,
 Then my vote will successfully get through and the counter will update its value accordingly.
 
-**_Scenario #3_**
+**_Scenario #19_**
 
 Given I'm `NOT a Logged-in User`, 
 When I try to comment under a question,
 Then my comment will fail to get appended to that question's thread (system does nothing).
 
-**_Scenario #4_**
+**_Scenario #20_**
 
 Given I'm `NOT a Logged-in User`, 
 When I try to vote on a comment under a question,
 Then my vote will fail to get through and the counter will NOT update its value (system does nothing).
 
 
-**_Scenario #5_**
+**_Scenario #21_**
 
 Given I'm `a Logged-in User`, 
 When I try to comment under an answer,
 Then my comment will get successfully appended to that answer's thread.
 
-**_Scenario #6_**
+**_Scenario #22_**
 
 Given I'm `a Logged-in User`, 
 When I try to vote on a comment an answer,
 Then my vote will successfully get through and the counter will update its value accordingly.
 
-**_Scenario #7_**
+**_Scenario #23_**
 
 Given I'm `NOT a Logged-in User`, 
 When I try to comment under an answer,
 Then my comment will fail to get appended to that answer's thread (system does nothing).
 
-**_Scenario #8_**
+**_Scenario #24_**
 
 Given I'm `NOT a Logged-in User`, 
 When I try to vote on a comment under an answer,
